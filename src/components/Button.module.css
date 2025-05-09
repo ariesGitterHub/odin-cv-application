@@ -1,0 +1,42 @@
+.button {
+  border: 0.35rem solid var(--mage-blue);
+  border-radius: 1rem;
+  cursor: pointer;
+  font-family: var(--font-logo);
+  font-size: 1rem;
+  margin: 0.35rem;
+  padding: 0.35rem;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(.9);
+}
+
+.button-primary {
+  background-color: #3b82f6; 
+  color: white;
+}
+
+.button-page-link {
+  height: fit-content;
+  width: fit-content;
+  background: none; 
+  border-color: transparent;
+  border-radius: 2rem;
+}
+
+.button-page-link:hover {
+  background-color: var(--orb-gold); 
+
+}
+
+
+.button-danger {
+  background-color: #ef4444; 
+  color: white;
+}
+

@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    width: 100vw;
+    /* background-color: var(--mage-blue); */
+    color: var(--orb-gold);
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 { 
+    font-family: var(--font-logo);
+    font-size: 1.75rem;  
+}
+
+.homeLogoContainer {
+    height: fit-content;
+    /* width: fit-content; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeLogo {
+    height: 15rem;
+    width: auto;
+}
+
+/* .homeLogo:hover {
+transform: scale(1.125);
+} */
+
+.homeMsgContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: var(--orb-gold);
+    font-family: var(--font-text);
+    font-size: 1.25rem;  
+    margin: 0 1rem 0 1rem;
+    text-align: center;
+}
+
+.homeLinkContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* margin: 1rem 0 1rem 0; */
+}
+
+footer {
+    width: 100vw;
+    /* background-color: var(--mage-blue); */
+    color: var(--mage-blue);
+    font-family: var(--font-logo);
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}

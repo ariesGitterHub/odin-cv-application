@@ -1,9 +1,9 @@
-import Button from "../components/Button";
+import HomeLayout from "../layouts/HomeLayout";
+
 export default function Home() {
-      return (
-        <>
-          <Button variant="primary">Save</Button>
-          <Button variant="danger">Delete</Button>
-        </>
-      );
+  return (
+    <>
+      <HomeLayout />
+    </>
+  );
 }

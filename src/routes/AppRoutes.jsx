@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
 // import NotFound from "../pages/NotFound";
+import Home from "../pages/Home";
+import Education from "../pages/Education";
 
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-
+      <Route path="/education" element={<Education />} />
     </Routes>
   );
 }
