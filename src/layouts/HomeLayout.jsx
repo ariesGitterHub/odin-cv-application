@@ -2,11 +2,13 @@ import styles from "./HomeLayout.module.css";
 import { Link } from "react-router-dom";
 import Image from "../components/Image";
 
+import favIcon from "../assets/favIcon.svg";
+
 import resumeWizardLogo from "../assets/resumeWizardLogo.svg";
 
 import linkEducation from "../assets/linkEducation.svg";
 import linkOtherStuff from "../assets/linkOtherStuff.svg";
-import linkPersonalData from "../assets/linkPersonalData.svg";
+import linkPersonalDetails from "../assets/linkPersonalDetails.svg";
 // import linkPreview from "../assets/linkPreview.svg";
 import linkResumeControls from "../assets/linkResumeControls.svg";
 import linkSkillSets from "../assets/linkSkillSets.svg";
@@ -16,7 +18,18 @@ export default function HomeLayout() {
   return (
     <>
       <header>
-        <h1>The Resumé Wizard</h1>
+        <div className={styles.innerHeaderContainer}>
+          <Image
+            src={favIcon}
+            alt="Resumé Wizard Hat Logo"
+            className={styles.homeHatLogo}
+          />
+          <h1>Resumé Wizard</h1>
+        </div>
+
+        <hr />
+        <p>Build your own resumé from scratch</p>
+        <hr />
       </header>
       <main>
         <div className={styles.homeLogoContainer}>
@@ -27,13 +40,13 @@ export default function HomeLayout() {
           />
         </div>
         <div className={styles.homeMsgContainer}>
-          <p>Click the links below to get started on building your resumé!</p>
+          <p>Use the links below to start your resumé!</p>
         </div>
 
         <div className={styles.homeLinkContainer}>
           <Link to="/personal-details" className="page-link">
             <Image
-              src={linkPersonalData}
+              src={linkPersonalDetails}
               alt="Link to Personal Details page"
               className="img-link"
             />

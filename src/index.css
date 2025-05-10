@@ -103,11 +103,12 @@ select {
 .page-link {
   height: fit-content;
   width: fit-content;
-  /* display: flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
   background: none; 
-  border-radius: 2rem;
+  border-radius: 50%;
   border: 0.25rem solid var(--mage-blue);
   border-color: transparent;
   border-radius: 50%;
