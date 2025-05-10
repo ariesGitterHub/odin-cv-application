@@ -1,4 +1,4 @@
-import styles from "./Image.module.css";
+// import styles from "./Image.module.css";
 
 export default function Image({ src, alt, className = "", ...props }) {
   return (
