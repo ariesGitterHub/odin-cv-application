@@ -1,6 +1,6 @@
 import MainLayout from "../layouts/MainLayout";
 
-export default function SkillSets() {
+export default function PersonalData() {
   return (
     <>
       <MainLayout />

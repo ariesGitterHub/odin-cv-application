@@ -1,0 +1,27 @@
+.homeLogoContainer {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .homeLogo {
+    width: 15rem;
+  }
+  
+  .homeMsgContainer {
+    color: var(--orb-gold);
+    font-family: var(--font-text);
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .homeLinkContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  

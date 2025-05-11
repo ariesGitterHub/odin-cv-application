@@ -1,0 +1,27 @@
+.navBarContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.navBarPseudoBtn {
+ height: fit-content;
+ width: fit-content;
+ background-color: var(--accent-blue);
+ border-radius: 2rem;
+ padding: 0.25rem;
+}
+
+.navBarPseudoBtn:hover {
+    background-color: var(--orb-gold);
+transform: scale(1.1);
+   }
+
+.navBarText {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    margin: 0.25rem;
+    word-wrap: break-word;
+}

@@ -1,3 +1,7 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
-  return <footer>A Mad Muffin Man Design © 2025</footer>;
+  return (
+    <footer className={styles.footer}>A Mad Muffin Man Design © 2025</footer>
+  );
 }

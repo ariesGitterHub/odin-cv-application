@@ -7,8 +7,6 @@ import linkSkillSets from "../assets/linkSkillSets.svg";
 import linkWorkExperience from "../assets/linkWorkExperience.svg";
 
 
-// Set it up so that each page lacks the link for that page.
-
 export const navLinks = [
   {
     to: "/",
@@ -40,33 +38,64 @@ export const navLinks = [
   },
 ];
 
+export const headerMessage = {
+  home: {
+    message: "Build your own resumé from scratch"
+  },
+  personalDetails: {
+    message: "Two"
+  },
+  education: {
+    message: "Three"
+  },
+  workExperience: {
+    message: "Four"
+  },
+  skillSets: {
+    message: "Five"
+  },
+  otherStuff: {
+    message: "Six"
+  },
+  resumeControls: {
+    message: "Seven"
+  },
+};
+
 export const linkAssets = {
   home: {
     src: linkHome,
     alt: "Link to Home page",
+    text: "Home",
   },
   personalDetails: {
     src: linkPersonalDetails,
-    alt: "Link to Personal Details page",
+    alt: "Text on image reads: Personal Details",
+    text: "Personal Details",
   },
   education: {
     src: linkEducation,
-    alt: "Link to Education page",
+    alt: "Text on image reads: Education",
+    text: "Education",
   },
   workExperience: {
     src: linkWorkExperience,
-    alt: "Link to Work Experience page",
+    alt: "Text on image reads: Work Experience",
+    text: "Work Experience",
   },
   skillSets: {
     src: linkSkillSets,
-    alt: "Link to Skill Sets page",
+    alt: "Text on image reads: Skill Sets",
+    text: "Skill Sets",
   },
   otherStuff: {
     src: linkOtherStuff,
-    alt: "Link to the Other Stuff page",
+    alt: "Text on image reads: Other Stuff",
+    text: "Other Stuff",
   },
   resumeControls: {
     src: linkResumeControls,
-    alt: "Link to the Resume Controls page",
+    alt: "Text on image reads: Resume Controls",
+    text: "Resumé Controls",
   },
 };

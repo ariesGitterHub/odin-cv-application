@@ -1,4 +1,4 @@
-// import styles from "./Image.module.css";
+import styles from "./Image.module.css";
 
 export default function Image({ src, alt, className = "", ...props }) {
   return (
@@ -6,8 +6,7 @@ export default function Image({ src, alt, className = "", ...props }) {
       src={src}
       alt={alt}
       loading="lazy"
-      // className={`${styles.icon} ${className}`}
-      className={`${className}`}
+      className={`${styles.image} ${className}`}
       {...props}
     />
   );
