@@ -1,13 +1,18 @@
 import styles from "./Button.module.css";
 
-export default function Button({ variant = "primary", children, ...rest }) {
+export default function Button({
+  variant = "default",
+  type,
+  children,
+  ...rest
+}) {
   return (
     <button
-      className={`${styles.button} ${styles[`button-${variant}`]}`}
+      type={type}
+      className={`${styles.button} ${styles[variant]}`}
       {...rest}
     >
       {children}
     </button>
   );
 }
-

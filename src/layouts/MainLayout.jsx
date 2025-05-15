@@ -22,7 +22,6 @@ export default function MainLayout({ children }) {
         })}
       {navLinks.some(({ to }) => to === currentPath) &&
         currentPath !== homePath && <NavBar />}
-
       <main>{children}</main>
       <Footer />
     </>

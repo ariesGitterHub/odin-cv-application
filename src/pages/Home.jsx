@@ -1,11 +1,11 @@
-import Main1Home from "../components/Main1Home";
 import MainLayout from "../layouts/MainLayout";
+import MainHome from "../components/MainHome";
 
 export default function Home() {
   return (
     <>
       <MainLayout>
-        <Main1Home />
+        <MainHome />
       </MainLayout>
     </>
   );

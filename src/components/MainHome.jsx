@@ -3,11 +3,12 @@ import Image from "./Image";
 import { navLinks, linkAssets } from "../data/linkData";
 import { useLocation } from "react-router-dom";
 import resumeWizardLogo from "../assets/resumeWizardLogo.svg";
-import styles from "./Main1Home.module.css";
+import styles from "./MainHome.module.css";
 
 export default function Main1Home() {
   const location = useLocation();
   const currentPath = location.pathname;
+  
   return (
     <>
       <div className={styles.homeLogoContainer}>

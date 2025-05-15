@@ -1,11 +1,11 @@
 import MainLayout from "../layouts/MainLayout";
-import MainEducation from "../components/MainEducation";
+import MainOther from "../components/MainOther";
 
-export default function Education() {
+export default function Other() {
   return (
     <>
       <MainLayout>
-        <MainEducation />
+        <MainOther />
       </MainLayout>
     </>
   );

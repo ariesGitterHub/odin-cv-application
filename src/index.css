@@ -4,7 +4,7 @@
 :root {
   /* COLORS */
   --orb-gold: #EDBD58;
-  --orb-gold-lt: #c9bb9c;
+  --orb-gold-lt: #d9c8a3;
   --mage-blue: #080818;
   /* --mage-blue-dk: #7575a1; */
   --accent-blue: #5D667E;
@@ -95,12 +95,59 @@ select {
 
 /* 8. Prevent animations during page load (optional) */
 *:focus {
-  outline: 2px solid var(--focus-blue); /* a11y: blue focus ring */
-  outline-offset: 10px;
+  border-radius: 2rem;
+  outline: 2px solid var(--focus-blue);
+  outline-offset: 3.5px;
 }
 
 .image-app-link {
   width: 8rem;
   margin-left: 7px;
   margin-top: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--orb-gold);
+  font-family: var(--font-text);
+  font-size: 1rem;
+  margin: 0.125rem;
+  text-transform: uppercase;
+}
+
+input {
+  min-width: 29ch;
+  background-color: var(--orb-gold-lt);
+  border-color: transparent;
+  border-radius: 2rem;
+  color: var(--mage-blue);
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 0.125rem 0.125rem 0.125rem 0.25rem;
+}
+
+input::placeholder {
+  text-transform: capitalize;
+}
+
+.button-container {
+  width: 29ch;
+  display: flex;
+  align-items: space-evenly;
+  justify-content: center;
+  gap: 1rem;
 }

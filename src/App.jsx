@@ -1,11 +1,10 @@
+import FormDataContextProvider from "./components/FormDataContextProvider";
 import AppRoutes from "./routes/AppRoutes";
-// import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
-    <>
+    <FormDataContextProvider>
       <AppRoutes />
-    </>
+    </FormDataContextProvider>
   );
 }
-      {/* <Navbar /> */}

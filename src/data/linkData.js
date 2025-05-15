@@ -1,10 +1,10 @@
 import linkEducation from "../assets/linkEducation.svg";
 import linkHome from "../assets/linkHome.svg";
-import linkOtherStuff from "../assets/linkOtherStuff.svg";
+import linkOther from "../assets/linkOther.svg";
 import linkPersonalDetails from "../assets/linkPersonalDetails.svg";
-import linkResumeControls from "../assets/linkResumeControls.svg";
-import linkSkillSets from "../assets/linkSkillSets.svg";
-import linkWorkExperience from "../assets/linkWorkExperience.svg";
+import linkReview from "../assets/linkReview.svg";
+import linkSkills from "../assets/linkSkills.svg";
+import linkWork from "../assets/linkWork.svg";
 
 
 export const navLinks = [
@@ -17,48 +17,48 @@ export const navLinks = [
     key: "personalDetails",
   },
   {
+    to: "/work",
+    key: "work",
+  },
+  {
     to: "/education",
     key: "education",
   },
   {
-    to: "/work-experience",
-    key: "workExperience",
+    to: "/skills",
+    key: "skills",
   },
   {
-    to: "/skill-sets",
-    key: "skillSets",
+    to: "/other",
+    key: "other",
   },
   {
-    to: "/other-stuff",
-    key: "otherStuff",
-  },
-  {
-    to: "/resume-controls",
-    key: "resumeControls",
+    to: "/review",
+    key: "review",
   },
 ];
 
 export const headerMessage = {
   home: {
-    message: "Build your own resumé from scratch"
+    message: "Build your own resumé from scratch",
   },
   personalDetails: {
-    message: "Two"
+    message: "Add your basic personal information",
+  },
+  work: {
+    message: "Provide your current and prior employers",
   },
   education: {
-    message: "Three"
+    message: "Input your educational background",
   },
-  workExperience: {
-    message: "Four"
+  skills: {
+    message: "Add relevant skills and abilities",
   },
-  skillSets: {
-    message: "Five"
+  other: {
+    message: "References, awards, and other optional information",
   },
-  otherStuff: {
-    message: "Six"
-  },
-  resumeControls: {
-    message: "Seven"
+  review: {
+    message: "Review data, change layout, and more",
   },
 };
 
@@ -73,29 +73,29 @@ export const linkAssets = {
     alt: "Text on image reads: Personal Details",
     text: "Personal Details",
   },
+  work: {
+    src: linkWork,
+    alt: "Text on image reads: Work",
+    text: "Work",
+  },
   education: {
     src: linkEducation,
     alt: "Text on image reads: Education",
     text: "Education",
   },
-  workExperience: {
-    src: linkWorkExperience,
-    alt: "Text on image reads: Work Experience",
-    text: "Work Experience",
+  skills: {
+    src: linkSkills,
+    alt: "Text on image reads: Skills",
+    text: "Skills",
   },
-  skillSets: {
-    src: linkSkillSets,
-    alt: "Text on image reads: Skill Sets",
-    text: "Skill Sets",
+  other: {
+    src: linkOther,
+    alt: "Text on image reads: Other",
+    text: "Other",
   },
-  otherStuff: {
-    src: linkOtherStuff,
-    alt: "Text on image reads: Other Stuff",
-    text: "Other Stuff",
-  },
-  resumeControls: {
-    src: linkResumeControls,
-    alt: "Text on image reads: Resume Controls",
-    text: "Resumé Controls",
+  review: {
+    src: linkReview,
+    alt: "Text on image reads: Review",
+    text: "Review",
   },
 };
