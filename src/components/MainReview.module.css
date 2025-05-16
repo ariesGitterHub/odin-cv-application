@@ -1,0 +1,24 @@
+.resumeBasic {
+    background-color: var(--orb-gold-lt);
+    border-radius: 0.25rem;
+    color: var(--mage-blue);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 8pt;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem
+}
+
+.resumeBasic h1 {
+    font-size: 16pt;
+    text-align: left;
+}
+
+.resumeBasic hr {
+    border-color: var(--mage-blue);
+}
+
+.resumeBasic .contactInfoDiv {
+    display: flex;
+    flex-direction: column;
+    text-indent: 0.125rem;
+}

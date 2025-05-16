@@ -29,6 +29,7 @@ export default function FormDataContextProvider({ children }) {
       // github: "",
       // website: "",
     },
+    work: [{}],
     education: [
       {
         // school: "",
@@ -37,14 +38,8 @@ export default function FormDataContextProvider({ children }) {
         // year: "",
       },
     ],
-    work: [
-      {
-        // school: "",
-        // degree: "",
-        // location: "",
-        // year: "",
-      },
-    ],
+    skills: [{}],
+    other: [{}],
   });
 
   // const handleChange = (e) => {

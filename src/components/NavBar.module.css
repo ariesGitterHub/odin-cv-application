@@ -13,7 +13,7 @@
   width: fit-content;
   background-color: var(--accent-blue);
   border-radius: 2rem;
-  padding: 0.25rem;
+  padding: 0.125rem;
 }
 
 .navBarPseudoBtn:hover {
@@ -24,6 +24,6 @@
 .navBarText {
   font-family: var(--font-text);
   font-size: 1rem;
-  margin: 0.25rem;
+  margin: 0.125rem;
   word-wrap: break-word;
 }
