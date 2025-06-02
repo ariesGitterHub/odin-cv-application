@@ -1,0 +1,38 @@
+header {
+    width: 100vw;
+    margin-bottom: 1rem;
+  }
+  
+  header h1 {
+    color: var(--orb-gold);
+    font-family: var(--font-logo);
+    font-size: 1.5rem;
+    margin: 0 0.25rem 0 0.25rem;
+    text-transform: uppercase;
+  }
+  
+  header p {
+    color: var(--orb-gold-lt);
+    font-family: var(--font-text);
+    font-size: 0.9rem;
+    margin: 0 0.25rem 0 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  header hr {
+    border-color: var(--accent-blue);
+  }
+  
+  .innerHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .headerHatLogo {
+    height: 2.5rem;
+    width: auto;
+    padding: 0 0.5rem 0 0.5rem;
+  }

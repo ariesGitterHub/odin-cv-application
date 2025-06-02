@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Wendy+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+
+:root {
+  /* COLORS */
+  --orb-gold: #EDBD58;
+  --orb-gold-lt: #d9c8a3;
+  --mage-blue: #080818;
+  /* --mage-blue-dk: #7575a1; */
+  --accent-blue: #5D667E;
+  --focus-blue: #3b82f6;
+  --reddy: #B96B6B;
+  --orangy: #B97F6B;
+  --greeny: #A8B96B;
+  --cyany: #6BB9A4;
+  --bluey: #6B7EB9;
+  --purply: #A06BB9;
+
+  --font-logo: "Wendy One", sans-serif;
+  /* --font-header: ; */
+  --font-input: ;
+  --font-text: "Lato", sans-serif;
+  --font-emoji: "Noto Emoji", sans-serif;
+
+  /* MEDIA QUERY VARIABLES */
+  /* Mobile first */
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, figure,
+blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Remove list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* 4. Remove link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 5. Set default body styles */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  line-height: 1.5;
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  background: linear-gradient(5deg, var(--accent-blue), var(--mage-blue));
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 1rem;
+}
+
+h2 {
+  color: var(--orb-gold);
+  font-family: var(--font-text);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.content-list{
+  margin: 1rem;
+}
+
+li {
+  color: var(--orb-gold-lt);
+  font-family: var(--font-text);
+  font-size: .9rem;
+}
+
+/* 6. Set media to block */
+/* img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+} */
+
+/* 7. Inherit fonts for form elements */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Prevent animations during page load (optional) */
+*:focus {
+  border-radius: 2rem;
+  outline: 2px solid var(--focus-blue);
+  outline-offset: 3.5px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--orb-gold-lt)
+}
+
