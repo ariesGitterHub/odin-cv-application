@@ -1,3 +1,5 @@
+import styles from "../styles/InputField.module.css";
+
 export default function InputField({
   label,
   section,
@@ -10,9 +12,12 @@ export default function InputField({
 }) {
   return (
     <>
-      <div className="input-field">
-        <label htmlFor={name}>{label}</label>
+      <form className={styles.form}>
+        <label className={styles.label} htmlFor={name}>
+          {label}
+        </label>
         <input
+          className={styles.input}
           section={section}
           type={type}
           id={name}
@@ -23,7 +28,7 @@ export default function InputField({
           required={required}
           autoFocus
         />
-      </div>
+      </form>
     </>
   );
 }

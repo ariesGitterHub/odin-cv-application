@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "../styles/Editor.module.css";
 import Button from "../helpers/Button";
 import Image from "../helpers/Image";
@@ -7,19 +8,27 @@ import imgWork from "../assets/btnWork.svg";
 import imgProjects from "../assets/btnProjects.svg";
 import imgSkills from "../assets/btnSkills.svg";
 import EditorFormPersonal from "./EditorFormPersonal";
-// import EditorFormEducation from "./EditorFormEducation";
+import EditorFormEducation from "./EditorFormEducation";
 // import EditorFormWork from "../EditorFormWork";
 // import EditorFormProjects from "./EditorFormProjects";
 // import EditorFormSkills from "./EditorFormSkills";
 
 export default function Editor() {
+    const [showForm, setShowForm] = useState("personal");
+    const toggleForm = (formName) => {
+        if (formName !== showForm) {
+          setShowForm(formName);
+        }
+    };
+
+
   return (
     <div className={styles.editorContainer}>
       <div className={styles.buttonContainer}>
-        <Button type="button">
+        <Button type="button" onClick={() => toggleForm("personal")}>
           <Image src={imgPersonal} alt="" />
         </Button>
-        <Button type="button">
+        <Button type="button" onClick={() => toggleForm("education")}>
           <Image src={imgEducation} alt="" />
         </Button>
         <Button type="button">
@@ -33,7 +42,16 @@ export default function Editor() {
         </Button>
       </div>
       <div className={styles.formContainer}>
-            <EditorFormPersonal />  
+        {showForm === "personal" && (
+          <div className={styles.visible}>
+            <EditorFormPersonal />
+          </div>
+        )}
+        {showForm === "education" && (
+          <div className={styles.visible}>
+            <EditorFormEducation />
+          </div>
+        )}
       </div>
     </div>
   );

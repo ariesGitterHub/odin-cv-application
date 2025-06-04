@@ -1,11 +1,11 @@
 .editorContainer {
     height: fit-content;
     width: fit-content;
-    background-color: var(--orb-gold-lt);
+    background-color: rgb(36, 3, 3);
     border-radius: 1rem;
     color: var(--mage-blue);
-    margin: 1rem;
-    padding: 1rem;
+    /* margin: 1rem; */
+    /* padding: 1rem; */
 }
 
 .buttonContainer {
@@ -16,9 +16,9 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background-color: lightgreen;
+    background-color: rgb(39, 67, 3);
     margin: 1rem;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
 
   .formContainer {
@@ -26,7 +26,15 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    background-color: lightblue;
+    background-color: rgb(1, 25, 5);
     margin: 1rem;
     padding: 1rem;
+  }
+
+  .visible {
+    display: block;
+  }
+
+  .invisible {
+    display: none;
   }
