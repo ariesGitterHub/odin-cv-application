@@ -1,0 +1,32 @@
+.editorContainer {
+    height: fit-content;
+    width: fit-content;
+    background-color: var(--orb-gold-lt);
+    border-radius: 1rem;
+    color: var(--mage-blue);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.buttonContainer {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: lightgreen;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-color: lightblue;
+    margin: 1rem;
+    padding: 1rem;
+  }

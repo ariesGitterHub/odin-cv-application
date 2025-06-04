@@ -13,9 +13,9 @@ export default function Header({ message }) {
         />
         <h1 className={styles.h1}>Resumé Wizard</h1>
       </div>
-      <hr className={styles.hr} />
+      {/* <hr className={styles.hr} /> */}
       <p className={styles.p}>{message}</p>
-      <hr className={styles.hr} />
+      {/* <hr className={styles.hr} /> */}
     </header>
   );
 }

@@ -6,6 +6,7 @@
   /* COLORS */
   --orb-gold: #EDBD58;
   --orb-gold-lt: #d9c8a3;
+  --orb-white: #dcdad5;
   --mage-blue: #080818;
   /* --mage-blue-dk: #7575a1; */
   --accent-blue: #5D667E;
@@ -117,14 +118,5 @@ select {
   border-radius: 2rem;
   outline: 2px solid var(--focus-blue);
   outline-offset: 3.5px;
-}
-
-.app-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  color: var(--orb-gold-lt)
 }
 

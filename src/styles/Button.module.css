@@ -1,0 +1,28 @@
+.button {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: transparent; */
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: var(--font-logo);
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .button:hover {
+    transform: scale(1.1);
+  }
+  
+  .button:active {
+    transform: scale(0.9);
+  }
+  
+  .default {
+    background-color: var(--orb-gold);
+    border-color: var(--mage-blue);
+    /* color: var(--orb-gold-lt); */
+  }

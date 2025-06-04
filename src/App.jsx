@@ -11,7 +11,7 @@ export default function App() {
         <Header />
         <div className="editor-preview-container">
           <Editor />
-          <Preview />  
+          <Preview />
         </div>
         <Footer />
       </div>

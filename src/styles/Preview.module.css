@@ -1,0 +1,9 @@
+.previewContainer {
+    height: fit-content;
+    width: fit-content;
+    background-color: var(--orb-white);
+    border-radius: 1rem;
+    color: var(--mage-blue);
+    margin: 1rem;
+    padding: 1rem;
+}
