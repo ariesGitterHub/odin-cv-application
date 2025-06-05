@@ -2,10 +2,10 @@ import InputField from "../helpers/InputField";
 import Button from "../helpers/Button";
 // import { useState } from "react";
 
-export default function EditorFormEducation() {
-    return(
-        <div>
-            <p>Education</p>
-        </div>
-    )
+export default function EditorFormWork() {
+  return (
+    <div>
+      <p>Work</p>
+    </div>
+  );
 }

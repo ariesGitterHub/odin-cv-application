@@ -1,9 +1,8 @@
 import InputField from "../helpers/InputField";
 import Button from "../helpers/Button";
-// import { useState } from "react";
 
-export default function EditorFormPersonal() {
-//   const { formData, handleChange, handleSubmit } = useFormData();
+export default function EditorFormPersonal({ formData, handleChange, handleSubmit }) {
+
   const section = "personal";
   const enterYour = "Enter your";
 
@@ -12,6 +11,8 @@ export default function EditorFormPersonal() {
       label: "full name*",
       section: section,
       name: "fullName",
+      value: `${formData.fullName}`,
+      onChange: handleChange,
       placeholder: `${enterYour} full name...`,
       required: true,
     },
@@ -20,6 +21,8 @@ export default function EditorFormPersonal() {
       section: section,
       type: "email",
       name: "email",
+      value: `${formData.email}`,
+      onChange: handleChange,
       placeholder: `${enterYour} email...`,
       required: true,
     },
@@ -28,30 +31,34 @@ export default function EditorFormPersonal() {
       section: section,
       type: "tel",
       name: "phone",
+      value: `${formData.phone}`,
+      onChange: handleChange,
       placeholder: `${enterYour} phone number...`,
       required: true,
-    },
-    {
-      label: "address",
-      section: section,
-      name: "address",
-      placeholder: `${enterYour} address...`,
-      required: false,
     },
     {
       label: "website(s)",
       section: section,
       // type: "url",
       name: "website",
+      value: `${formData.website}`,
+      onChange: handleChange,
       placeholder: `${enterYour} website(s)...`,
+      required: false,
+    },
+    {
+      label: "address",
+      section: section,
+      name: "address",
+      value: `${formData.address}`,
+      onChange: handleChange,
+      placeholder: `${enterYour} address...`,
       required: false,
     },
   ];
 
   return (
-    <form 
-    // onSubmit={handleSubmit}
-    >
+    <form onSubmit={handleSubmit}>
       {inputFields.map((field) => {
         return (
           <InputField
@@ -60,18 +67,17 @@ export default function EditorFormPersonal() {
             section={field.section}
             type={field.type}
             name={field.name}
-            // value={formData[field.name]}
-            // onChange={handleChange}
-            // value={formData.personal[field.name]}
-            // onChange={(e) => handleChange(e, "personal")}
+            value={field.value}
+            onChange={field.onChange}
             placeholder={field.placeholder}
             required={field.required}
           />
         );
       })}
       <div className="button-container">
-        <Button type="submit">Submit</Button>
-        {/* <Button>Preview</Button> */}
+        <Button variant="test" type="submit">
+          Submit
+        </Button>
       </div>
     </form>
   );

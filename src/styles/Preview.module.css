@@ -1,9 +1,21 @@
 .previewContainer {
     height: fit-content;
-    width: fit-content;
+    width: 40ch;
     background-color: var(--orb-white);
     border-radius: 1rem;
     color: var(--mage-blue);
     margin: 1rem;
     padding: 1rem;
+}
+
+.fullName {
+    font-size: 1.25rem;
+}
+
+.contactInfo {
+    font-size: .85rem;
+}
+
+.fullName, .contactInfo {
+    text-align: center;
 }

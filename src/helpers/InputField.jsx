@@ -11,24 +11,23 @@ export default function InputField({
   required = false,
 }) {
   return (
-    <>
-      <form className={styles.form}>
-        <label className={styles.label} htmlFor={name}>
-          {label}
-        </label>
-        <input
-          className={styles.input}
-          section={section}
-          type={type}
-          id={name}
-          name={name}
-          value={value || ""}
-          onChange={onChange}
-          placeholder={placeholder}
-          required={required}
-          autoFocus
-        />
-      </form>
-    </>
+    <div className={styles.inputFieldContainer}>
+      <label className={styles.label} htmlFor={name}>
+        {label}
+      </label>
+      <input
+        className={styles.input}
+        section={section}
+        type={type}
+        id={name}
+        name={name}
+        // value={value || ""}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        required={required}
+        autoFocus
+      />
+    </div>
   );
 }
