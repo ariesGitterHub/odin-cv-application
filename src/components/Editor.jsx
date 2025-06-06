@@ -13,7 +13,9 @@ import EditorFormWork from "./EditorFormWork";
 // import EditorFormProjects from "./EditorFormProjects";
 // import EditorFormSkills from "./EditorFormSkills";
 
-export default function Editor({ formData, handleChange, handleSubmit }) {
+export default function Editor({ formData, handleChange, 
+  handleChangeArray, 
+  handleSubmit }) {
   const [showForm, setShowForm] = useState("personal");
   const toggleForm = (formName) => {
     if (formName !== showForm) {
@@ -60,7 +62,12 @@ export default function Editor({ formData, handleChange, handleSubmit }) {
         )}
         {showForm === "education" && (
           <div className={styles.visible}>
-            <EditorFormEducation />
+            <EditorFormEducation
+              formData={formData}
+              handleChangeArray={handleChangeArray}
+              // handleChange={handleChange}
+              handleSubmit={handleSubmit}
+            />
           </div>
         )}
         {showForm === "work" && (

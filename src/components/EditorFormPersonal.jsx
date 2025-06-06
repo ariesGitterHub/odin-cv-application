@@ -4,54 +4,50 @@ import Button from "../helpers/Button";
 export default function EditorFormPersonal({ formData, handleChange, handleSubmit }) {
 
   const section = "personal";
+  const personal = formData[section];
   const enterYour = "Enter your";
 
   const inputFields = [
     {
       label: "full name*",
-      section: section,
       name: "fullName",
-      value: `${formData.fullName}`,
-      onChange: handleChange,
+      value: personal.fullName,
+      onChange: handleChange(section),
       placeholder: `${enterYour} full name...`,
       required: true,
     },
     {
       label: "email*",
-      section: section,
       type: "email",
       name: "email",
-      value: `${formData.email}`,
-      onChange: handleChange,
+      value: personal.email,
+      onChange: handleChange(section),
       placeholder: `${enterYour} email...`,
       required: true,
     },
     {
       label: "phone number*",
-      section: section,
       type: "tel",
       name: "phone",
-      value: `${formData.phone}`,
-      onChange: handleChange,
+      value: personal.phone,
+      onChange: handleChange(section),
       placeholder: `${enterYour} phone number...`,
       required: true,
     },
     {
       label: "website(s)",
-      section: section,
       // type: "url",
       name: "website",
-      value: `${formData.website}`,
-      onChange: handleChange,
+      value: personal.website,
+      onChange: handleChange(section),
       placeholder: `${enterYour} website(s)...`,
       required: false,
     },
     {
       label: "address",
-      section: section,
       name: "address",
-      value: `${formData.address}`,
-      onChange: handleChange,
+      value: personal.address,
+      onChange: handleChange(section),
       placeholder: `${enterYour} address...`,
       required: false,
     },
@@ -59,12 +55,12 @@ export default function EditorFormPersonal({ formData, handleChange, handleSubmi
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>{section}</h1>
       {inputFields.map((field) => {
         return (
           <InputField
             key={field.name}
             label={field.label}
-            section={field.section}
             type={field.type}
             name={field.name}
             value={field.value}
