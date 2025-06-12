@@ -117,6 +117,7 @@ export default function App() {
             /> */}
           <Editor
             formData={formData}
+            setFormData={setFormData}
             handleChange={handleChange}
             handleChangeArray={handleChangeArray}
             handleSubmit={handleSubmit}

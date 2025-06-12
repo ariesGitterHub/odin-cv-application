@@ -1,6 +1,6 @@
 
 .inputFieldContainer {
-  width: 37ch;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

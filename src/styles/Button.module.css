@@ -40,9 +40,9 @@
   }
 
   .formDataControl {
-    height:  2.5rem;
-    width: 2.5rem;
-    background-color: var(--orb-gold-lt);
-    border-color: var(--mage-blue);    
+    height:  2.25rem;
+    width: 2.25rem;
+    background-color: var(--orb-gold);
+    border: 0.125rem solid var(--mage-blue);    
     border-radius: 50%;
   }

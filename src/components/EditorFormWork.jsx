@@ -39,7 +39,7 @@ export default function EditorFormWork({ formData, handleChangeArray, handleSubm
       name: "years",
       value: work[0].years,
       onChange: handleChangeArray(section, 0),
-      placeholder: `${enterYour} years employed...`,
+      placeholder: `${enterYour} years...`,
       required: false,
     },
   ];

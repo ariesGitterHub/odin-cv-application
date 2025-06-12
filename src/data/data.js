@@ -17,7 +17,7 @@ export const initialFormData = {
       school: "Tattooine Beauty & Makeup",
       location: "Mos Espa, TAT",
       degree: "Certification, Jawa-grooming",
-      year: "2025",
+      year: "2024-2026",
     },
   ],
   work: [

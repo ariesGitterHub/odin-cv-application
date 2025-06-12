@@ -15,6 +15,7 @@ import EditorFormSkills from "./EditorFormSkills";
 
 export default function Editor({
   formData,
+  setFormData,
   handleChange,
   handleChangeArray,
   handleSubmit,
@@ -71,6 +72,7 @@ export default function Editor({
           <div className="visible">
             <EditorFormEducation
               formData={formData}
+              setFormData={setFormData}
               handleChangeArray={handleChangeArray}
               // handleChange={handleChange}
               handleSubmit={handleSubmit}
@@ -82,6 +84,7 @@ export default function Editor({
           <div className="visible">
             <EditorFormWork
               formData={formData}
+              setFormData={setFormData}
               handleChangeArray={handleChangeArray}
               // handleChange={handleChange}
               handleSubmit={handleSubmit}
@@ -93,6 +96,7 @@ export default function Editor({
           <div className="visible">
             <EditorFormProjects
               formData={formData}
+              setFormData={setFormData}
               handleChangeArray={handleChangeArray}
               // handleChange={handleChange}
               handleSubmit={handleSubmit}
