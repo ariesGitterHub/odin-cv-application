@@ -10,6 +10,7 @@
   --mage-blue: #080818;
   /* --mage-blue-dk: #7575a1; */
   --accent-blue: #5D667E;
+  --resume-blue: #bacbd0;
   --focus-blue: #3b82f6;
   --reddy: #B96B6B;
   --orangy: #B97F6B;
@@ -120,3 +121,10 @@ select {
   outline-offset: 3.5px;
 }
 
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}

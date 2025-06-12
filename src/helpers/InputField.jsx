@@ -14,7 +14,7 @@ export default function InputField({
     <div className={styles.inputFieldContainer}>
       <label className={styles.label} htmlFor={name}>
         {label}
-      </label>
+      
       <input
         className={styles.input}
         section={section}
@@ -28,6 +28,7 @@ export default function InputField({
         required={required}
         autoFocus
       />
+      </label>
     </div>
   );
 }

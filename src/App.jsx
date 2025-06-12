@@ -95,6 +95,21 @@ export default function App() {
     <>
       <div className="app-container">
         <Header />
+        {/* <Button
+          variant="test"
+          onClick={() => {
+            localStorage.removeItem("resumeData");
+            setFormData({
+              fullName: "",
+              email: "",
+              phone: "",
+              address: "",
+              website: "",
+            });
+          }}
+        >
+          Clear Saved Data
+        </Button> */}
         <div className="editor-preview-container">
           {/* <Editor
             fullName={fullName}
@@ -109,21 +124,6 @@ export default function App() {
           {/* <Preview fullName={fullName} /> */}
           <Preview formData={formData} />
         </div>
-        <Button
-          variant="test"
-          onClick={() => {
-            localStorage.removeItem("resumeData");
-            setFormData({
-              fullName: "",
-              email: "",
-              phone: "",
-              address: "",
-              website: "",
-            });
-          }}
-        >
-          Clear Saved Data
-        </Button>
         <Footer />
       </div>
     </>

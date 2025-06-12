@@ -1,6 +1,11 @@
 .editorContainer {
     height: fit-content;
     width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     /* background-color: #240303; */
     /* border: 0.125rem solid var(--orb-gold-lt);
     border-radius: 1rem; */
@@ -34,16 +39,16 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
-    /* background-color: #011905; */
+    justify-content: start;
+    border: 3px dashed purple;
     margin: 0 1rem 1rem 1rem;
     padding: 1rem;
   }
 
-  .visible {
+  /* .visible {
     display: block;
   }
 
   .invisible {
     display: none;
-  }
+  } */

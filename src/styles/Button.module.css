@@ -10,7 +10,7 @@
   }
   
   .button:hover {
-    transform: scale(1.125);
+    transform: scale(1.1);
     background-color: var(--orb-gold);
     color: var(--mage-blue);
   }
@@ -28,12 +28,21 @@
   .default {
   }
 
-  .test {
+  .save {
     width: 100%;
     background-color: var(--mage-blue);
     border-color: white;
-    border-radius: 1rem;
+    border-radius: 2rem;
     color: var(--orb-gold-lt);
     font-family: var(--font-logo);
     margin-top: 1rem;
+    padding: 0.5rem;
+  }
+
+  .formDataControl {
+    height:  2.5rem;
+    width: 2.5rem;
+    background-color: var(--orb-gold-lt);
+    border-color: var(--mage-blue);    
+    border-radius: 50%;
   }

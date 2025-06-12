@@ -3,24 +3,43 @@ export const initialFormData = {
     fullName: "Han Solo",
     email: "nerferder@sw.net",
     phone: "(555) 555-5555",
-    address: "13 Falcon Way, Corellia City, CA",
+    address: "13 Falcon Way, Corellia City, COR",
     website: "12parsecs.com",
   },
-    education: [
-      {
-        school: "Corellia Technical",
-        location: "Corellia City",
-        degree: "Hyperspace Engineering",
-        year: "2012",
-      },
-    ],
-//   education: {
-//     school: "Corellia Technical",
-//     location: "Corellia City",
-//     degree: "Hyperspace Engineering",
-//     year: "2012",
-//   },
-  work: [{}],
-  projects: [{}],
-  skills: "",
+  education: [
+    {
+      school: "Corellia Technical",
+      location: "Corellia City, COR",
+      degree: "BS, Hyperspace Engineering",
+      year: "2008-2012",
+    },
+    {
+      school: "Tattooine Beauty & Makeup",
+      location: "Mos Espa, TAT",
+      degree: "Certification, Jawa-grooming",
+      year: "2025",
+    },
+  ],
+  work: [
+    {
+      employer: "Kansk Imperial Shipyards",
+      location: "Skyview-Upper, HOM",
+      position: "Life-support Engineer",
+      years: "2015-2025",
+      bullets: [
+        {item: "Rebuilt custom life-support arrays"},
+        {item: "Prototyped sequential fail-safes"},
+        {item: "Tested third-party assemblies"},
+    ]
+  },
+  ],
+  projects: [
+    {
+      project: "Tactical Hyperdrive System",
+      description: "Functional escape coordinate re-allocator. ",
+    },
+  ],
+  skills: {
+    description: "JavaScript, HTML, CSS, Webpack, React, Node.js",
+  } 
 };

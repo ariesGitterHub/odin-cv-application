@@ -71,8 +71,8 @@ export default function EditorFormPersonal({ formData, handleChange, handleSubmi
         );
       })}
       <div className="button-container">
-        <Button variant="test" type="submit">
-          Submit
+        <Button variant="save" type="submit">
+          Save
         </Button>
       </div>
     </form>

@@ -2,10 +2,14 @@
     height: fit-content;
     width: 40ch;
     background-color: var(--orb-white);
-    border-radius: 0.125rem;
+    border-radius: 0.25rem;
     color: var(--mage-blue);
     margin: 1rem;
     padding: 1rem;
+}
+
+.bold {
+    font-weight: 800;
 }
 
 .fullName {
@@ -24,20 +28,32 @@
     color: var(--accent-blue);
     font-size: .85rem;
 }
-.educationInfo {
+.data0Info {
     display: flex;
     flex-direction: column;
-    font-size: 0.7rem;
+    background-color: var(--resume-blue);
+    font-size: 0.75rem;
+    margin: 0.35rem;
+    padding: 0.35rem;
 }
 
-.schoolInfo {
+.data1Info {
     display: flex;
     flex-direction: row;
 }
 
-.degreeInfo {
+.data2Info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 0.6rem;
+    font-style: italic;
+}
+
+.dataXInfo {
+    display: flex;
+    flex-direction: row;
+    /* background-color: var(--resume-blue); */
+    font-size: 0.75rem;
+    /* margin: 0.35rem; */
+    padding: 0.35rem;
 }

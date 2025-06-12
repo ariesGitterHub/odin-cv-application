@@ -30,17 +30,64 @@ export default function Preview({ formData }) {
       </div>
       <hr />
       <h2 className={styles.sectionHeader}>Education</h2>
-      <div className={styles.educationInfo}>
-        <div className={styles.schoolInfo}>
-          <p>{formData.education[0].school}</p>
+      {/* <div className={styles.data0Info}>
+        <div className={styles.data1Info}>
+          <p className={styles.bold}>{formData.education[0].school}</p>
           &nbsp;
-          <p>({formData.education[0].location})</p> 
+          <p>({formData.education[0].location})</p>
         </div>
-        <div className={styles.degreeInfo}>
+        <div className={styles.data2Info}>
           <p>{formData.education[0].degree}</p>
-          <p>{formData.education[0].year}</p>  
+          <p>{formData.education[0].year}</p>
         </div>
+      </div> */}
 
+      {formData.education.map((entry, index) => (
+        <div key={index} className={styles.data0Info}>
+          <div className={styles.data1Info}>
+            <p className={styles.bold}>{formData.education[index].school}</p>
+            &nbsp;
+            <p>({formData.education[index].location})</p>
+          </div>
+          <div className={styles.data2Info}>
+            <p>{formData.education[index].degree}</p>
+            <p>{formData.education[index].year}</p>
+          </div>
+        </div>
+      ))}
+
+      {/* <hr /> */}
+      <h2 className={styles.sectionHeader}>Work Experience</h2>
+      <div className={styles.data0Info}>
+        <div className={styles.data1Info}>
+          <p className={styles.bold}>{formData.work[0].employer}</p>
+          &nbsp;
+          <p>({formData.work[0].location})</p>
+        </div>
+        <div className={styles.data2Info}>
+          <p>{formData.work[0].position}</p>
+          <p>{formData.work[0].years}</p>
+        </div>
+      </div>
+      {/* <hr /> */}
+      <h2 className={styles.sectionHeader}>Projects</h2>
+      <div className={styles.data0Info}>
+        <div className={styles.data1Info}>
+          <p className={styles.bold}>{formData.projects[0].project}</p>
+        </div>
+        <div className={styles.data2Info}>
+          <p>{formData.projects[0].description}</p>
+        </div>
+      </div>
+      {/* <hr /> */}
+      <h2 className={styles.sectionHeader}>Skills</h2>
+      <div className={styles.dataXInfo}>
+        <p>{formData.skills.description}</p>
+      </div>
+      {/* <hr /> */}
+      <h2 className={styles.sectionHeader}>references</h2>
+      <div className={styles.dataXInfo}>
+        <p>Available upon request.</p>
       </div>
     </div>
   );
