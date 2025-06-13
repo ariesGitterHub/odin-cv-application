@@ -42,6 +42,7 @@ export default function Preview({ formData }) {
         </div>
       </div> */}
 
+      {/* Refactor this? what about "entry" */}
       {formData.education.map((entry, index) => (
         <div key={index} className={styles.data0Info}>
           <div className={styles.data1Info}>
@@ -57,7 +58,7 @@ export default function Preview({ formData }) {
       ))}
 
       {/* <hr /> */}
-      <h2 className={styles.sectionHeader}>Work Experience</h2>
+      {/* <h2 className={styles.sectionHeader}>Work Experience</h2>
       <div className={styles.data0Info}>
         <div className={styles.data1Info}>
           <p className={styles.bold}>{formData.work[0].employer}</p>
@@ -68,7 +69,22 @@ export default function Preview({ formData }) {
           <p>{formData.work[0].position}</p>
           <p>{formData.work[0].years}</p>
         </div>
-      </div>
+      </div> */}
+
+      {formData.work.map((entry, index) => (
+        <div key={index} className={styles.data0Info}>
+          <div className={styles.data1Info}>
+            <p className={styles.bold}>{formData.work[index].employer}</p>
+            &nbsp;
+            <p>({formData.work[index].location})</p>
+          </div>
+          <div className={styles.data2Info}>
+            <p>{formData.work[index].position}</p>
+            <p>{formData.work[index].years}</p>
+          </div>
+          <p>{formData.work[index].tasks}</p>
+        </div>
+      ))}
       {/* <hr /> */}
       <h2 className={styles.sectionHeader}>Projects</h2>
       <div className={styles.data0Info}>

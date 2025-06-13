@@ -26,12 +26,17 @@ export const initialFormData = {
       location: "Skyview-Upper, HOM",
       position: "Life-support Engineer",
       years: "2015-2025",
-      bullets: [
-        {item: "Rebuilt custom life-support arrays"},
-        {item: "Prototyped sequential fail-safes"},
-        {item: "Tested third-party assemblies"},
-    ]
-  },
+      tasks: [
+        { item: "Rebuilt custom life-support arrays" },
+        { item: "Prototyped sequential fail-safes" },
+        { item: "Tested third-party assemblies" },
+      ],
+      // tasks: [
+      //   "Rebuilt custom life-support arrays",
+      //   "Prototyped sequential fail-safes",
+      //   "Tested third-party assemblies",
+      // ],
+    },
   ],
   projects: [
     {
@@ -41,5 +46,5 @@ export const initialFormData = {
   ],
   skills: {
     description: "JavaScript, HTML, CSS, Webpack, React, Node.js",
-  } 
+  },
 };

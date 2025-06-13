@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InputField from "../helpers/InputField";
 import Button from "../helpers/Button";
 import Image from "../helpers/Image";
@@ -19,23 +19,92 @@ export default function EditorFormEducation({
   const enterYour = "Enter your";
 
   const [showForm, setShowForm] = useState(null);
-  const toggleForm = (formName) => {
-    if (formName !== showForm) {
-      setShowForm(formName);
-    } else {
-      setShowForm(null);
-    }
-  }
+
+  // const toggleForm = (formName) => {
+  //   if (formName !== showForm) {
+  //     setShowForm(formName);
+  //   } else {
+  //     setShowForm(null);
+  //   }
+  // }
+
+  // const [textColor, setTextColor] = useState("");
+
+  // useEffect(() => {
+  //   if (showForm) {
+  //     setTextColor("red");
+  //   } else {
+  //     setTextColor("inherit");
+  //   }
+  // }, [showForm]); // <-- runs every time `showForm` changes
+
+  const toggleForm = (index) => {
+    setShowForm((prev) => (prev === index ? null : index));
+   };
 
   const removeEducationItem = (indexToRemove) => {
     const updatedEducation = education.filter(
-      (_, index) => index !== indexToRemove
+      (entry, index) => index !== indexToRemove
     );
 
     setFormData((prevData) => ({
       ...prevData,
       education: updatedEducation,
     }));
+  };
+
+  // const addEducationItem = () => {
+  //   const newEntry = {
+  //     school: "",
+  //     location: "",
+  //     degree: "",
+  //     year: "",
+  //   };
+
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     education: [...prevData.education, newEntry],
+  //   }));
+  // };
+
+  // const addEducationItem = () => {
+  //   const newEntry = {
+  //     school: "",
+  //     location: "",
+  //     degree: "",
+  //     year: "",
+  //   };
+
+  //   const newEducation = [...education, newEntry];
+
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     education: newEducation,
+  //   }));
+
+  //   setShowForm(""); // optional: open the latest one
+  //   setTimeout(() => {
+  //     setShowForm(newEntry.school); // won't open immediately due to school being ""
+  //   }, 0);
+  // };
+  
+  const addEducationItem = () => {
+    const newEntry = {
+      school: "",
+      location: "",
+      degree: "",
+      year: "",
+    };
+
+    const newEducation = [...education, newEntry];
+
+    setFormData((prevData) => ({
+      ...prevData,
+      education: newEducation,
+    }));
+
+    // Automatically open the new entry after state is updated
+    setShowForm(education.length); // new entry is at the next index
   };
   
   // const inputFields = [
@@ -103,9 +172,20 @@ export default function EditorFormEducation({
       <h1>{section}</h1>
       {education.map((entry, index) => (
         <div key={index} className="education-entry">
-          <div className="showExistingData">
+          <div
+            style={{
+              backgroundColor:
+                showForm === index ? "var(--focus-blue)" : "var(--orb-gold-lt)",
+              // color:
+              //   showForm === index
+              //     ? "var(--orb-gold)"
+              //     : "inherit",
+            }}
+            className="showExistingData"
+          >
             <div className="dataContainer">
               <h2
+              // className="activeForm"
               //  className="clickable-heading"
               >
                 {/* {entry.school} */}
@@ -123,13 +203,13 @@ export default function EditorFormEducation({
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => toggleForm(entry.school)}
+                onClick={() => toggleForm(index)}
               >
                 <Image src={imgEdit} alt="" />
               </Button>
             </div>
           </div>
-          {showForm === `${entry.school}` && (
+          {showForm === index && (
             <div className="visible">
               <InputField
                 label="School"
@@ -169,12 +249,19 @@ export default function EditorFormEducation({
       ))}
       <div className="addNewContainer">
         <h2>Add New Item</h2>
-        <Button
+        {/* <Button
           variant="formDataControl"
           type="button"
           //   onClick={}
         >
           <Image src={imgAdd} alt="" />
+        </Button> */}
+        <Button
+          variant="formDataControl"
+          type="button"
+          onClick={addEducationItem}
+        >
+          <Image src={imgAdd} alt="Add new education entry" />
         </Button>
       </div>
 

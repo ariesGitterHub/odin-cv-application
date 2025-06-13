@@ -24,7 +24,8 @@
   
   .input {
     min-width: 100%;
-    background-color: var(--orb-gold-lt);
+    /* background-color: var(--orb-gold-lt); */
+    background-color: var(--orb-white);
     border-color: transparent;
     border-radius: 1rem;
     color: var(--mage-blue);

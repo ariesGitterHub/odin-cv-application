@@ -140,6 +140,7 @@ select {
   background-color: var(--orb-gold);
   /* border: 0.125rem solid var(--orb-gold); */
   border-radius: 0.75rem;
+  color: var(--mage-blue);
   margin: 0.5rem 0 0.25rem 0;
   padding: 0.25rem;
 }
@@ -176,3 +177,5 @@ select {
 .invisible {
   display: none;
 }
+
+
