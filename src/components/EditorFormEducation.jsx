@@ -1,12 +1,18 @@
-import { useState, useEffect } from "react";
-import InputField from "../helpers/InputField";
-import Button from "../helpers/Button";
-import Image from "../helpers/Image";
+import { useState } from "react";
+import InputField from "../utils/InputField";
+import Button from "../utils/Button";
+import Image from "../utils/Image";
 import imgEdit from "../assets/btnEdit.svg";
 import imgTrash from "../assets/btnTrash.svg";
 import imgAdd from "../assets/btnAdd.svg";
-import ShowExistingData from "../helpers/ShowExistingData";
-import AddNewData from "../helpers/AddNewData";
+import imgDown from "../assets/btnArrowDown.svg";
+import imgUp from "../assets/btnArrowUp.svg";
+import { nanoid } from "nanoid";
+import {
+  removeItemById,
+  moveItemUp,
+  moveItemDown,
+} from "../utils/formArrayHelpers";
 
 export default function EditorFormEducation({
   formData,
@@ -20,175 +26,110 @@ export default function EditorFormEducation({
 
   const [showForm, setShowForm] = useState(null);
 
-  // const toggleForm = (formName) => {
-  //   if (formName !== showForm) {
-  //     setShowForm(formName);
-  //   } else {
-  //     setShowForm(null);
-  //   }
-  // }
+  const toggleForm = (id) => {
+    setShowForm((prev) => (prev === id ? null : id));
+  };
 
-  // const [textColor, setTextColor] = useState("");
+  // const removeEducationItem = (idToRemove) => {
+  //   const updatedEducation = education.filter(
+  //     (entry) => entry.id !== idToRemove
+  //   );
 
-  // useEffect(() => {
-  //   if (showForm) {
-  //     setTextColor("red");
-  //   } else {
-  //     setTextColor("inherit");
-  //   }
-  // }, [showForm]); // <-- runs every time `showForm` changes
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     education: updatedEducation,
+  //   }));
+  // };
 
-  const toggleForm = (index) => {
-    setShowForm((prev) => (prev === index ? null : index));
-   };
-
-  const removeEducationItem = (indexToRemove) => {
-    const updatedEducation = education.filter(
-      (entry, index) => index !== indexToRemove
-    );
-
+  const removeEducationItem = (id) => {
+    const updatedEducation = removeItemById(education, id);
     setFormData((prevData) => ({
       ...prevData,
       education: updatedEducation,
     }));
   };
 
-  // const addEducationItem = () => {
-  //   const newEntry = {
-  //     school: "",
-  //     location: "",
-  //     degree: "",
-  //     year: "",
-  //   };
-
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     education: [...prevData.education, newEntry],
-  //   }));
-  // };
-
-  // const addEducationItem = () => {
-  //   const newEntry = {
-  //     school: "",
-  //     location: "",
-  //     degree: "",
-  //     year: "",
-  //   };
-
-  //   const newEducation = [...education, newEntry];
-
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     education: newEducation,
-  //   }));
-
-  //   setShowForm(""); // optional: open the latest one
-  //   setTimeout(() => {
-  //     setShowForm(newEntry.school); // won't open immediately due to school being ""
-  //   }, 0);
-  // };
-  
   const addEducationItem = () => {
     const newEntry = {
+      id: nanoid(),
       school: "",
       location: "",
       degree: "",
       year: "",
     };
 
-    const newEducation = [...education, newEntry];
-
     setFormData((prevData) => ({
       ...prevData,
-      education: newEducation,
+      education: [...prevData.education, newEntry],
     }));
 
-    // Automatically open the new entry after state is updated
-    setShowForm(education.length); // new entry is at the next index
+    setShowForm(newEntry.id);
   };
-  
-  // const inputFields = [
-  //   {
-  //     label: "school",
-  //     name: "school",
-  //     value: education[0].school,
-  //     onChange: handleChangeArray(section, 0),
-  //     placeholder: `${enterYour} school's name...`,
-  //     required: false,
-  //   },
-  //   {
-  //     label: "location",
-  //     name: "location",
-  //     value: education[0].location,
-  //     onChange: handleChangeArray(section, 0),
-  //     placeholder: `${enterYour} school's location...`,
-  //     required: false,
-  //   },
-  //   {
-  //     label: "degree",
-  //     name: "degree",
-  //     value: education[0].degree,
-  //     onChange: handleChangeArray(section, 0),
-  //     placeholder: `${enterYour} degree type...`,
-  //     required: false,
-  //   },
-  //   {
-  //     label: "year",
-  //     name: "year",
-  //     value: education[0].year,
-  //     onChange: handleChangeArray(section, 0),
-  //     placeholder: `${enterYour} graduation year...`,
-  //     required: false,
-  //   },
-  // ];
 
-  // return (
-  //   <form onSubmit={handleSubmit}>
-  //     <h1>{section}</h1>
-  //       {inputFields.map((field) => {
-  //         return (
-  //           <InputField
-  //             key={field.name}
-  //             label={field.label}
-  //             type={field.type}
-  //             name={field.name}
-  //             value={field.value}
-  //             onChange={field.onChange}
-  //             placeholder={field.placeholder}
-  //             required={field.required}
-  //           />
-  //         );
-  //       })}
-  //     <div className="button-container">
-  //       <Button variant="save" type="submit">
-  //         Save
-  //       </Button>
-  //     </div>
-  //   </form>
-  // );
+  // const moveEducationItemUp = (id) => {
+  //   const index = education.findIndex((entry) => entry.id === id);
+  //   if (index > 0) {
+  //     const newEducation = [...education];
+  //     [newEducation[index - 1], newEducation[index]] = [
+  //       newEducation[index],
+  //       newEducation[index - 1],
+  //     ];
+
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       education: newEducation,
+  //     }));
+  //   }
+  // };
+
+  const moveEducationItemUp = (id) => {
+    const updatedEducation = moveItemUp(education, id);
+    setFormData((prevData) => ({
+      ...prevData,
+      education: updatedEducation,
+    }));
+  };
+
+  // const moveEducationItemDown = (id) => {
+  //   const index = education.findIndex((entry) => entry.id === id);
+  //   if (index < education.length - 1) {
+  //     const newEducation = [...education];
+  //     [newEducation[index + 1], newEducation[index]] = [
+  //       newEducation[index],
+  //       newEducation[index + 1],
+  //     ];
+
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       education: newEducation,
+  //     }));
+  //   }
+  // };
+
+  const moveEducationItemDown = (id) => {
+    const updatedEducation = moveItemDown(education, id);
+    setFormData((prevData) => ({
+      ...prevData,
+      education: updatedEducation,
+    }));
+  };
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>{section}</h1>
       {education.map((entry, index) => (
-        <div key={index} className="education-entry">
+        <div key={entry.id} className="education-entry">
           <div
             style={{
               backgroundColor:
-                showForm === index ? "var(--focus-blue)" : "var(--orb-gold-lt)",
-              // color:
-              //   showForm === index
-              //     ? "var(--orb-gold)"
-              //     : "inherit",
+                showForm === entry.id
+                  ? "var(--focus-blue)"
+                  : "var(--orb-gold-lt)",
             }}
             className="showExistingData"
           >
             <div className="dataContainer">
-              <h2
-              // className="activeForm"
-              //  className="clickable-heading"
-              >
-                {/* {entry.school} */}
+              <h2>
                 {section} #{index + 1}
               </h2>
             </div>
@@ -196,26 +137,42 @@ export default function EditorFormEducation({
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => removeEducationItem(index)}
+                onClick={() => removeEducationItem(entry.id)}
               >
                 <Image src={imgTrash} alt="" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => toggleForm(index)}
+                // onClick={() => removeEducationItem(entry.id)}
+                onClick={() => moveEducationItemUp(entry.id)}
+              >
+                <Image src={imgUp} alt="" />
+              </Button>
+              <Button
+                variant="formDataControl"
+                type="button"
+                // onClick={() => removeEducationItem(entry.id)}
+                onClick={() => moveEducationItemDown(entry.id)}
+              >
+                <Image src={imgDown} alt="" />
+              </Button>
+              <Button
+                variant="formDataControl"
+                type="button"
+                onClick={() => toggleForm(entry.id)}
               >
                 <Image src={imgEdit} alt="" />
               </Button>
             </div>
           </div>
-          {showForm === index && (
+          {showForm === entry.id && (
             <div className="visible">
               <InputField
                 label="School"
                 name="school"
                 value={entry.school}
-                onChange={handleChangeArray(section, index)}
+                onChange={handleChangeArray(section, entry.id)}
                 placeholder={`${enterYour} school's name...`}
                 required={false}
               />
@@ -223,7 +180,7 @@ export default function EditorFormEducation({
                 label="Location"
                 name="location"
                 value={entry.location}
-                onChange={handleChangeArray(section, index)}
+                onChange={handleChangeArray(section, entry.id)}
                 placeholder={`${enterYour} school's location...`}
                 required={false}
               />
@@ -231,7 +188,7 @@ export default function EditorFormEducation({
                 label="Degree"
                 name="degree"
                 value={entry.degree}
-                onChange={handleChangeArray(section, index)}
+                onChange={handleChangeArray(section, entry.id)}
                 placeholder={`${enterYour} degree type...`}
                 required={false}
               />
@@ -239,7 +196,7 @@ export default function EditorFormEducation({
                 label="Year"
                 name="year"
                 value={entry.year}
-                onChange={handleChangeArray(section, index)}
+                onChange={handleChangeArray(section, entry.id)}
                 placeholder={`${enterYour} graduation year...`}
                 required={false}
               />
@@ -248,14 +205,7 @@ export default function EditorFormEducation({
         </div>
       ))}
       <div className="addNewContainer">
-        <h2>Add New Item</h2>
-        {/* <Button
-          variant="formDataControl"
-          type="button"
-          //   onClick={}
-        >
-          <Image src={imgAdd} alt="" />
-        </Button> */}
+        <h2>Add New {section} Item</h2>
         <Button
           variant="formDataControl"
           type="button"
@@ -265,11 +215,9 @@ export default function EditorFormEducation({
         </Button>
       </div>
 
-      <div className="button-container">
-        <Button variant="save" type="submit">
-          Save
-        </Button>
-      </div>
+      <Button variant="save" type="submit">
+        Save
+      </Button>
     </form>
   );
 }

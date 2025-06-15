@@ -1,4 +1,4 @@
-import Image from "../helpers/Image"
+import Image from "../utils/Image"
 import favIcon from "../assets/favIcon.svg"
 import styles from "../styles/Header.module.css"
 

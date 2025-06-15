@@ -1,6 +1,6 @@
 import Button from "./Button";
 import Image from "./Image";
-import InputField from "../helpers/InputField";
+import InputField from "./InputField";
 import imgAdd from "../assets/btnAdd.svg";
 import styles from "../styles/AddNewData.module.css";
 

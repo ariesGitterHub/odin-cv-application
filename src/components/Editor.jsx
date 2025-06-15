@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/Editor.module.css";
-import Button from "../helpers/Button";
-import Image from "../helpers/Image";
+import Button from "../utils/Button";
+import Image from "../utils/Image";
 import imgPersonal from "../assets/btnPersonal.svg";
 import imgEducation from "../assets/btnEducation.svg";
 import imgWork from "../assets/btnWork.svg";

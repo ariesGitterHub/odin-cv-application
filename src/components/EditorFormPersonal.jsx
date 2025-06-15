@@ -1,5 +1,5 @@
-import InputField from "../helpers/InputField";
-import Button from "../helpers/Button";
+import InputField from "../utils/InputField";
+import Button from "../utils/Button";
 
 export default function EditorFormPersonal({ formData, handleChange, handleSubmit }) {
 

@@ -43,7 +43,7 @@ export default function Preview({ formData }) {
       </div> */}
 
       {/* Refactor this? what about "entry" */}
-      {formData.education.map((entry, index) => (
+      {/* {formData.education.map((entry, index) => (
         <div key={index} className={styles.data0Info}>
           <div className={styles.data1Info}>
             <p className={styles.bold}>{formData.education[index].school}</p>
@@ -55,46 +55,84 @@ export default function Preview({ formData }) {
             <p>{formData.education[index].year}</p>
           </div>
         </div>
-      ))}
-
-      {/* <hr /> */}
-      {/* <h2 className={styles.sectionHeader}>Work Experience</h2>
-      <div className={styles.data0Info}>
-        <div className={styles.data1Info}>
-          <p className={styles.bold}>{formData.work[0].employer}</p>
-          &nbsp;
-          <p>({formData.work[0].location})</p>
-        </div>
-        <div className={styles.data2Info}>
-          <p>{formData.work[0].position}</p>
-          <p>{formData.work[0].years}</p>
-        </div>
-      </div> */}
-
-      {formData.work.map((entry, index) => (
-        <div key={index} className={styles.data0Info}>
+      ))} */}
+      {formData.education.map((entry) => (
+        <div key={entry.id} className={styles.data0Info}>
           <div className={styles.data1Info}>
-            <p className={styles.bold}>{formData.work[index].employer}</p>
+            <p className={styles.bold}>{entry.school}</p>
             &nbsp;
-            <p>({formData.work[index].location})</p>
+            <p>({entry.location})</p>
           </div>
           <div className={styles.data2Info}>
-            <p>{formData.work[index].position}</p>
-            <p>{formData.work[index].years}</p>
+            <p>{entry.degree}</p>
+            <p>{entry.year}</p>
           </div>
-          <p>{formData.work[index].tasks}</p>
         </div>
       ))}
+
+      {/* <hr /> */}
+      {/* <h2 className={styles.sectionHeader}>Work History</h2>
+      {formData.work.map((entry) => (
+        <div key={entry.id} className={styles.data0Info}>
+          <div className={styles.data1Info}>
+            <p className={styles.bold}>{entry.employer}</p>
+            &nbsp;
+            <p>({entry.location})</p>
+          </div>
+          <div className={styles.data2Info}>
+            <p>{entry.position}</p>
+            <p>{entry.years}</p>
+          </div>
+        </div>
+      ))} */}
+
+      <h2 className={styles.sectionHeader}>Work History</h2>
+      {formData.work.map((entry) => (
+        <div key={entry.id} className={styles.data0Info}>
+          <div className={styles.data1Info}>
+            <p className={styles.bold}>{entry.employer}</p>
+            &nbsp;
+            <p>({entry.location})</p>
+          </div>
+          <div className={styles.data2Info}>
+            <p>{entry.position}</p>
+            <p>{entry.years}</p>
+          </div>
+
+          {entry.tasks && entry.tasks.length > 0 && (
+            <ul className={styles.taskList}>
+              {entry.tasks.map((task) => (
+                <li key={task.id} className={styles.taskItem}>
+                  {task.item}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+
       {/* <hr /> */}
       <h2 className={styles.sectionHeader}>Projects</h2>
-      <div className={styles.data0Info}>
+      {/* <div className={styles.data0Info}>
         <div className={styles.data1Info}>
           <p className={styles.bold}>{formData.projects[0].project}</p>
         </div>
         <div className={styles.data2Info}>
           <p>{formData.projects[0].description}</p>
         </div>
-      </div>
+      </div> */}
+
+      {formData.projects.map((entry) => (
+        <div key={entry.id} className={styles.data0Info}>
+          <div className={styles.data1Info}>
+            <p className={styles.bold}>{entry.project}</p>
+          </div>
+          <div className={styles.data2Info}>
+            <p>{entry.description}</p>
+          </div>
+          {/* <p>{entry.tasks}</p> */}
+        </div>
+      ))}
       {/* <hr /> */}
       <h2 className={styles.sectionHeader}>Skills</h2>
       <div className={styles.dataXInfo}>

@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid";
+
 export const initialFormData = {
   personal: {
     fullName: "Han Solo",
@@ -8,12 +10,14 @@ export const initialFormData = {
   },
   education: [
     {
+      id: nanoid(),
       school: "Corellia Technical",
       location: "Corellia City, COR",
       degree: "BS, Hyperspace Engineering",
       year: "2008-2012",
     },
     {
+      id: nanoid(),
       school: "Tattooine Beauty & Makeup",
       location: "Mos Espa, TAT",
       degree: "Certification, Jawa-grooming",
@@ -22,14 +26,15 @@ export const initialFormData = {
   ],
   work: [
     {
+      id: nanoid(),
       employer: "Kansk Imperial Shipyards",
       location: "Skyview-Upper, HOM",
       position: "Life-support Engineer",
       years: "2015-2025",
       tasks: [
-        { item: "Rebuilt custom life-support arrays" },
-        { item: "Prototyped sequential fail-safes" },
-        { item: "Tested third-party assemblies" },
+        { id: nanoid(), item: "Rebuilt custom life-support arrays" },
+        { id: nanoid(), item: "Prototyped sequential fail-safes" },
+        { id: nanoid(), item: "Tested third-party assemblies" },
       ],
       // tasks: [
       //   "Rebuilt custom life-support arrays",
@@ -40,6 +45,7 @@ export const initialFormData = {
   ],
   projects: [
     {
+      id: nanoid(),
       project: "Tactical Hyperdrive System",
       description: "Functional escape coordinate re-allocator. ",
     },

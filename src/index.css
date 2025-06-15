@@ -88,11 +88,20 @@ h2 {
 .content-list{
   margin: 1rem;
 }
-
+ul {
+  display: block;
+  list-style-type: disc;
+  /* margin-block-start: 1em; */
+  /* margin-block-end: 1em; */
+  padding-inline-start: 1rem;
+}
 li {
-  color: var(--orb-gold-lt);
+  /* color: var(--orb-gold-lt); */
+  color: var(--mage-blue);
   font-family: var(--font-text);
-  font-size: .9rem;
+  font-size: .65rem;
+  list-style: circle;
+  /* text-indent: 1rem; */
 }
 
 /* 6. Set media to block */
@@ -178,4 +187,12 @@ select {
   display: none;
 }
 
+.littleGray {
+  background-color: lavenderblush;
+}
 
+.taskItemContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}

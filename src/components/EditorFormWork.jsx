@@ -1,12 +1,18 @@
-import { useState, useEffect } from "react";
-import InputField from "../helpers/InputField";
-import Button from "../helpers/Button";
-import Image from "../helpers/Image";
+import { useState } from "react";
+import InputField from "../utils/InputField";
+import Button from "../utils/Button";
+import Image from "../utils/Image";
 import imgEdit from "../assets/btnEdit.svg";
 import imgTrash from "../assets/btnTrash.svg";
 import imgAdd from "../assets/btnAdd.svg";
-import ShowExistingData from "../helpers/ShowExistingData";
-import AddNewData from "../helpers/AddNewData";
+import imgDown from "../assets/btnArrowDown.svg";
+import imgUp from "../assets/btnArrowUp.svg";
+import { nanoid } from "nanoid";
+import {
+  removeItemById,
+  moveItemUp,
+  moveItemDown,
+} from "../utils/formArrayHelpers";
 
 export default function EditorFormWork({
   formData,
@@ -20,56 +26,134 @@ export default function EditorFormWork({
 
   const [showForm, setShowForm] = useState(null);
 
-  const toggleForm = (index) => {
-    setShowForm((prev) => (prev === index ? null : index));
-   };
+  const toggleForm = (id) => {
+    setShowForm((prev) => (prev === id ? null : id));
+  };
 
-  const removeWorkItem = (indexToRemove) => {
-    const updatedWork = work.filter(
-      (entry, index) => index !== indexToRemove
-    );
+  // const removeWorkItem = (idToRemove) => {
+  //   const updatedWork = work.filter((entry) => entry.id !== idToRemove);
 
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     work: updatedWork,
+  //   }));
+  // };
+
+  const removeWorkItem = (id) => {
+    const updatedWork = removeItemById(work, id);
     setFormData((prevData) => ({
       ...prevData,
       work: updatedWork,
     }));
   };
-  
+
   const addWorkItem = () => {
     const newEntry = {
+      id: nanoid(),
       employer: "",
       location: "",
       position: "",
       years: "",
-      bullets: [],
+      tasks: [],
     };
-
-    const newWork = [...work, newEntry];
 
     setFormData((prevData) => ({
       ...prevData,
-      work: newWork,
+      work: [...prevData.work, newEntry],
     }));
 
-    setShowForm(work.length);
+    setShowForm(newEntry.id);
   };
 
+  const moveWorkItemUp = (id) => {
+    const updatedWork = moveItemUp(work, id);
+    setFormData((prevData) => ({
+      ...prevData,
+      work: updatedWork,
+    }));
+  };
+
+
+  const moveWorkItemDown = (id) => {
+    const updatedWork = moveItemDown(work, id);
+    setFormData((prevData) => ({
+      ...prevData,
+      work: updatedWork,
+    }));
+  };
+
+  const addTaskToWork = (workId) => {
+    setFormData((prevData) => {
+      const updatedWork = prevData.work.map((entry) => {
+        if (entry.id === workId) {
+          return {
+            ...entry,
+            tasks: [...(entry.tasks || []), { id: nanoid(), item: "" }],
+          };
+        }
+        return entry;
+      });
+
+      return {
+        ...prevData,
+        work: updatedWork,
+      };
+    });
+  };
+
+  const handleTaskChange = (workId, taskId, value) => {
+    setFormData((prevData) => {
+      const updatedWork = prevData.work.map((entry) => {
+        if (entry.id === workId) {
+          const updatedTasks = entry.tasks.map((task) =>
+            task.id === taskId ? { ...task, item: value } : task
+          );
+          return { ...entry, tasks: updatedTasks };
+        }
+        return entry;
+      });
+
+      return {
+        ...prevData,
+        work: updatedWork,
+      };
+    });
+  };
+
+  const removeTaskFromWork = (workId, taskId) => {
+    setFormData((prevData) => {
+      const updatedWork = prevData.work.map((entry) => {
+        if (entry.id === workId) {
+          const updatedTasks = entry.tasks.filter((task) => task.id !== taskId);
+          return { ...entry, tasks: updatedTasks };
+        }
+        return entry;
+      });
+
+      return {
+        ...prevData,
+        work: updatedWork,
+      };
+    });
+  };
+  
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>{section}</h1>
       {work.map((entry, index) => (
-        <div key={index} className="work-entry">
+        <div key={entry.id} className="work-entry">
           <div
             style={{
               backgroundColor:
-                showForm === index ? "var(--focus-blue)" : "var(--orb-gold-lt)",
+                showForm === entry.id
+                  ? "var(--focus-blue)"
+                  : "var(--orb-gold-lt)",
             }}
             className="showExistingData"
           >
             <div className="dataContainer">
               <h2>
-                {/* {entry.school} */}
                 {section} #{index + 1}
               </h2>
             </div>
@@ -77,26 +161,47 @@ export default function EditorFormWork({
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => removeWorkItem(index)}
+                onClick={() =>
+                  removeWorkItem(
+                    // index
+                    entry.id
+                  )
+                }
               >
                 <Image src={imgTrash} alt="" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => toggleForm(index)}
+                // onClick={() => removeEducationItem(entry.id)}
+                onClick={() => moveWorkItemUp(entry.id)}
+              >
+                <Image src={imgUp} alt="" />
+              </Button>
+              <Button
+                variant="formDataControl"
+                type="button"
+                // onClick={() => removeEducationItem(entry.id)}
+                onClick={() => moveWorkItemDown(entry.id)}
+              >
+                <Image src={imgDown} alt="" />
+              </Button>
+              <Button
+                variant="formDataControl"
+                type="button"
+                onClick={() => toggleForm(entry.id)}
               >
                 <Image src={imgEdit} alt="" />
               </Button>
             </div>
           </div>
-          {showForm === index && (
+          {showForm === entry.id && (
             <div className="visible">
               <InputField
                 label="Employer"
                 name="employer"
                 value={entry.employer}
-                onChange={handleChangeArray(section, index)}
+                onChange={handleChangeArray(section, entry.id)}
                 placeholder={`${enterYour} employer's name...`}
                 required={false}
               />
@@ -104,7 +209,7 @@ export default function EditorFormWork({
                 label="Location"
                 name="location"
                 value={entry.location}
-                onChange={handleChangeArray(section, index)}
+                onChange={handleChangeArray(section, entry.id)}
                 placeholder={`${enterYour} employer's location...`}
                 required={false}
               />
@@ -112,49 +217,82 @@ export default function EditorFormWork({
                 label="Position"
                 name="position"
                 value={entry.position}
-                onChange={handleChangeArray(section, index)}
-                placeholder={`${enterYour} position's title...`}
+                onChange={handleChangeArray(section, entry.id)}
+                placeholder={`${enterYour} job position...`}
                 required={false}
               />
               <InputField
                 label="Years"
                 name="years"
                 value={entry.years}
-                onChange={handleChangeArray(section, index)}
-                placeholder={`${enterYour} employment duration...`}
+                onChange={handleChangeArray(section, entry.id)}
+                placeholder={`${enterYour} years employed...`}
                 required={false}
               />
-              <InputField
-                label="Tasks"
-                name="tasks"
-                value={entry.tasks}
-                onChange={handleChangeArray(section, index)}
-                placeholder={`${enterYour} position's tasks...`}
-                required={false}
-              />
+
+              <div className="addNewContainer">
+                <h2>
+                  Add New {section} #{index + 1} Task
+                </h2>
+                <Button
+                  variant="formDataControl"
+                  type="button"
+                  onClick={() => addTaskToWork(entry.id)}
+                >
+                  <Image src={imgAdd} alt="Add new task entry" />
+                </Button>
+              </div>
+
+              {/* {entry.tasks &&
+                entry.tasks.map((task, index) => (
+                  <InputField
+                    key={task.id}
+                    label={`Task Item #${index + 1}`}
+                    name="item"
+                    value={task.item}
+                    onChange={(e) =>
+                      handleTaskChange(entry.id, task.id, e.target.value)
+                    }
+                    placeholder="Describe a responsibility or achievement..."
+                    required={false}
+                  />
+                ))} */}
+              {entry.tasks &&
+                entry.tasks.map((task) => (
+                  <div key={task.id} className="taskItemContainer">
+                    <InputField
+                      label=""
+                      name="item"
+                      value={task.item}
+                      onChange={(e) =>
+                        handleTaskChange(entry.id, task.id, e.target.value)
+                      }
+                      placeholder="Enter a responsibility/achievement..."
+                      required={false}
+                    />
+                    <Button
+                      type="button"
+                      variant="formDataControl"
+                      onClick={() => removeTaskFromWork(entry.id, task.id)}
+                    >
+                      <Image src={imgTrash} alt="Remove task" />
+                    </Button>
+                  </div>
+                ))}
             </div>
           )}
         </div>
       ))}
       <div className="addNewContainer">
-        <h2>Add New Item</h2>
-        {/* <Button
-          variant="formDataControl"
-          type="button"
-          //   onClick={}
-        >
-          <Image src={imgAdd} alt="" />
-        </Button> */}
+        <h2>Add New {section} Item</h2>
         <Button variant="formDataControl" type="button" onClick={addWorkItem}>
           <Image src={imgAdd} alt="Add new work entry" />
         </Button>
       </div>
 
-      <div className="button-container">
-        <Button variant="save" type="submit">
-          Save
-        </Button>
-      </div>
+      <Button variant="save" type="submit">
+        Save
+      </Button>
     </form>
   );
 }

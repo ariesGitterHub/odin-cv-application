@@ -1,11 +1,11 @@
 import "./App.css";
 import { useState } from "react";
 import { initialFormData } from "./data/data";
-import Header from "./components/Header"
+import Header from "./components/Header";
 import Editor from "./components/Editor"
 import Preview from "./components/Preview"
 import Footer from "./components/Footer";
-import Button from "./helpers/Button";
+import Button from "./utils/Button";
 
 export default function App() {
 
@@ -68,15 +68,30 @@ export default function App() {
     }));
   };
 
-  const handleChangeArray = (section, index) => (e) => {
+  // const handleChangeArray = (section, index) => (e) => {
+  //   const { name, value } = e.target;
+
+  //   setFormData((prev) => {
+  //     const updatedArray = [...prev[section]];
+  //     updatedArray[index] = {
+  //       ...updatedArray[index],
+  //       [name]: value,
+  //     };
+
+  //     return {
+  //       ...prev,
+  //       [section]: updatedArray,
+  //     };
+  //   });
+  // };
+
+  const handleChangeArray = (section, id) => (e) => {
     const { name, value } = e.target;
 
     setFormData((prev) => {
-      const updatedArray = [...prev[section]];
-      updatedArray[index] = {
-        ...updatedArray[index],
-        [name]: value,
-      };
+      const updatedArray = prev[section].map((item) =>
+        item.id === id ? { ...item, [name]: value } : item
+      );
 
       return {
         ...prev,
@@ -84,6 +99,7 @@ export default function App() {
       };
     });
   };
+  
   
   const handleSubmit = (e) => {
     e.preventDefault();
