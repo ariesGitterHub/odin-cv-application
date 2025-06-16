@@ -112,7 +112,7 @@ export default function Preview({ formData }) {
       ))}
 
       {/* <hr /> */}
-      <h2 className={styles.sectionHeader}>projects</h2>
+      {/* <h2 className={styles.sectionHeader}>projects</h2> */}
       {/* <div className={styles.data0Info}>
         <div className={styles.data1Info}>
           <p className={styles.bold}>{formData.projects[0].project}</p>
@@ -122,7 +122,7 @@ export default function Preview({ formData }) {
         </div>
       </div> */}
 
-      {formData.projects.map((entry) => (
+      {/* {formData.projects.map((entry) => (
         <div key={entry.id} className={styles.data0Info}>
           <div className={styles.data1Info}>
             <p className={styles.bold}>{entry.title}</p>
@@ -130,9 +130,8 @@ export default function Preview({ formData }) {
           <div className={styles.data2Info}>
             <p>{entry.description}</p>
           </div>
-          {/* <p>{entry.tasks}</p> */}
         </div>
-      ))}
+      ))} */}
       {/* <hr /> */}
       {/* <h2 className={styles.sectionHeader}>Skills</h2>
       <div className={styles.dataXInfo}>
@@ -141,11 +140,11 @@ export default function Preview({ formData }) {
       {/* <h2 className={styles.sectionHeader}>miscellaneous</h2> */}
       {formData.miscellaneous.map((entry) => (
         <>
-          <h2 className={styles.sectionHeader}>{entry.category}</h2>
+          <h2 className={styles.sectionHeader}>{entry.section}</h2>
           <div key={entry.id} className={styles.data0Info}>
-            {/* <div className={styles.data1Info}>
-              <p className={styles.bold}>{entry.category}</p>
-            </div> */}
+            <div className={styles.data1Info}>
+              <p className={styles.bold}>{entry.title}</p>
+            </div>
             <div className={styles.data2Info}>
               <p>{entry.description}</p>
             </div>

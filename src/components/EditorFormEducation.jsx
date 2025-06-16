@@ -129,7 +129,11 @@ export default function EditorFormEducation({
             className="showExistingData"
           >
             <div className="dataContainer">
-              <h2>
+              <h2
+                style={{
+                  fontWeight: showForm === entry.id ? "800" : "inherit",
+                }}
+              >
                 {section} #{index + 1}
               </h2>
             </div>

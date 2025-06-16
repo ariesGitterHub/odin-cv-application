@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 
 export const initialFormData = {
   personal: {
-    fullName: "Harry James Potter",
+    fullName: "HAROLD JAMES POTTER",
     email: "h.potter@ministryofmagic.gov.uk",
     phone: "01632 960974",
     address: "14 Primrose Lane, Penhaligon, Cornwall, TR27 5BZ",
@@ -68,14 +68,14 @@ export const initialFormData = {
       ],
     },
   ],
-  projects: [
-    {
-      id: nanoid(),
-      title: "The Lumos Legacy Project",
-      description:
-        "Supporting Vulnerable Magical Children: Providing resources, support, and safe havens for children.",
-    },
-  ],
+  // projects: [
+  //   {
+  //     id: nanoid(),
+  //     title: "The Lumos Legacy Project",
+  //     description:
+  //       "Supporting Vulnerable Magical Children: Providing resources, support, and safe havens for children.",
+  //   },
+  // ],
   // skills: {
   //   description:
   //     "Expert level spells: Expecto Patronum (stag), Expelliarmus, Appare Vestigium, Stupefy, Finite Incantatem",
@@ -83,15 +83,23 @@ export const initialFormData = {
   miscellaneous: [
     {
       id: nanoid(),
-      category: "Skills",
+      section: "PROJECTS",
+      title: "The Lumos Legacy Project",
       description:
-        "Expert level spells: Expecto Patronum (stag), Expelliarmus, Appare Vestigium, Stupefy, Finite Incantatem.",
+        "Supporting Vulnerable Magical Children: Providing resources, support, and safe havens for children.",
     },
     {
       id: nanoid(),
-      category: "References",
+      section: "SKILLS",
+      title: "Expert Level Spells",
       description:
-        "Available upon request.",
+        "Expecto Patronum (stag), Expelliarmus, Appare Vestigium, Stupefy, Finite Incantatem.",
+    },
+    {
+      id: nanoid(),
+      section: "REFERENCES",
+      title: "",
+      description: "Available upon request.",
     },
   ],
 };

@@ -5,15 +5,15 @@ import Image from "../utils/Image";
 import imgPersonal from "../assets/btnPersonal.svg";
 import imgEducation from "../assets/btnEducation.svg";
 import imgWork from "../assets/btnWork.svg";
-import imgProjects from "../assets/btnProjects.svg";
+// import imgProjects from "../assets/btnProjects.svg";
 // import imgSkills from "../assets/btnSkills.svg";
 import imgMisc from "../assets/btnMisc.svg";
 import EditorFormPersonal from "./EditorFormPersonal";
 import EditorFormEducation from "./EditorFormEducation";
 import EditorFormWork from "./EditorFormWork";
-import EditorFormProjects from "./EditorFormProjects";
+// import EditorFormProjects from "./EditorFormProjects";
 // import EditorFormSkills from "./EditorFormSkills";
-import EditorFormMiscellaneous from "./EditorFormMiscellaneous";
+import EditorFormMiscSections from "./EditorFormMiscSections";
 
 export default function Editor({
   formData,
@@ -49,13 +49,13 @@ export default function Editor({
         <Button variant="nav" type="button" onClick={() => switchForm("work")}>
           <Image src={imgWork} alt="" />
         </Button>
-        <Button
+        {/* <Button
           variant="nav"
           type="button"
           onClick={() => switchForm("projects")}
         >
           <Image src={imgProjects} alt="" />
-        </Button>
+        </Button> */}
         {/* <Button
           variant="nav"
           type="button"
@@ -66,7 +66,7 @@ export default function Editor({
         <Button
           variant="nav"
           type="button"
-          onClick={() => switchForm("miscellaneous")}
+          onClick={() => switchForm("misc-sections")}
         >
           <Image src={imgMisc} alt="" />
         </Button>
@@ -105,7 +105,7 @@ export default function Editor({
             />
           </div>
         )}
-        {activeForm === "projects" && (
+        {/* {activeForm === "projects" && (
           <div className="visible">
             <EditorFormProjects
               formData={formData}
@@ -116,7 +116,7 @@ export default function Editor({
               // switchForm={switchForm}
             />
           </div>
-        )}
+        )} */}
         {/* {activeForm === "skills" && (
           <div className="visible">
             <EditorFormSkills
@@ -128,9 +128,9 @@ export default function Editor({
             />
           </div>
         )} */}
-        {activeForm === "miscellaneous" && (
+        {activeForm === "misc-sections" && (
           <div className="visible">
-            <EditorFormMiscellaneous
+            <EditorFormMiscSections
               formData={formData}
               setFormData={setFormData}
               handleChangeArray={handleChangeArray}

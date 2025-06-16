@@ -140,7 +140,7 @@ export default function EditorFormWork({
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>{section}</h1>
+      <h1>{section} history</h1>
       {work.map((entry, index) => (
         <div key={entry.id} className="work-entry">
           <div
@@ -153,7 +153,11 @@ export default function EditorFormWork({
             className="showExistingData"
           >
             <div className="dataContainer">
-              <h2>
+              <h2
+                style={{
+                  fontWeight: showForm === entry.id ? "800" : "inherit",
+                }}
+              >
                 {section} #{index + 1}
               </h2>
             </div>
@@ -279,13 +283,13 @@ export default function EditorFormWork({
                     </Button>
                   </div>
                 ))}
-                {/* <hr /> */}
+              {/* <hr /> */}
             </div>
           )}
         </div>
       ))}
       <div className="addNewContainer">
-        <h2>Add New {section} Item</h2>
+        <h2>add new {section} item</h2>
         <Button variant="formDataControl" type="button" onClick={addWorkItem}>
           <Image src={imgAdd} alt="Add new work entry" />
         </Button>

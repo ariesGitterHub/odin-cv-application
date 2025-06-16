@@ -19,6 +19,7 @@
   --cyany: #6BB9A4;
   --bluey: #6B7EB9;
   --purply: #A06BB9;
+  --purple-dragon: #710771;
 
   --font-logo: "Wendy One", sans-serif;
   /* --font-header: ; */
@@ -198,7 +199,7 @@ select {
   gap: 0.25rem;
 }
 
-.education-entry, .work-entry, .projects-entry {
+.education-entry, .work-entry, .miscellaneous-entry {
 background-color: var(--mage-blue-trans);
 border-radius: 0.75rem;
 margin: 0.5rem;

@@ -14,7 +14,7 @@ import {
   moveItemDown,
 } from "../utils/formArrayHelpers";
 
-export default function EditorFormMiscellaneous({
+export default function EditorFormMiscSections({
   formData,
   setFormData,
   handleChangeArray,
@@ -52,7 +52,7 @@ export default function EditorFormMiscellaneous({
   const addMiscellaneousItem = () => {
     const newEntry = {
       id: nanoid(),
-      category: "",
+      section: "",
       description: "",
     };
 
@@ -114,7 +114,7 @@ export default function EditorFormMiscellaneous({
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>{section}</h1>
+      <h1>{section} sections</h1>
       {miscellaneous.map((entry, index) => (
         <div key={entry.id} className="miscellaneous-entry">
           <div
@@ -127,8 +127,15 @@ export default function EditorFormMiscellaneous({
             className="showExistingData"
           >
             <div className="dataContainer">
-              <h2>
-                {section} #{index + 1}
+              <h2
+                style={{
+                  fontWeight:
+                    showForm === entry.id
+                      ? "800"
+                      : "inherit",
+                }}
+              >
+                section #{index + 1}
               </h2>
             </div>
             <div className="buttonContainer">
@@ -167,11 +174,11 @@ export default function EditorFormMiscellaneous({
           {showForm === entry.id && (
             <div className="visible">
               <InputField
-                label="Category"
-                name="category"
-                value={entry.category}
+                label="Section"
+                name="section"
+                value={entry.section}
                 onChange={handleChangeArray(section, entry.id)}
-                placeholder={`${enterYour} new category...`}
+                placeholder={`${enterYour} new section...`}
                 required={false}
               />
               <InputField
@@ -187,7 +194,7 @@ export default function EditorFormMiscellaneous({
         </div>
       ))}
       <div className="addNewContainer">
-        <h2>Add New {section} Item</h2>
+        <h2>add new section</h2>
         <Button
           variant="formDataControl"
           type="button"
