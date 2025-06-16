@@ -6,12 +6,14 @@ import imgPersonal from "../assets/btnPersonal.svg";
 import imgEducation from "../assets/btnEducation.svg";
 import imgWork from "../assets/btnWork.svg";
 import imgProjects from "../assets/btnProjects.svg";
-import imgSkills from "../assets/btnSkills.svg";
+// import imgSkills from "../assets/btnSkills.svg";
+import imgMisc from "../assets/btnMisc.svg";
 import EditorFormPersonal from "./EditorFormPersonal";
 import EditorFormEducation from "./EditorFormEducation";
 import EditorFormWork from "./EditorFormWork";
 import EditorFormProjects from "./EditorFormProjects";
-import EditorFormSkills from "./EditorFormSkills";
+// import EditorFormSkills from "./EditorFormSkills";
+import EditorFormMiscellaneous from "./EditorFormMiscellaneous";
 
 export default function Editor({
   formData,
@@ -54,8 +56,19 @@ export default function Editor({
         >
           <Image src={imgProjects} alt="" />
         </Button>
-        <Button variant="nav" type="button">
+        {/* <Button
+          variant="nav"
+          type="button"
+          onClick={() => switchForm("skills")}
+        >
           <Image src={imgSkills} alt="" />
+        </Button> */}
+        <Button
+          variant="nav"
+          type="button"
+          onClick={() => switchForm("miscellaneous")}
+        >
+          <Image src={imgMisc} alt="" />
         </Button>
       </div>
       <div className={styles.formContainer}>
@@ -104,12 +117,24 @@ export default function Editor({
             />
           </div>
         )}
-        {activeForm === "skills" && (
+        {/* {activeForm === "skills" && (
           <div className="visible">
-            <EditorFormProjects
+            <EditorFormSkills
               formData={formData}
               // handleChangeArray={handleChangeArray}
               handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              // switchForm={switchForm}
+            />
+          </div>
+        )} */}
+        {activeForm === "miscellaneous" && (
+          <div className="visible">
+            <EditorFormMiscellaneous
+              formData={formData}
+              setFormData={setFormData}
+              handleChangeArray={handleChangeArray}
+              // handleChange={handleChange}
               handleSubmit={handleSubmit}
               // switchForm={switchForm}
             />

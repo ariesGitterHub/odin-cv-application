@@ -29,7 +29,7 @@ export default function Preview({ formData }) {
         {/* Use above line to hide empty values... */}
       </div>
       <hr />
-      <h2 className={styles.sectionHeader}>Education</h2>
+      <h2 className={styles.sectionHeader}>education</h2>
       {/* <div className={styles.data0Info}>
         <div className={styles.data1Info}>
           <p className={styles.bold}>{formData.education[0].school}</p>
@@ -86,7 +86,7 @@ export default function Preview({ formData }) {
         </div>
       ))} */}
 
-      <h2 className={styles.sectionHeader}>Work History</h2>
+      <h2 className={styles.sectionHeader}>work history</h2>
       {formData.work.map((entry) => (
         <div key={entry.id} className={styles.data0Info}>
           <div className={styles.data1Info}>
@@ -112,7 +112,7 @@ export default function Preview({ formData }) {
       ))}
 
       {/* <hr /> */}
-      <h2 className={styles.sectionHeader}>Projects</h2>
+      <h2 className={styles.sectionHeader}>projects</h2>
       {/* <div className={styles.data0Info}>
         <div className={styles.data1Info}>
           <p className={styles.bold}>{formData.projects[0].project}</p>
@@ -125,7 +125,7 @@ export default function Preview({ formData }) {
       {formData.projects.map((entry) => (
         <div key={entry.id} className={styles.data0Info}>
           <div className={styles.data1Info}>
-            <p className={styles.bold}>{entry.project}</p>
+            <p className={styles.bold}>{entry.title}</p>
           </div>
           <div className={styles.data2Info}>
             <p>{entry.description}</p>
@@ -134,15 +134,27 @@ export default function Preview({ formData }) {
         </div>
       ))}
       {/* <hr /> */}
-      <h2 className={styles.sectionHeader}>Skills</h2>
+      {/* <h2 className={styles.sectionHeader}>Skills</h2>
       <div className={styles.dataXInfo}>
         <p>{formData.skills.description}</p>
-      </div>
+      </div> */}
+      <h2 className={styles.sectionHeader}>miscellaneous</h2>
+      {formData.miscellaneous.map((entry) => (
+        <div key={entry.id} className={styles.data0Info}>
+          <div className={styles.data1Info}>
+            <p className={styles.bold}>{entry.category}</p>
+          </div>
+          <div className={styles.data2Info}>
+            <p>{entry.description}</p>
+          </div>
+        </div>
+      ))}
+
       {/* <hr /> */}
-      <h2 className={styles.sectionHeader}>references</h2>
+      {/* <h2 className={styles.sectionHeader}>references</h2>
       <div className={styles.dataXInfo}>
         <p>Available upon request.</p>
-      </div>
+      </div> */}
     </div>
   );
 }

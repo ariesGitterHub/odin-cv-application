@@ -2,55 +2,96 @@ import { nanoid } from "nanoid";
 
 export const initialFormData = {
   personal: {
-    fullName: "Han Solo",
-    email: "nerferder@sw.net",
-    phone: "(555) 555-5555",
-    address: "13 Falcon Way, Corellia City, COR",
-    website: "12parsecs.com",
+    fullName: "Harry James Potter",
+    email: "h.potter@ministryofmagic.gov.uk",
+    phone: "01632 960974",
+    address: "14 Primrose Lane, Penhaligon, Cornwall, TR27 5BZ",
+    website: "",
   },
   education: [
     {
       id: nanoid(),
-      school: "Corellia Technical",
-      location: "Corellia City, COR",
-      degree: "BS, Hyperspace Engineering",
-      year: "2008-2012",
+      school: "Hogwarts School of Witchcraft & Wizardry",
+      location: "Hogwarts Castle, Scottish Highlands, UK",
+      degree: "N.E.W.T.s Certified",
+      year: "1991-1997",
     },
     {
       id: nanoid(),
-      school: "Tattooine Beauty & Makeup",
-      location: "Mos Espa, TAT",
-      degree: "Certification, Jawa-grooming",
-      year: "2024-2026",
+      school: "College of Wizardry at Durham",
+      location: "Durham, England",
+      degree: "Master of Spellcraft & Enchantments (MSE)",
+      year: "1998-2000",
     },
   ],
   work: [
     {
       id: nanoid(),
-      employer: "Kansk Imperial Shipyards",
-      location: "Skyview-Upper, HOM",
-      position: "Life-support Engineer",
-      years: "2015-2025",
+      employer: "Ministry of Magic",
+      location: "Whitehall Below, Central London, UK",
+      position: "Auror (Auror Office)",
+      years: "2001-2018",
       tasks: [
-        { id: nanoid(), item: "Rebuilt custom life-support arrays" },
-        { id: nanoid(), item: "Prototyped sequential fail-safes" },
-        { id: nanoid(), item: "Tested third-party assemblies" },
+        {
+          id: nanoid(),
+          item: "Investigated and apprehended Dark wizards and witches. ",
+        },
+        {
+          id: nanoid(),
+          item: "Enforced magical law and protected the wizarding community from threats.",
+        },
+        {
+          id: nanoid(),
+          item: "Developed and utilized advanced defensive magic skills to counter Dark Arts.",
+        },
       ],
-      // tasks: [
-      //   "Rebuilt custom life-support arrays",
-      //   "Prototyped sequential fail-safes",
-      //   "Tested third-party assemblies",
-      // ],
+    },
+    {
+      id: nanoid(),
+      employer: "Ministry of Magic",
+      location: "Whitehall Below, Central London, UK",
+      position: "Head Auror (Auror Office)",
+      years: "2019-Present",
+      tasks: [
+        {
+          id: nanoid(),
+          item: "Led the Auror Office overseeing operations, investigations, and personnel in the Department of Magical Law Enforcement, focusing on combating Dark magic",
+        },
+        {
+          id: nanoid(),
+          item: "Directed high-profile investigations involving Dark wizards and magical threats, utilizing advanced magical skills and strategic planning to apprehend dangerous criminals.",
+        },
+        {
+          id: nanoid(),
+          item: "Developed and implemented strategies to enhance magical law enforcement, ensuring the safety of the wizarding community through proactive measures against Dark magic and artifacts.",
+        },
+      ],
     },
   ],
   projects: [
     {
       id: nanoid(),
-      project: "Tactical Hyperdrive System",
-      description: "Functional escape coordinate re-allocator. ",
+      title: "The Lumos Legacy Project",
+      description:
+        "Supporting Vulnerable Magical Children: Providing resources, support, and safe havens for children.",
     },
   ],
-  skills: {
-    description: "JavaScript, HTML, CSS, Webpack, React, Node.js",
-  },
+  // skills: {
+  //   description:
+  //     "Expert level spells: Expecto Patronum (stag), Expelliarmus, Appare Vestigium, Stupefy, Finite Incantatem",
+  // },
+  miscellaneous: [
+    {
+      id: nanoid(),
+      category: "Skills",
+      description:
+        "Expert level spells: Expecto Patronum (stag), Expelliarmus, Appare Vestigium, Stupefy, Finite Incantatem.",
+    },
+    {
+      id: nanoid(),
+      category: "References",
+      description:
+        "Available upon request.",
+    },
+  ],
 };

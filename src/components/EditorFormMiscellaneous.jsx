@@ -14,14 +14,14 @@ import {
   moveItemDown,
 } from "../utils/formArrayHelpers";
 
-export default function EditorFormWork({
+export default function EditorFormMiscellaneous({
   formData,
   setFormData,
   handleChangeArray,
   handleSubmit,
 }) {
-  const section = "projects";
-  const projects = formData[section];
+  const section = "miscellaneous";
+  const miscellaneous = formData[section];
   const enterYour = "Enter your";
 
   const [showForm, setShowForm] = useState(null);
@@ -30,59 +30,93 @@ export default function EditorFormWork({
     setShowForm((prev) => (prev === id ? null : id));
   };
 
-  // const removeProjectsItem = (idToRemove) => {
-  //   const updatedProjects = projects.filter((entry) => entry.id !== idToRemove);
+  // const removeEducationItem = (idToRemove) => {
+  //   const updatedEducation = education.filter(
+  //     (entry) => entry.id !== idToRemove
+  //   );
 
   //   setFormData((prevData) => ({
   //     ...prevData,
-  //     projects: updatedProjects,
+  //     education: updatedEducation,
   //   }));
   // };
 
-  const removeProjectsItem = (id) => {
-    const updatedProjects = removeItemById(projects, id);
+  const removeMiscellaneousItem = (id) => {
+    const updatedMiscellaneous = removeItemById(miscellaneous, id);
     setFormData((prevData) => ({
       ...prevData,
-      projects: updatedProjects,
+      miscellaneous: updatedMiscellaneous,
     }));
   };
 
-  const addProjectsItem = () => {
+  const addMiscellaneousItem = () => {
     const newEntry = {
       id: nanoid(),
-      title: "",
+      category: "",
       description: "",
     };
 
     setFormData((prevData) => ({
       ...prevData,
-      projects: [...prevData.projects, newEntry],
+      miscellaneous: [...prevData.miscellaneous, newEntry],
     }));
 
     setShowForm(newEntry.id);
   };
 
-  const moveProjectsItemUp = (id) => {
-    const updatedProjects = moveItemUp(projects, id);
+  // const moveEducationItemUp = (id) => {
+  //   const index = education.findIndex((entry) => entry.id === id);
+  //   if (index > 0) {
+  //     const newEducation = [...education];
+  //     [newEducation[index - 1], newEducation[index]] = [
+  //       newEducation[index],
+  //       newEducation[index - 1],
+  //     ];
+
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       education: newEducation,
+  //     }));
+  //   }
+  // };
+
+  const moveMiscellaneousItemUp = (id) => {
+    const updatedMiscellaneous = moveItemUp(miscellaneous, id);
     setFormData((prevData) => ({
       ...prevData,
-      projects: updatedProjects,
+      miscellaneous: updatedMiscellaneous,
     }));
   };
 
-  const moveProjectsItemDown = (id) => {
-    const updatedProjects = moveItemDown(projects, id);
+  // const moveEducationItemDown = (id) => {
+  //   const index = education.findIndex((entry) => entry.id === id);
+  //   if (index < education.length - 1) {
+  //     const newEducation = [...education];
+  //     [newEducation[index + 1], newEducation[index]] = [
+  //       newEducation[index],
+  //       newEducation[index + 1],
+  //     ];
+
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       education: newEducation,
+  //     }));
+  //   }
+  // };
+
+  const moveMiscellaneousItemDown = (id) => {
+    const updatedMiscellaneous = moveItemDown(miscellaneous, id);
     setFormData((prevData) => ({
       ...prevData,
-      projects: updatedProjects,
+      miscellaneous: updatedMiscellaneous,
     }));
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>{section}</h1>
-      {projects.map((entry, index) => (
-        <div key={entry.id} className="projects-entry">
+      {miscellaneous.map((entry, index) => (
+        <div key={entry.id} className="miscellaneous-entry">
           <div
             style={{
               backgroundColor:
@@ -94,19 +128,14 @@ export default function EditorFormWork({
           >
             <div className="dataContainer">
               <h2>
-                project #{index + 1}
+                {section} #{index + 1}
               </h2>
             </div>
             <div className="buttonContainer">
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() =>
-                  removeProjectsItem(
-                    // index
-                    entry.id
-                  )
-                }
+                onClick={() => removeMiscellaneousItem(entry.id)}
               >
                 <Image src={imgTrash} alt="" />
               </Button>
@@ -114,7 +143,7 @@ export default function EditorFormWork({
                 variant="formDataControl"
                 type="button"
                 // onClick={() => removeEducationItem(entry.id)}
-                onClick={() => moveProjectsItemUp(entry.id)}
+                onClick={() => moveMiscellaneousItemUp(entry.id)}
               >
                 <Image src={imgUp} alt="" />
               </Button>
@@ -122,7 +151,7 @@ export default function EditorFormWork({
                 variant="formDataControl"
                 type="button"
                 // onClick={() => removeEducationItem(entry.id)}
-                onClick={() => moveProjectsItemDown(entry.id)}
+                onClick={() => moveMiscellaneousItemDown(entry.id)}
               >
                 <Image src={imgDown} alt="" />
               </Button>
@@ -138,11 +167,11 @@ export default function EditorFormWork({
           {showForm === entry.id && (
             <div className="visible">
               <InputField
-                label="Title"
-                name="title"
-                value={entry.title}
+                label="Category"
+                name="category"
+                value={entry.category}
                 onChange={handleChangeArray(section, entry.id)}
-                placeholder={`${enterYour} project's title...`}
+                placeholder={`${enterYour} new category...`}
                 required={false}
               />
               <InputField
@@ -150,7 +179,7 @@ export default function EditorFormWork({
                 name="description"
                 value={entry.description}
                 onChange={handleChangeArray(section, entry.id)}
-                placeholder={`${enterYour} project's description...`}
+                placeholder="Enter the appropriate text..."
                 required={false}
               />
             </div>
@@ -162,16 +191,15 @@ export default function EditorFormWork({
         <Button
           variant="formDataControl"
           type="button"
-          onClick={addProjectsItem}
+          onClick={addMiscellaneousItem}
         >
-          <Image src={imgAdd} alt="Add new work entry" />
+          <Image src={imgAdd} alt="Add new miscellaneous entry" />
         </Button>
       </div>
-      <div className="button-container">
-        <Button variant="save" type="submit">
-          Save
-        </Button>
-      </div>
+
+      <Button variant="save" type="submit">
+        Save
+      </Button>
     </form>
   );
 }

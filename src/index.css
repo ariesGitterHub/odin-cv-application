@@ -8,6 +8,7 @@
   --orb-gold-lt: #d9c8a3;
   --orb-white: #dcdad5;
   --mage-blue: #080818;
+  --mage-blue-trans: #0808184b;
   /* --mage-blue-dk: #7575a1; */
   --accent-blue: #5D667E;
   --resume-blue: #bacbd0;
@@ -195,4 +196,11 @@ select {
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
+}
+
+.education-entry, .work-entry, .projects-entry {
+background-color: var(--mage-blue-trans);
+border-radius: 0.75rem;
+margin: 0.5rem;
+padding: 0.5rem;
 }

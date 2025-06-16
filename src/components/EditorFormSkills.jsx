@@ -1,7 +1,5 @@
 import InputField from "../utils/InputField";
 import Button from "../utils/Button";
-import ShowExistingData from "../utils/ShowExistingData";
-import AddNewData from "../utils/AddNewData";
 
 export default function EditorFormSkills({
   formData,
