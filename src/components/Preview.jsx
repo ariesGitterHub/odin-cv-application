@@ -138,16 +138,19 @@ export default function Preview({ formData }) {
       <div className={styles.dataXInfo}>
         <p>{formData.skills.description}</p>
       </div> */}
-      <h2 className={styles.sectionHeader}>miscellaneous</h2>
+      {/* <h2 className={styles.sectionHeader}>miscellaneous</h2> */}
       {formData.miscellaneous.map((entry) => (
-        <div key={entry.id} className={styles.data0Info}>
-          <div className={styles.data1Info}>
-            <p className={styles.bold}>{entry.category}</p>
+        <>
+          <h2 className={styles.sectionHeader}>{entry.category}</h2>
+          <div key={entry.id} className={styles.data0Info}>
+            {/* <div className={styles.data1Info}>
+              <p className={styles.bold}>{entry.category}</p>
+            </div> */}
+            <div className={styles.data2Info}>
+              <p>{entry.description}</p>
+            </div>
           </div>
-          <div className={styles.data2Info}>
-            <p>{entry.description}</p>
-          </div>
-        </div>
+        </>
       ))}
 
       {/* <hr /> */}
