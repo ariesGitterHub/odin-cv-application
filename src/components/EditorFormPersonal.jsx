@@ -1,12 +1,15 @@
 import InputField from "../utils/InputField";
-import Button from "../utils/Button";
+// import Button from "../utils/Button";
+import SaveButton from "../utils/SaveButton";
 
-export default function EditorFormPersonal({ formData, handleChange, handleSubmit }) {
-
+export default function EditorFormPersonal({
+  formData,
+  handleChange,
+  handleSubmit,
+}) {
   const section = "personal";
   const personal = formData[section];
   const enterYour = "Enter your";
-
   const inputFields = [
     {
       label: "full name*",
@@ -36,7 +39,6 @@ export default function EditorFormPersonal({ formData, handleChange, handleSubmi
     },
     {
       label: "website(s)",
-      // type: "url",
       name: "website",
       value: personal.website,
       onChange: handleChange(section),
@@ -71,9 +73,10 @@ export default function EditorFormPersonal({ formData, handleChange, handleSubmi
         );
       })}
       <div className="button-container">
-        <Button variant="save" type="submit">
+        {/* <Button variant="save" type="submit">
           Save
-        </Button>
+        </Button> */}
+        <SaveButton />
       </div>
     </form>
   );

@@ -1,49 +1,49 @@
 .button {
-    height: fit-content;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: transparent;
-    cursor: pointer;
-    padding: 0.5rem;
-  }
-  
-  .button:hover {
-    transform: scale(1.1);
-    background-color: var(--orb-gold);
-    color: var(--mage-blue);
-  }
-  
-  .button:active {
-    transform: scale(0.9);
-  }
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+}
 
-  .nav {
-    background-color: var(--orb-gold-lt);
-    border-color: var(--mage-blue);    
-    border-radius: 50%;
-  }
-  
-  .default {
-  }
+.button:hover {
+  transform: scale(1.1);
+  background-color: var(--orb-gold);
+  color: var(--mage-blue);
+}
 
-  .save {
-    width: 100%;
-    background-color: var(--mage-blue);
-    border-color: white;
-    border-radius: 2rem;
-    color: var(--orb-gold-lt);
-    font-family: var(--font-logo);
-    margin-top: 1rem;
-    padding: 0.5rem;
-  }
+.button:active {
+  transform: scale(0.9);
+}
 
-  .formDataControl {
-    height:  2.25rem;
-    width: 2.25rem;
-    /* background-color: var(--orb-gold); */
-    background-color: var(--orb-gold-lt);
-    border: 0.125rem solid var(--mage-blue);    
-    border-radius: 50%;
-  }
+.default {
+  background-color: var(--focus-blue);
+}
+
+.nav {
+  background-color: var(--orb-gold-lt);
+  border-color: var(--mage-blue);
+  border-radius: 50%;
+}
+
+.save {
+  width: 100%;
+  background-color: var(--mage-blue);
+  border-color: white;
+  border-radius: 2rem;
+  color: var(--orb-gold-lt);
+  font-family: var(--font-logo);
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+.formDataControl {
+  height: 2.25rem;
+  width: 2.25rem;
+  background-color: var(--orb-gold-lt);
+  border: 0.125rem solid var(--mage-blue);
+  border-radius: 50%;
+}

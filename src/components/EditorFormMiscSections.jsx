@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 import InputField from "../utils/InputField";
 import Button from "../utils/Button";
+import SaveButton from "../utils/SaveButton";
 import Image from "../utils/Image";
-import imgEdit from "../assets/btnEdit.svg";
 import imgTrash from "../assets/btnTrash.svg";
-import imgAdd from "../assets/btnAdd.svg";
-import imgDown from "../assets/btnArrowDown.svg";
 import imgUp from "../assets/btnArrowUp.svg";
-import { nanoid } from "nanoid";
+import imgDown from "../assets/btnArrowDown.svg";
+import imgEdit from "../assets/btnEdit.svg";
+import imgAdd from "../assets/btnAdd.svg";
 import {
   removeItemById,
   moveItemUp,
@@ -29,17 +30,6 @@ export default function EditorFormMiscSections({
   const toggleForm = (id) => {
     setShowForm((prev) => (prev === id ? null : id));
   };
-
-  // const removeEducationItem = (idToRemove) => {
-  //   const updatedEducation = education.filter(
-  //     (entry) => entry.id !== idToRemove
-  //   );
-
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     education: updatedEducation,
-  //   }));
-  // };
 
   const removeMiscellaneousItem = (id) => {
     const updatedMiscellaneous = removeItemById(miscellaneous, id);
@@ -64,22 +54,6 @@ export default function EditorFormMiscSections({
     setShowForm(newEntry.id);
   };
 
-  // const moveEducationItemUp = (id) => {
-  //   const index = education.findIndex((entry) => entry.id === id);
-  //   if (index > 0) {
-  //     const newEducation = [...education];
-  //     [newEducation[index - 1], newEducation[index]] = [
-  //       newEducation[index],
-  //       newEducation[index - 1],
-  //     ];
-
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       education: newEducation,
-  //     }));
-  //   }
-  // };
-
   const moveMiscellaneousItemUp = (id) => {
     const updatedMiscellaneous = moveItemUp(miscellaneous, id);
     setFormData((prevData) => ({
@@ -87,22 +61,6 @@ export default function EditorFormMiscSections({
       miscellaneous: updatedMiscellaneous,
     }));
   };
-
-  // const moveEducationItemDown = (id) => {
-  //   const index = education.findIndex((entry) => entry.id === id);
-  //   if (index < education.length - 1) {
-  //     const newEducation = [...education];
-  //     [newEducation[index + 1], newEducation[index]] = [
-  //       newEducation[index],
-  //       newEducation[index + 1],
-  //     ];
-
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       education: newEducation,
-  //     }));
-  //   }
-  // };
 
   const moveMiscellaneousItemDown = (id) => {
     const updatedMiscellaneous = moveItemDown(miscellaneous, id);
@@ -129,10 +87,7 @@ export default function EditorFormMiscSections({
             <div className="dataContainer">
               <h2
                 style={{
-                  fontWeight:
-                    showForm === entry.id
-                      ? "800"
-                      : "inherit",
+                  fontWeight: showForm === entry.id ? "800" : "inherit",
                 }}
               >
                 section #{index + 1}
@@ -149,7 +104,6 @@ export default function EditorFormMiscSections({
               <Button
                 variant="formDataControl"
                 type="button"
-                // onClick={() => removeEducationItem(entry.id)}
                 onClick={() => moveMiscellaneousItemUp(entry.id)}
               >
                 <Image src={imgUp} alt="" />
@@ -157,7 +111,6 @@ export default function EditorFormMiscSections({
               <Button
                 variant="formDataControl"
                 type="button"
-                // onClick={() => removeEducationItem(entry.id)}
                 onClick={() => moveMiscellaneousItemDown(entry.id)}
               >
                 <Image src={imgDown} alt="" />
@@ -203,10 +156,10 @@ export default function EditorFormMiscSections({
           <Image src={imgAdd} alt="Add new miscellaneous entry" />
         </Button>
       </div>
-
-      <Button variant="save" type="submit">
-        Save
-      </Button>
+        {/* <Button variant="save" type="submit">
+          Save
+        </Button> */}
+        <SaveButton />
     </form>
   );
 }

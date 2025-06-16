@@ -1,18 +1,14 @@
-import { useState } from "react";
 import styles from "../styles/Editor.module.css";
+import { useState } from "react";
 import Button from "../utils/Button";
 import Image from "../utils/Image";
 import imgPersonal from "../assets/btnPersonal.svg";
 import imgEducation from "../assets/btnEducation.svg";
 import imgWork from "../assets/btnWork.svg";
-// import imgProjects from "../assets/btnProjects.svg";
-// import imgSkills from "../assets/btnSkills.svg";
 import imgMisc from "../assets/btnMisc.svg";
 import EditorFormPersonal from "./EditorFormPersonal";
 import EditorFormEducation from "./EditorFormEducation";
 import EditorFormWork from "./EditorFormWork";
-// import EditorFormProjects from "./EditorFormProjects";
-// import EditorFormSkills from "./EditorFormSkills";
 import EditorFormMiscSections from "./EditorFormMiscSections";
 
 export default function Editor({
@@ -49,20 +45,6 @@ export default function Editor({
         <Button variant="nav" type="button" onClick={() => switchForm("work")}>
           <Image src={imgWork} alt="" />
         </Button>
-        {/* <Button
-          variant="nav"
-          type="button"
-          onClick={() => switchForm("projects")}
-        >
-          <Image src={imgProjects} alt="" />
-        </Button> */}
-        {/* <Button
-          variant="nav"
-          type="button"
-          onClick={() => switchForm("skills")}
-        >
-          <Image src={imgSkills} alt="" />
-        </Button> */}
         <Button
           variant="nav"
           type="button"
@@ -87,9 +69,7 @@ export default function Editor({
               formData={formData}
               setFormData={setFormData}
               handleChangeArray={handleChangeArray}
-              // handleChange={handleChange}
               handleSubmit={handleSubmit}
-              // switchForm={switchForm}
             />
           </div>
         )}
@@ -99,44 +79,17 @@ export default function Editor({
               formData={formData}
               setFormData={setFormData}
               handleChangeArray={handleChangeArray}
-              // handleChange={handleChange}
               handleSubmit={handleSubmit}
-              // switchForm={switchForm}
             />
           </div>
         )}
-        {/* {activeForm === "projects" && (
-          <div className="visible">
-            <EditorFormProjects
-              formData={formData}
-              setFormData={setFormData}
-              handleChangeArray={handleChangeArray}
-              // handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              // switchForm={switchForm}
-            />
-          </div>
-        )} */}
-        {/* {activeForm === "skills" && (
-          <div className="visible">
-            <EditorFormSkills
-              formData={formData}
-              // handleChangeArray={handleChangeArray}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              // switchForm={switchForm}
-            />
-          </div>
-        )} */}
         {activeForm === "misc-sections" && (
           <div className="visible">
             <EditorFormMiscSections
               formData={formData}
               setFormData={setFormData}
               handleChangeArray={handleChangeArray}
-              // handleChange={handleChange}
               handleSubmit={handleSubmit}
-              // switchForm={switchForm}
             />
           </div>
         )}

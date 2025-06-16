@@ -1,6 +1,6 @@
-import Image from "../utils/Image"
-import favIcon from "../assets/favIcon.svg"
-import styles from "../styles/Header.module.css"
+import Image from "../utils/Image";
+import favIcon from "../assets/favIcon.svg";
+import styles from "../styles/Header.module.css";
 
 export default function Header({ message }) {
   return (
@@ -13,9 +13,7 @@ export default function Header({ message }) {
         />
         <h1 className={styles.h1}>Resumé Wizard</h1>
       </div>
-      {/* <hr className={styles.hr} /> */}
       <p className={styles.p}>{message}</p>
-      {/* <hr className={styles.hr} /> */}
     </header>
   );
 }

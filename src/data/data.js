@@ -68,18 +68,6 @@ export const initialFormData = {
       ],
     },
   ],
-  // projects: [
-  //   {
-  //     id: nanoid(),
-  //     title: "The Lumos Legacy Project",
-  //     description:
-  //       "Supporting Vulnerable Magical Children: Providing resources, support, and safe havens for children.",
-  //   },
-  // ],
-  // skills: {
-  //   description:
-  //     "Expert level spells: Expecto Patronum (stag), Expelliarmus, Appare Vestigium, Stupefy, Finite Incantatem",
-  // },
   miscellaneous: [
     {
       id: nanoid(),

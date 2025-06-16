@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 import InputField from "../utils/InputField";
 import Button from "../utils/Button";
+import SaveButton from "../utils/SaveButton";
 import Image from "../utils/Image";
-import imgEdit from "../assets/btnEdit.svg";
 import imgTrash from "../assets/btnTrash.svg";
-import imgAdd from "../assets/btnAdd.svg";
-import imgDown from "../assets/btnArrowDown.svg";
 import imgUp from "../assets/btnArrowUp.svg";
-import { nanoid } from "nanoid";
+import imgDown from "../assets/btnArrowDown.svg";
+import imgEdit from "../assets/btnEdit.svg";
+import imgAdd from "../assets/btnAdd.svg";
 import {
   removeItemById,
   moveItemUp,
@@ -29,15 +30,6 @@ export default function EditorFormWork({
   const toggleForm = (id) => {
     setShowForm((prev) => (prev === id ? null : id));
   };
-
-  // const removeWorkItem = (idToRemove) => {
-  //   const updatedWork = work.filter((entry) => entry.id !== idToRemove);
-
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     work: updatedWork,
-  //   }));
-  // };
 
   const removeWorkItem = (id) => {
     const updatedWork = removeItemById(work, id);
@@ -72,7 +64,6 @@ export default function EditorFormWork({
       work: updatedWork,
     }));
   };
-
 
   const moveWorkItemDown = (id) => {
     const updatedWork = moveItemDown(work, id);
@@ -136,7 +127,6 @@ export default function EditorFormWork({
       };
     });
   };
-  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -165,19 +155,13 @@ export default function EditorFormWork({
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() =>
-                  removeWorkItem(
-                    // index
-                    entry.id
-                  )
-                }
+                onClick={() => removeWorkItem(entry.id)}
               >
                 <Image src={imgTrash} alt="" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
-                // onClick={() => removeEducationItem(entry.id)}
                 onClick={() => moveWorkItemUp(entry.id)}
               >
                 <Image src={imgUp} alt="" />
@@ -185,7 +169,6 @@ export default function EditorFormWork({
               <Button
                 variant="formDataControl"
                 type="button"
-                // onClick={() => removeEducationItem(entry.id)}
                 onClick={() => moveWorkItemDown(entry.id)}
               >
                 <Image src={imgDown} alt="" />
@@ -246,21 +229,6 @@ export default function EditorFormWork({
                   <Image src={imgAdd} alt="Add new task entry" />
                 </Button>
               </div>
-
-              {/* {entry.tasks &&
-                entry.tasks.map((task, index) => (
-                  <InputField
-                    key={task.id}
-                    label={`Task Item #${index + 1}`}
-                    name="item"
-                    value={task.item}
-                    onChange={(e) =>
-                      handleTaskChange(entry.id, task.id, e.target.value)
-                    }
-                    placeholder="Describe a responsibility or achievement..."
-                    required={false}
-                  />
-                ))} */}
               {entry.tasks &&
                 entry.tasks.map((task) => (
                   <div key={task.id} className="taskItemContainer">
@@ -283,7 +251,6 @@ export default function EditorFormWork({
                     </Button>
                   </div>
                 ))}
-              {/* <hr /> */}
             </div>
           )}
         </div>
@@ -294,10 +261,10 @@ export default function EditorFormWork({
           <Image src={imgAdd} alt="Add new work entry" />
         </Button>
       </div>
-
-      <Button variant="save" type="submit">
-        Save
-      </Button>
+        {/* <Button variant="save" type="submit">
+          Save
+        </Button> */}
+        <SaveButton />
     </form>
   );
 }

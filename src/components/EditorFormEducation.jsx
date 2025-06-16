@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 import InputField from "../utils/InputField";
 import Button from "../utils/Button";
+import SaveButton from "../utils/SaveButton";
 import Image from "../utils/Image";
-import imgEdit from "../assets/btnEdit.svg";
 import imgTrash from "../assets/btnTrash.svg";
-import imgAdd from "../assets/btnAdd.svg";
-import imgDown from "../assets/btnArrowDown.svg";
 import imgUp from "../assets/btnArrowUp.svg";
-import { nanoid } from "nanoid";
+import imgDown from "../assets/btnArrowDown.svg";
+import imgEdit from "../assets/btnEdit.svg";
+import imgAdd from "../assets/btnAdd.svg";
 import {
   removeItemById,
   moveItemUp,
@@ -29,17 +30,6 @@ export default function EditorFormEducation({
   const toggleForm = (id) => {
     setShowForm((prev) => (prev === id ? null : id));
   };
-
-  // const removeEducationItem = (idToRemove) => {
-  //   const updatedEducation = education.filter(
-  //     (entry) => entry.id !== idToRemove
-  //   );
-
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     education: updatedEducation,
-  //   }));
-  // };
 
   const removeEducationItem = (id) => {
     const updatedEducation = removeItemById(education, id);
@@ -66,22 +56,6 @@ export default function EditorFormEducation({
     setShowForm(newEntry.id);
   };
 
-  // const moveEducationItemUp = (id) => {
-  //   const index = education.findIndex((entry) => entry.id === id);
-  //   if (index > 0) {
-  //     const newEducation = [...education];
-  //     [newEducation[index - 1], newEducation[index]] = [
-  //       newEducation[index],
-  //       newEducation[index - 1],
-  //     ];
-
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       education: newEducation,
-  //     }));
-  //   }
-  // };
-
   const moveEducationItemUp = (id) => {
     const updatedEducation = moveItemUp(education, id);
     setFormData((prevData) => ({
@@ -89,22 +63,6 @@ export default function EditorFormEducation({
       education: updatedEducation,
     }));
   };
-
-  // const moveEducationItemDown = (id) => {
-  //   const index = education.findIndex((entry) => entry.id === id);
-  //   if (index < education.length - 1) {
-  //     const newEducation = [...education];
-  //     [newEducation[index + 1], newEducation[index]] = [
-  //       newEducation[index],
-  //       newEducation[index + 1],
-  //     ];
-
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       education: newEducation,
-  //     }));
-  //   }
-  // };
 
   const moveEducationItemDown = (id) => {
     const updatedEducation = moveItemDown(education, id);
@@ -148,7 +106,6 @@ export default function EditorFormEducation({
               <Button
                 variant="formDataControl"
                 type="button"
-                // onClick={() => removeEducationItem(entry.id)}
                 onClick={() => moveEducationItemUp(entry.id)}
               >
                 <Image src={imgUp} alt="" />
@@ -156,7 +113,6 @@ export default function EditorFormEducation({
               <Button
                 variant="formDataControl"
                 type="button"
-                // onClick={() => removeEducationItem(entry.id)}
                 onClick={() => moveEducationItemDown(entry.id)}
               >
                 <Image src={imgDown} alt="" />
@@ -218,10 +174,10 @@ export default function EditorFormEducation({
           <Image src={imgAdd} alt="Add new education entry" />
         </Button>
       </div>
-
-      <Button variant="save" type="submit">
-        Save
-      </Button>
+        {/* <Button variant="save" type="submit">
+          Save
+        </Button> */}
+        <SaveButton />
     </form>
   );
 }
