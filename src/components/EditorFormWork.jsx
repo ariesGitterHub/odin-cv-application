@@ -1,3 +1,4 @@
+import styles from "../styles/Editor.module.css";
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import InputField from "../utils/InputField";
@@ -132,7 +133,7 @@ export default function EditorFormWork({
     <form onSubmit={handleSubmit}>
       <h1>{section} history</h1>
       {work.map((entry, index) => (
-        <div key={entry.id} className="work-entry">
+        <div key={entry.id} className={styles.workEntry}>
           <div
             style={{
               backgroundColor:
@@ -140,18 +141,14 @@ export default function EditorFormWork({
                   ? "var(--focus-blue)"
                   : "var(--orb-gold-lt)",
             }}
-            className="showExistingData"
+            className={styles.showExistingData}
           >
-            <div className="dataContainer">
-              <h2
-                style={{
-                  fontWeight: showForm === entry.id ? "800" : "inherit",
-                }}
-              >
-                {section} #{index + 1}
+            <div className={styles.dataContainer}>
+              <h2>
+                employer #{index + 1}
               </h2>
             </div>
-            <div className="buttonContainer">
+            <div className={styles.entryButtonContainer}>
               <Button
                 variant="formDataControl"
                 type="button"
@@ -217,7 +214,7 @@ export default function EditorFormWork({
                 required={false}
               />
 
-              <div className="addNewContainer">
+              <div className={styles.addNewContainer}>
                 <h2>
                   Add New {section} #{index + 1} Task
                 </h2>
@@ -231,7 +228,7 @@ export default function EditorFormWork({
               </div>
               {entry.tasks &&
                 entry.tasks.map((task) => (
-                  <div key={task.id} className="taskItemContainer">
+                  <div key={task.id} className={styles.taskItemContainer}>
                     <InputField
                       label=""
                       name="item"
@@ -255,16 +252,13 @@ export default function EditorFormWork({
           )}
         </div>
       ))}
-      <div className="addNewContainer">
+      <div className={styles.addNewContainer}>
         <h2>add new {section} item</h2>
         <Button variant="formDataControl" type="button" onClick={addWorkItem}>
           <Image src={imgAdd} alt="Add new work entry" />
         </Button>
       </div>
-        {/* <Button variant="save" type="submit">
-          Save
-        </Button> */}
-        <SaveButton />
+      <SaveButton />
     </form>
   );
 }

@@ -1,5 +1,4 @@
 import InputField from "../utils/InputField";
-// import Button from "../utils/Button";
 import SaveButton from "../utils/SaveButton";
 
 export default function EditorFormPersonal({
@@ -73,9 +72,6 @@ export default function EditorFormPersonal({
         );
       })}
       <div className="button-container">
-        {/* <Button variant="save" type="submit">
-          Save
-        </Button> */}
         <SaveButton />
       </div>
     </form>

@@ -1,4 +1,4 @@
 .image {
     height: auto;
-    width: 2.25rem;
+    width: var(--button-image-size);
   }

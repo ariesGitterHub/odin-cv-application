@@ -1,9 +1,11 @@
 .previewContainer {
     height: fit-content;
-    width: 40ch;
+    /* width: 40ch; */
+    width: 38%;
     background-color: var(--orb-white);
     border-radius: 0.25rem;
     color: var(--mage-blue);
+    font-family: var(--font-text);
     margin: 1rem;
     padding: 1rem;
 }

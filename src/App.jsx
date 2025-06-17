@@ -2,8 +2,8 @@ import "./App.css";
 import { useState } from "react";
 import { initialFormData } from "./data/data";
 import Header from "./components/Header";
-import Editor from "./components/Editor"
-import Preview from "./components/Preview"
+import Editor from "./components/Editor";
+import Preview from "./components/Preview";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
     const savedData = localStorage.getItem("resumeData");
     return savedData ? JSON.parse(savedData) : initialFormData;
   });
-  
+
   const handleChange = (section) => (e) => {
     const { name, value } = e.target;
 
@@ -38,7 +38,7 @@ export default function App() {
       };
     });
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("resumeData", JSON.stringify(formData));

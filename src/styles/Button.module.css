@@ -32,7 +32,7 @@
 .save {
   width: 100%;
   background-color: var(--mage-blue);
-  border-color: white;
+  border: 0.125rem solid var(--orb-gold-lt);
   border-radius: 2rem;
   color: var(--orb-gold-lt);
   font-family: var(--font-logo);

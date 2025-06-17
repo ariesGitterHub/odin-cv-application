@@ -1,8 +1,8 @@
+import styles from "../styles/Header.module.css";
 import Image from "../utils/Image";
 import favIcon from "../assets/favIcon.svg";
-import styles from "../styles/Header.module.css";
 
-export default function Header({ message }) {
+export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.innerHeaderContainer}>
@@ -13,7 +13,6 @@ export default function Header({ message }) {
         />
         <h1 className={styles.h1}>Resumé Wizard</h1>
       </div>
-      <p className={styles.p}>{message}</p>
     </header>
   );
 }

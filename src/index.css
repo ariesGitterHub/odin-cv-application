@@ -9,27 +9,26 @@
   --orb-white: #dcdad5;
   --mage-blue: #080818;
   --mage-blue-trans: #0808184b;
-  /* --mage-blue-dk: #7575a1; */
   --accent-blue: #5D667E;
   --resume-blue: #bacbd0;
   --focus-blue: #3b82f6;
-  --reddy: #B96B6B;
-  --orangy: #B97F6B;
-  --greeny: #A8B96B;
-  --cyany: #6BB9A4;
-  --bluey: #6B7EB9;
-  --purply: #A06BB9;
-  --purple-dragon: #710771;
 
   --font-logo: "Wendy One", sans-serif;
-  /* --font-header: ; */
   --font-input: ;
   --font-text: "Lato", sans-serif;
   --font-emoji: "Noto Emoji", sans-serif;
 
   /* MEDIA QUERY VARIABLES */
   /* Mobile first */
+  --header-font-size: 1.65rem;
+  --header-logo-size: 2.65rem;
 
+  --button-image-size: 2rem;
+  --border-radius-round: 50%;
+  --border-radius-squarish: 0.5rem;
+
+  --section-header-size: 1.5rem;
+  --existing-data-header-size: 1rem;
 }
 
 *,
@@ -140,8 +139,8 @@ select {
   margin: 0.5rem 0 0.25rem 0;
   padding: 0.5rem;
 } */
-
-.showExistingData {
+/* 
+.show-existing-data {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -149,29 +148,28 @@ select {
   justify-content: space-between;
   gap: 0.5rem;
   background-color: var(--orb-gold);
-  /* border: 0.125rem solid var(--orb-gold); */
   border-radius: 0.75rem;
   color: var(--mage-blue);
   margin: 0.5rem 0 0.25rem 0;
   padding: 0.25rem;
 }
 
-.showExistingData h2 {
+.show-existing-data h2 {
    color: var(--mage-blue);
 }
 
-.dataContainer {
+.data-container {
   display: flex;
   flex-direction: column;
 }
 
-.buttonContainer {
+.button-container {
   display: flex;
   flex-direction: row;
   gap: 0.35rem;
 }
 
-.addNewContainer {
+.add-new-container {
   width: 30.5ch;
   display: flex;
   flex-direction: row;
@@ -189,11 +187,7 @@ select {
   display: none;
 }
 
-.littleGray {
-  background-color: lavenderblush;
-}
-
-.taskItemContainer {
+.task-item-container {
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
@@ -204,4 +198,4 @@ background-color: var(--mage-blue-trans);
 border-radius: 0.75rem;
 margin: 0.5rem;
 padding: 0.5rem;
-}
+} */
