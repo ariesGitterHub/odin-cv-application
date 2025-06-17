@@ -6,6 +6,8 @@ import imgPersonal from "../assets/btnPersonal.svg";
 import imgEducation from "../assets/btnEducation.svg";
 import imgWork from "../assets/btnWork.svg";
 import imgMisc from "../assets/btnMisc.svg";
+import imgHat from "../assets/btnHat.svg";
+import imgDownload from "../assets/btnDownload.svg";
 import EditorFormPersonal from "./EditorFormPersonal";
 import EditorFormEducation from "./EditorFormEducation";
 import EditorFormWork from "./EditorFormWork";
@@ -52,6 +54,9 @@ export default function Editor({
         >
           <Image src={imgMisc} alt="" />
         </Button>
+        <Button variant="nav" type="button" onClick={() => switchForm("hat")}>
+          <Image src={imgDownload} alt="" />
+        </Button>
       </div>
       <div className={styles.formContainer}>
         {activeForm === "personal" && (
@@ -93,6 +98,16 @@ export default function Editor({
             />
           </div>
         )}
+        {/* {activeForm === "hat" && (
+          <div className="visible">
+            <EditorFormMiscSections
+              formData={formData}
+              setFormData={setFormData}
+              handleChangeArray={handleChangeArray}
+              handleSubmit={handleSubmit}
+            />
+          </div>
+        )} */}
       </div>
     </div>
   );
