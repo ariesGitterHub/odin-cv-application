@@ -141,12 +141,10 @@ export default function EditorFormWork({
                   ? "var(--focus-blue)"
                   : "var(--orb-gold-lt)",
             }}
-            className={styles.showExistingData}
+            className={styles.dropdownDataItemTile}
           >
             <div className={styles.dataContainer}>
-              <h2>
-                employer #{index + 1}
-              </h2>
+              <h2> ➤ employer #{index + 1}</h2>
             </div>
             <div className={styles.entryButtonContainer}>
               <Button
@@ -241,7 +239,7 @@ export default function EditorFormWork({
                     />
                     <Button
                       type="button"
-                      variant="formDataControl"
+                      variant="formDataControlTask"
                       onClick={() => removeTaskFromWork(entry.id, task.id)}
                     >
                       <Image src={imgTrash} alt="Remove task" />
@@ -258,7 +256,9 @@ export default function EditorFormWork({
           <Image src={imgAdd} alt="Add new work entry" />
         </Button>
       </div>
-      <SaveButton />
+      <div className={styles.saveButtonContainer}>
+        <SaveButton />
+      </div>
     </form>
   );
 }

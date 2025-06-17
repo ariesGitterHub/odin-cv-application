@@ -6,7 +6,6 @@ import imgPersonal from "../assets/btnPersonal.svg";
 import imgEducation from "../assets/btnEducation.svg";
 import imgWork from "../assets/btnWork.svg";
 import imgMisc from "../assets/btnMisc.svg";
-import imgHat from "../assets/btnHat.svg";
 import imgDownload from "../assets/btnDownload.svg";
 import EditorFormPersonal from "./EditorFormPersonal";
 import EditorFormEducation from "./EditorFormEducation";
@@ -58,7 +57,8 @@ export default function Editor({
           <Image src={imgDownload} alt="" />
         </Button>
       </div>
-      <div className={styles.formContainer}>
+      {/* <div className={styles.formContainer}> */}
+      <div>
         {activeForm === "personal" && (
           <div className="visible">
             <EditorFormPersonal

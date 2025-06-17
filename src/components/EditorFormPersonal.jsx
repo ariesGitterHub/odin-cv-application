@@ -1,3 +1,4 @@
+import styles from "../styles/Editor.module.css";
 import InputField from "../utils/InputField";
 import SaveButton from "../utils/SaveButton";
 
@@ -57,21 +58,23 @@ export default function EditorFormPersonal({
   return (
     <form onSubmit={handleSubmit}>
       <h1>{section}</h1>
-      {inputFields.map((field) => {
-        return (
-          <InputField
-            key={field.name}
-            label={field.label}
-            type={field.type}
-            name={field.name}
-            value={field.value}
-            onChange={field.onChange}
-            placeholder={field.placeholder}
-            required={field.required}
-          />
-        );
-      })}
-      <div className="button-container">
+      <div className={styles.personalEntry}>
+        {inputFields.map((field) => {
+          return (
+            <InputField
+              key={field.name}
+              label={field.label}
+              type={field.type}
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              placeholder={field.placeholder}
+              required={field.required}
+            />
+          );
+        })}
+      </div>
+      <div className={styles.saveButtonContainer}>
         <SaveButton />
       </div>
     </form>

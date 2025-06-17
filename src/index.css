@@ -12,7 +12,8 @@
   --accent-blue: #5D667E;
   --resume-blue: #bacbd0;
   --focus-blue: #3b82f6;
-
+  --purple-trans: #6e026e3f;
+  
   --font-logo: "Wendy One", sans-serif;
   --font-input: ;
   --font-text: "Lato", sans-serif;
@@ -23,8 +24,9 @@
   --header-font-size: 1.65rem;
   --header-logo-size: 2.65rem;
 
-  --button-image-size: 2rem;
+  /* --button-image-size: 2rem; */
   --border-radius-round: 50%;
+  --border-radius-roundish: 1rem;
   --border-radius-squarish: 0.5rem;
 
   --section-header-size: 1.5rem;
@@ -131,71 +133,10 @@ select {
   outline-offset: 3.5px;
 }
 
-/* .clickable-heading {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: var(--mage-blue);
-  font-style: italic;
-  margin: 0.5rem 0 0.25rem 0;
-  padding: 0.5rem;
-} */
-/* 
-.show-existing-data {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  background-color: var(--orb-gold);
-  border-radius: 0.75rem;
-  color: var(--mage-blue);
-  margin: 0.5rem 0 0.25rem 0;
-  padding: 0.25rem;
-}
-
-.show-existing-data h2 {
-   color: var(--mage-blue);
-}
-
-.data-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 0.35rem;
-}
-
-.add-new-container {
-  width: 30.5ch;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-.visible {
+/* .visible {
   display: block;
 }
 
 .invisible {
   display: none;
-}
-
-.task-item-container {
-  display: flex;
-  flex-direction: row;
-  gap: 0.25rem;
-}
-
-.education-entry, .work-entry, .miscellaneous-entry {
-background-color: var(--mage-blue-trans);
-border-radius: 0.75rem;
-margin: 0.5rem;
-padding: 0.5rem;
 } */

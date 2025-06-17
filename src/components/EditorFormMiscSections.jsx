@@ -83,12 +83,10 @@ export default function EditorFormMiscSections({
                   ? "var(--focus-blue)"
                   : "var(--orb-gold-lt)",
             }}
-            className={styles.showExistingData}
+            className={styles.dropdownDataItemTile}
           >
             <div className={styles.dataContainer}>
-              <h2>
-                section #{index + 1}
-              </h2>
+              <h2> ➤ section #{index + 1}</h2>
             </div>
             <div className={styles.entryButtonContainer}>
               <Button
@@ -153,7 +151,9 @@ export default function EditorFormMiscSections({
           <Image src={imgAdd} alt="Add new miscellaneous entry" />
         </Button>
       </div>
-      <SaveButton />
+      <div className={styles.saveButtonContainer}>
+        <SaveButton />
+      </div>{" "}
     </form>
   );
 }
