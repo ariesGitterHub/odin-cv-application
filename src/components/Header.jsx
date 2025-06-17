@@ -1,13 +1,13 @@
 import styles from "../styles/Header.module.css";
 import Image from "../utils/Image";
-import favIcon from "../assets/favIcon.svg";
+import imgHat from "../assets/btnHat.svg";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.innerHeaderContainer}>
         <Image
-          src={favIcon}
+          src={imgHat}
           alt="Resumé Wizard Hat Logo"
           className={styles.headerHatLogo}
         />

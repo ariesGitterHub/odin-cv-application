@@ -30,13 +30,13 @@
 }
 
 .save {
-  width: 90%;
+  width: 10rem;
   background-color: var(--mage-blue);
   border: 0.125rem solid var(--orb-gold-lt);
   border-radius: 2rem;
   color: var(--orb-gold-lt);
   font-family: var(--font-logo);
-  margin-top: 1rem;
+  /* margin-bottom: 1rem; */
   padding: 0.5rem;
 }
 

@@ -14,20 +14,19 @@ export default function InputField({
     <div className={styles.inputFieldContainer}>
       <label className={styles.label} htmlFor={name}>
         {label}
-
-        <input
-          className={styles.input}
-          section={section}
-          type={type}
-          id={name}
-          name={name}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          required={required}
-          autoFocus
-        />
       </label>
+      <input
+        className={styles.input}
+        section={section}
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        required={required}
+        autoFocus
+      />
     </div>
   );
 }

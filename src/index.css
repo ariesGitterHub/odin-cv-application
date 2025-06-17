@@ -4,18 +4,17 @@
 
 :root {
   /* COLORS */
-  --orb-gold: #EDBD58;
+  --orb-gold: #edbd58;
   --orb-gold-lt: #d9c8a3;
   --orb-white: #dcdad5;
   --mage-blue: #080818;
   --mage-blue-trans: #0808184b;
-  --accent-blue: #5D667E;
+  --accent-blue: #5d667e;
   --resume-blue: #bacbd0;
   --focus-blue: #3b82f6;
-  --purple-trans: #6e026e3f;
+  --purple-trans: #8105813f;
   
   --font-logo: "Wendy One", sans-serif;
-  --font-input: ;
   --font-text: "Lato", sans-serif;
   --font-emoji: "Noto Emoji", sans-serif;
 
@@ -24,13 +23,12 @@
   --header-font-size: 1.65rem;
   --header-logo-size: 2.65rem;
 
-  /* --button-image-size: 2rem; */
   --border-radius-round: 50%;
   --border-radius-roundish: 1rem;
   --border-radius-squarish: 0.5rem;
 
   --section-header-size: 1.5rem;
-  --existing-data-header-size: 1rem;
+  --existing-data-header-size: .95rem;
 }
 
 *,
@@ -133,10 +131,10 @@ select {
   outline-offset: 3.5px;
 }
 
-/* .visible {
+.visible {
   display: block;
 }
 
 .invisible {
   display: none;
-} */
+}

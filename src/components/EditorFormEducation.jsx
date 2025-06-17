@@ -160,13 +160,13 @@ export default function EditorFormEducation({
         </div>
       ))}
       <div className={styles.addNewContainer}>
-        <h2>Add New {section} Item</h2>
+        <h2>Add New {section} Entry</h2>
         <Button
           variant="formDataControl"
           type="button"
           onClick={addEducationItem}
         >
-          <Image src={imgAdd} alt="Add new education entry" />
+          <Image src={imgAdd} alt="add new education entry" />
         </Button>
       </div>
       <div className={styles.saveButtonContainer}>

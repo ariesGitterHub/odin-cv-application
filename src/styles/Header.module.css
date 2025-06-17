@@ -1,12 +1,14 @@
 header {
   width: 100vw;
+  background-color: var(--orb-gold);
 }
 
 header h1 {
-  color: var(--orb-gold);
+  color: var(--mage-blue);
   font-family: var(--font-logo);
   font-size: var(--header-font-size);
   margin: 0 0.25rem 0 0.25rem;
+  text-shadow: var(--accent-blue) 1px 0 10px;
   text-transform: uppercase;
 }
 

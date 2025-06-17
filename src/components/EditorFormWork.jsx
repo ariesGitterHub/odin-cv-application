@@ -251,7 +251,7 @@ export default function EditorFormWork({
         </div>
       ))}
       <div className={styles.addNewContainer}>
-        <h2>add new {section} item</h2>
+        <h2>add new employer entry</h2>
         <Button variant="formDataControl" type="button" onClick={addWorkItem}>
           <Image src={imgAdd} alt="Add new work entry" />
         </Button>
