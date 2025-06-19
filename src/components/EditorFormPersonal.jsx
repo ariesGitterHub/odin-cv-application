@@ -1,15 +1,20 @@
 import styles from "../styles/Editor.module.css";
 import InputField from "../utils/InputField";
 import SaveButton from "../utils/SaveButton";
+import ResetButton from "../utils/ResetButton";
+import { sectionHeaderText } from "../data/data";
 
 export default function EditorFormPersonal({
   formData,
   handleChange,
   handleSubmit,
+  handleResetSection,
 }) {
   const section = "personal";
   const personal = formData[section];
-  const enterYour = "Enter your";
+  const sectionHeader = sectionHeaderText[section];
+  const enterYour = "Enter your"; 
+
   const inputFields = [
     {
       label: "full name*",
@@ -57,7 +62,7 @@ export default function EditorFormPersonal({
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>{section}</h1>
+      <h1>{sectionHeader}</h1>
       <div className={styles.personalEntry}>
         {inputFields.map((field) => {
           return (
@@ -74,8 +79,9 @@ export default function EditorFormPersonal({
           );
         })}
       </div>
-      <div className={styles.saveButtonContainer}>
+      <div className={styles.endFormButtonContainer}>
         <SaveButton />
+        <ResetButton onClick={() => handleResetSection("personal")} />
       </div>
     </form>
   );

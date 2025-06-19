@@ -44,6 +44,23 @@ export default function App() {
     localStorage.setItem("resumeData", JSON.stringify(formData));
   };
 
+  const resetSection = (sectionName) => {
+    setFormData((prev) => ({
+      ...prev,
+      [sectionName]: initialFormData[sectionName],
+    }));
+  };
+
+  const handleResetSection = (section) => {
+    if (
+      confirm(
+        `Are you sure you want to reset this section to the original default data?`
+      )
+    ) {
+      resetSection(section);
+    }
+  };
+
   return (
     <>
       <div className="app-container">
@@ -55,10 +72,11 @@ export default function App() {
             handleChange={handleChange}
             handleChangeArray={handleChangeArray}
             handleSubmit={handleSubmit}
+            handleResetSection={handleResetSection}
           />
           <Preview formData={formData} />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

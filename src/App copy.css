@@ -1,0 +1,214 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor-preview-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 1rem; */
+}
+
+.editor-preview-container > * {
+  /* background: white; */
+  /* border: 1px solid red; */
+}
+
+.editor-preview-container > * {
+  flex: 1 1 45%;
+  max-width: 600px;
+  min-width: 300px;
+  /* box-sizing: border-box; */
+}
+
+.editor-container {
+  border: 2px solid red;
+  height: fit-content;
+  /* width: fit-content; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: start; */
+  font-family: var(--font-text);
+  /* margin: 0 auto; */
+
+  /* padding: 0; */
+}
+
+
+.preview-container {
+  border: 2px solid green;
+  height: fit-content;
+  /* height: auto; */
+  /* width: 100%;   */
+  /* width: fit-content; */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+    /* padding: 1rem; */
+    /* margin: 0.25rem; */
+    margin: 0 auto;
+    
+}
+
+.preview-scaler {
+  transform-origin: top center;
+  transition: transform 0.5s ease;
+}
+
+/* @media (max-width: 900px) {
+  .editor-preview-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}  */
+/* .editor-preview-container {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  align-items: start;
+}
+ */
+/* center children in column layout */
+/* @media (max-width: 900px) {
+.editor-preview-container {
+  grid-template-columns: 1fr;
+  justify-items: center; 
+} */
+
+/* optional: keep things readable */
+/* .editor-preview-container > * {
+  width: 100%;
+  max-width: 700px; 
+}
+} 
+*/
+
+  /* Responsive scaling without layout jumps */
+  @media (max-width: 1200px) {
+    .preview-scaler {
+      /* transform: scale(0.85); */
+      transform: scale(0.7);
+    }
+    .preview-container {
+
+    }
+  }
+
+  @media (max-width: 1200px) { .preview-scaler { transform: scale(0.7); } }
+@media (max-width: 1100px) { .preview-scaler { transform: scale(0.65); } }
+/* @media (max-width: 1000px) { .preview-scaler { transform: scale(0.6); } } */
+@media (max-width: 900px)  { .preview-scaler { transform: scale(0.55); } }
+/* @media (max-width: 800px)  { .preview-scaler { transform: scale(0.5); } } */
+@media (max-width: 700px)  { .preview-scaler { transform: scale(0.45); } }
+/* @media (max-width: 600px)  { .preview-scaler { transform: scale(0.4); } } */
+@media (max-width: 500px)  { .preview-scaler { transform: scale(0.35); } }
+/* @media (max-width: 400px)  { .preview-scaler { transform: scale(0.3); } } */
+
+  /* @media (max-width: 1150px) {
+    .preview-scaler {
+      transform: scale(0.675);
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .preview-scaler {
+      transform: scale(0.65);
+    }
+  }
+  
+  @media (max-width: 1050px) {
+    .preview-scaler {
+      transform: scale(0.625);
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .preview-scaler {
+      transform: scale(0.6);
+    }
+  }
+  @media (max-width: 950px) {
+    .preview-scaler {
+      transform: scale(0.575);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .preview-scaler {
+      transform: scale(0.55);
+    }
+  }
+  @media (max-width: 850px) {
+    .preview-scaler {
+      transform: scale(0.525);
+    }
+  }
+  @media (max-width: 800px) {
+    .preview-scaler {
+      transform: scale(0.5);
+    }
+  }
+
+  @media (max-width: 750px) {
+    .preview-scaler {
+      transform: scale(0.475);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .preview-scaler {
+      transform: scale(0.45);
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .preview-scaler {
+      transform: scale(0.425);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .preview-scaler {
+      transform: scale(0.4);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .preview-scaler {
+      transform: scale(0.375);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .preview-scaler {
+      transform: scale(0.35);
+    }
+  }
+
+  @media (max-width: 450px) {
+    .preview-scaler {
+      transform: scale(0.325);
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .preview-scaler {
+      transform: scale(0.3);
+    }
+  } */

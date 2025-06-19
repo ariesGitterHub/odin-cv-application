@@ -1,4 +1,5 @@
 import styles from "../styles/Editor.module.css";
+import "../App.css";
 import { useState } from "react";
 import Button from "../utils/Button";
 import Image from "../utils/Image";
@@ -18,6 +19,7 @@ export default function Editor({
   handleChange,
   handleChangeArray,
   handleSubmit,
+  handleResetSection,
 }) {
   const [activeForm, setActiveForm] = useState("personal");
   const switchForm = (formName) => {
@@ -27,8 +29,9 @@ export default function Editor({
   };
 
   return (
-    <div className={styles.editorContainer}>
-      <div className={styles.buttonContainer}>
+    // <div className={styles.editorContainer}>
+    <div className="editor-container">
+      <div className={styles.navButtonContainer}>
         <Button
           variant="nav"
           type="button"
@@ -49,15 +52,19 @@ export default function Editor({
         <Button
           variant="nav"
           type="button"
-          onClick={() => switchForm("misc-sections")}
+          onClick={() => switchForm("miscellaneous")}
         >
           <Image src={imgMisc} alt="" />
         </Button>
-        <Button variant="nav" type="button" onClick={() => switchForm("hat")}>
+        {/* Todo - this will be the download PDF button */}
+        <Button
+          variant="nav"
+          type="button"
+          // onClick={() => switchForm("hat")}
+        >
           <Image src={imgDownload} alt="" />
         </Button>
       </div>
-      {/* <div className={styles.formContainer}> */}
       <div>
         {activeForm === "personal" && (
           <div className="visible">
@@ -65,6 +72,7 @@ export default function Editor({
               formData={formData}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
+              handleResetSection={handleResetSection}
             />
           </div>
         )}
@@ -75,6 +83,7 @@ export default function Editor({
               setFormData={setFormData}
               handleChangeArray={handleChangeArray}
               handleSubmit={handleSubmit}
+              handleResetSection={handleResetSection}
             />
           </div>
         )}
@@ -85,29 +94,21 @@ export default function Editor({
               setFormData={setFormData}
               handleChangeArray={handleChangeArray}
               handleSubmit={handleSubmit}
+              handleResetSection={handleResetSection}
             />
           </div>
         )}
-        {activeForm === "misc-sections" && (
+        {activeForm === "miscellaneous" && (
           <div className="visible">
             <EditorFormMiscSections
               formData={formData}
               setFormData={setFormData}
               handleChangeArray={handleChangeArray}
               handleSubmit={handleSubmit}
+              handleResetSection={handleResetSection}
             />
           </div>
         )}
-        {/* {activeForm === "hat" && (
-          <div className="visible">
-            <EditorFormMiscSections
-              formData={formData}
-              setFormData={setFormData}
-              handleChangeArray={handleChangeArray}
-              handleSubmit={handleSubmit}
-            />
-          </div>
-        )} */}
       </div>
     </div>
   );

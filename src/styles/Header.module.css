@@ -1,15 +1,23 @@
 header {
   width: 100vw;
-  background-color: var(--orb-gold);
+  background-color: var(--purple-trans);
+  padding: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 header h1 {
-  color: var(--mage-blue);
-  font-family: var(--font-logo);
-  font-size: var(--header-font-size);
-  margin: 0 0.25rem 0 0.25rem;
-  text-shadow: var(--accent-blue) 1px 0 10px;
-  text-transform: uppercase;
+  color: var(--orb-gold);
+  /* font-size: var(--header-font-size); */
+  /* margin: 0 0.25rem 0 0.25rem; */
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+header p {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
 }
 
 .innerHeaderContainer {
@@ -19,8 +27,23 @@ header h1 {
   justify-content: center;
 }
 
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--orb-gold);
+  font-family: var(--font-logo);
+  /* margin: 0 0.25rem 0 0.25rem; */
+  margin-left: 0.25rem;
+  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue),
+    0 0 20px var(--accent-blue);
+  text-transform: uppercase;
+}
+
 .headerHatLogo {
-  height: var(--header-logo-size);
+  /* height: var(--header-logo-size); */
+  height: 3.5rem;
   width: auto;
-  padding: 0 0.5rem 0 0.5rem;
+  /* padding: 0 0.5rem 0 0.5rem; */
 }

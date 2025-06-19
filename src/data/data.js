@@ -1,9 +1,16 @@
 import { nanoid } from "nanoid";
 
+export const sectionHeaderText = {
+  personal: "personal details",
+  education: "educational background",
+  work: "work history",
+  miscellaneous: "miscellaneous sections",
+};
+
 export const initialFormData = {
   personal: {
     fullName: "HAROLD JAMES POTTER",
-    email: "h.potter@ministryofmagic.gov.uk",
+    email: "h.potter@potter-and-co.com",
     phone: "01632 960974",
     address: "14 Primrose Lane, Penhaligon, Cornwall, TR27 5BZ",
     website: "",
@@ -12,7 +19,7 @@ export const initialFormData = {
     {
       id: nanoid(),
       school: "Hogwarts School of Witchcraft & Wizardry",
-      location: "Hogwarts Castle, Scottish Highlands, UK",
+      location: "Hogwarts Castle, Scottish Highlands",
       degree: "N.E.W.T.s Certified",
       year: "1991-1997",
     },
@@ -27,43 +34,56 @@ export const initialFormData = {
   work: [
     {
       id: nanoid(),
-      employer: "Ministry of Magic",
-      location: "Whitehall Below, Central London, UK",
-      position: "Auror (Auror Office)",
-      years: "2001-2018",
+      employer: "Ministry of Magic, Auror Office",
+      location: "Whitehall Below, Central London",
+      position:
+        "Head Auror (2019-2021); Auror, Sr Grade (2010-2018); Auror, Jr Grade (2001-2009)",
+      years: "2001-2021",
       tasks: [
         {
           id: nanoid(),
-          item: "Investigated and apprehended Dark wizards and witches. ",
+          item: "Enforced magical law and protected the wizarding community from threats via the investigation and apprehension of dark wizards and witches.",
         },
         {
           id: nanoid(),
-          item: "Enforced magical law and protected the wizarding community from threats.",
+          item: "Oversaw operations, investigations, and personnel in the Department of Magical Law Enforcement.",
         },
         {
           id: nanoid(),
-          item: "Developed and utilized advanced defensive magic skills to counter Dark Arts.",
+          item: "Personally directed high-profile investigations involving dark wizards and magical threats, utilizing advanced magical skills and strategic planning to apprehend dangerous criminals.",
+        },
+        {
+          id: nanoid(),
+          item: "Developed and implemented strategies to enhance magical law enforcement, ensuring the safety of the wizarding community through proactive measures against dark magic and artifacts.",
         },
       ],
     },
     {
       id: nanoid(),
-      employer: "Ministry of Magic",
-      location: "Whitehall Below, Central London, UK",
-      position: "Head Auror (Auror Office)",
-      years: "2019-Present",
+      employer: "Potter & Company, Auror Solutions & Magical Security",
+      location: "Penhaligon, Cornwall",
+      position: "Owner & Managing Director",
+      years: "2021-Present",
       tasks: [
         {
           id: nanoid(),
-          item: "Led the Auror Office overseeing operations, investigations, and personnel in the Department of Magical Law Enforcement, focusing on combating Dark magic",
+          item: "Designed and installed magically-enhanced locks, alarm systems, and protective wards for homes and businesses.",
         },
         {
           id: nanoid(),
-          item: "Directed high-profile investigations involving Dark wizards and magical threats, utilizing advanced magical skills and strategic planning to apprehend dangerous criminals.",
+          item: "Offered expert advice and strategies on protection against Dark Arts threats, including identifying and neutralizing curses or jinxes.",
         },
         {
           id: nanoid(),
-          item: "Developed and implemented strategies to enhance magical law enforcement, ensuring the safety of the wizarding community through proactive measures against Dark magic and artifacts.",
+          item: "Collaborated with the Ministry of Magic to develop and supply advanced magical countermeasures for Aurors.",
+        },
+        {
+          id: nanoid(),
+          item: "Created bespoke amulets designed to enhance individual safety and awareness in dangerous situations.",
+        },
+        {
+          id: nanoid(),
+          item: "Provided comprehensive assessments of existing security measures and recommended improvements to mitigate magical and non-magical threats.",
         },
       ],
     },
@@ -74,7 +94,7 @@ export const initialFormData = {
       section: "PROJECTS",
       title: "The Lumos Legacy Project",
       description:
-        "Supporting Vulnerable Magical Children: Providing resources, support, and safe havens for children.",
+        "Provided resources, support, and safe havens for vulnerable, magical children of Muggle heritage.",
     },
     {
       id: nanoid(),

@@ -25,19 +25,18 @@
 
 .nav {
   background-color: var(--orb-gold-lt);
-  border-color: var(--mage-blue);
+  border: 0.125rem solid var(--mage-blue);
   border-radius: var(--border-radius-round);
 }
 
-.save {
-  width: 10rem;
+.save,
+.reset {
+  width: 8.25rem;
   background-color: var(--mage-blue);
   border: 0.125rem solid var(--orb-gold-lt);
   border-radius: 2rem;
   color: var(--orb-gold-lt);
   font-family: var(--font-logo);
-  /* margin-bottom: 1rem; */
-  padding: 0.5rem;
 }
 
 .formDataControl {
@@ -54,8 +53,8 @@
   background-color: var(--orb-gold-lt);
   border: 0.125rem solid var(--mage-blue);
   border-radius: var(--border-radius-round);
-  margin-top: 0.25rem;
-  margin-left: 0.75rem;
+  /* margin-top: 0.5rem; */
+  /* margin-right: 0rem; */
 }
 
 .formDataControlTask img {

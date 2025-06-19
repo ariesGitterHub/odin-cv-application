@@ -1,53 +1,55 @@
+/* Not used right now........ */
 .editorContainer {
   height: fit-content;
   width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  /* color: var(--mage-blue); */
+  /* justify-content: start; */
   font-family: var(--font-text);
+  margin: 0 auto;
+  /* padding: 0; */
 }
 
-.buttonContainer {
+/* form {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+.navButtonContainer {
   height: fit-content;
   width: fit-content;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  /* border: 0.125rem solid var(--orb-gold-lt); */
-  /* border-radius: var(--border-radius-squarish); */
-  margin: 0.5rem;
-  padding: 0.5rem;
+  gap: 0.5rem;
+  margin: 0 0.5rem 0 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+  ;
 }
 
-.buttonContainer img {
+.navButtonContainer img {
   height: 2rem;
   width: auto;
 }
-
-/* .formContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem;
-  padding: 1rem;
-} */
 
 h1 {
   color: var(--orb-gold-lt);
   font-family: var(--font-logo);
   font-size: var(--section-header-size);
+  margin: 0.75rem;
   text-align: center;
   text-transform: capitalize;
 }
 
-.dropdownDataItemTile {
+.dropdownEntryTile {
+  /* width: 31ch; */
   /* width: 100%; */
-  width: 31ch;
+  width: 32ch;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -58,14 +60,15 @@ h1 {
   padding: 0.25rem;
 }
 
-.dropdownDataItemTile h2 {
+.dropdownEntryTile h2 {
   color: var(--mage-blue);
   font-family: var(--font-logo);
   font-size: var(--existing-data-header-size);
-  text-transform: capitalize;
+  text-transform: uppercase;
+  margin: 0 0.25rem 0 0.25rem;
 }
 
-.dataContainer {
+.entryHeadingContainer {
   display: flex;
   flex-direction: column;
 }
@@ -74,33 +77,33 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: right;
+  gap: 0.25rem;
+}
+
+.addNewContainer, .addNewTaskContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 0.35rem;
 }
 
 .addNewContainer {
-  /* width: 30.5ch; */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  /* margin: 0.35rem; */
   margin-bottom: 1rem;
 }
 
-/* .addNewContainer button {
-  margin: 0.585rem;
-} */
+.addNewTaskContainer {
+  margin: 1rem 0 0.25rem 0;
+}
 
 .taskItemContainer {
-  /* height: 2.5rem; */
-  /* width: 100%; */
-  width: 28ch;
+  /* width: 30ch; */
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* gap: 0.25rem; */
+  /* margin: 0.125rem; */
 }
 
 .personalEntry,
@@ -115,11 +118,6 @@ h1 {
   margin-bottom: 1rem;
 }
 
-/* .personalEntry {
-  margin: 0.125rem 0.75rem 0.125rem 0.75rem;
-  padding: 0.25rem;
-} */
-
 .personalEntry {
   margin-top: -0.75rem;
 }
@@ -128,27 +126,15 @@ h1 {
 .workEntry,
 .miscellaneousEntry {
   background-color: var(--purple-trans);
-  margin: 0.125rem 0.125rem 0.75rem 0.125rem;
+  /* margin: 0.125rem 0.125rem 0.75rem 0.125rem; */
   padding: 0.25rem;
 }
 
-
-/* .saveButtonContainer {
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5rem;
-    padding: 0.5rem; 
-  } */
-
-.saveButtonContainer {
-  /* width: 100%; */
-  /* background-color: brown; */
+.endFormButtonContainer {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
 }

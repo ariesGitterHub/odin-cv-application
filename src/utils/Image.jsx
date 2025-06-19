@@ -1,4 +1,4 @@
-import styles from "../styles/Image.module.css";
+//import styles from "../styles/Image.module.css"; // Not needed on this project.
 
 export default function Image({ src, alt, className = "", ...props }) {
   return (
@@ -6,7 +6,8 @@ export default function Image({ src, alt, className = "", ...props }) {
       src={src}
       alt={alt}
       loading="lazy"
-      className={`${styles.image} ${className}`}
+      // className={`${styles.image} ${className}`}
+      className={className} // Use above if linking to Image.module.css
       {...props}
     />
   );

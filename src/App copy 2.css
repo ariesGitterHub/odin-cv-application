@@ -1,0 +1,77 @@
+/* EXPERIMENTED USING GRID */
+.app-container {
+  display: grid;
+  place-items: center;
+}
+
+.editor-preview-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .editor-preview-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.editor-preview-container > * {
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.editor-container {
+  display: grid;
+  place-items: center;
+  border: 2px solid red;
+  font-family: var(--font-text);
+  margin: 0 auto;
+}
+
+.preview-container {
+  display: grid;
+  place-items: center;
+  border: 2px solid green;
+  margin: 0 auto;
+}
+
+/* .preview-container {
+  display: grid;
+  place-items: center;
+  border: 2px solid green;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+} */
+
+
+.preview-scaler {
+  /* transform-origin: top center; */
+  transform-origin: top center;
+  transition: transform 0.5s ease;
+}
+
+/* .preview-scaler-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+} */
+
+
+/* Keep your existing preview-scaler media queries here */
+@media (max-width: 1200px) { .preview-scaler { transform: scale(0.7); } }
+@media (max-width: 1100px) { .preview-scaler { transform: scale(0.65); } }
+@media (max-width: 1000px) { .preview-scaler { transform: scale(0.6); } }
+@media (max-width: 900px)  { .preview-scaler { transform: scale(0.55); } }
+@media (max-width: 800px)  { .preview-scaler { transform: scale(0.5); } }
+@media (max-width: 700px)  { .preview-scaler { transform: scale(0.45); } }
+@media (max-width: 600px)  { .preview-scaler { transform: scale(0.4); } }
+@media (max-width: 500px)  { .preview-scaler { transform: scale(0.35); } }
+/* @media (max-width: 400px)  { .preview-scaler { transform: scale(0.3); } } */

@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import InputField from "../utils/InputField";
 import Button from "../utils/Button";
 import SaveButton from "../utils/SaveButton";
+import ResetButton from "../utils/ResetButton";
 import Image from "../utils/Image";
 import imgTrash from "../assets/btnTrash.svg";
 import imgUp from "../assets/btnArrowUp.svg";
@@ -15,15 +16,18 @@ import {
   moveItemUp,
   moveItemDown,
 } from "../utils/formArrayHelpers";
+import { sectionHeaderText } from "../data/data";
 
 export default function EditorFormEducation({
   formData,
   setFormData,
   handleChangeArray,
   handleSubmit,
+  handleResetSection,
 }) {
   const section = "education";
   const education = formData[section];
+  const sectionHeader = sectionHeaderText[section];
   const enterYour = "Enter your";
 
   const [showForm, setShowForm] = useState(null);
@@ -75,20 +79,33 @@ export default function EditorFormEducation({
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>{section}</h1>
+      <h1>{sectionHeader}</h1>
       {education.map((entry, index) => (
         <div key={entry.id} className={styles.educationEntry}>
           <div
             style={{
               backgroundColor:
                 showForm === entry.id
-                  ? "var(--focus-blue)"
+                  ? "var(--mage-blue)"
                   : "var(--orb-gold-lt)",
+              border:
+                showForm === entry.id
+                  ? "2px solid var(--orb-gold)"
+                  : "2px solid var(--orb-gold-lt)",
             }}
-            className={styles.dropdownDataItemTile}
+            className={styles.dropdownEntryTile}
           >
-            <div className={styles.dataContainer}>
-              <h2> ➤ {section} #{index + 1} </h2>
+            <div className={styles.entryHeadingContainer}>
+              <h2
+                style={{
+                  color:
+                    showForm === entry.id
+                      ? "var(--orb-gold)"
+                      : "var(--mage-blue)",
+                }}
+              >
+                school #{index + 1}{" "}
+              </h2>
             </div>
             <div className={styles.entryButtonContainer}>
               <Button
@@ -169,8 +186,9 @@ export default function EditorFormEducation({
           <Image src={imgAdd} alt="add new education entry" />
         </Button>
       </div>
-      <div className={styles.saveButtonContainer}>
+      <div className={styles.endFormButtonContainer}>
         <SaveButton />
+        <ResetButton onClick={() => handleResetSection("education")} />
       </div>
     </form>
   );
