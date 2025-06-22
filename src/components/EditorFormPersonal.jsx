@@ -1,7 +1,9 @@
 import styles from "../styles/Editor.module.css";
+
 import InputField from "../utils/InputField";
 import SaveButton from "../utils/SaveButton";
 import ResetButton from "../utils/ResetButton";
+
 import { sectionHeaderText } from "../data/data";
 
 export default function EditorFormPersonal({

@@ -1,17 +1,23 @@
-import styles from "../styles/Editor.module.css";
-import "../App.css";
 import { useState } from "react";
-import Button from "../utils/Button";
-import Image from "../utils/Image";
+
+import "../App.css";
+
+import styles from "../styles/Editor.module.css";
+
 import imgPersonal from "../assets/btnPersonal.svg";
 import imgEducation from "../assets/btnEducation.svg";
 import imgWork from "../assets/btnWork.svg";
 import imgMisc from "../assets/btnMisc.svg";
 import imgDownload from "../assets/btnDownload.svg";
+
 import EditorFormPersonal from "./EditorFormPersonal";
 import EditorFormEducation from "./EditorFormEducation";
 import EditorFormWork from "./EditorFormWork";
 import EditorFormMiscSections from "./EditorFormMiscSections";
+import EditorFormDownload from "./EditorFormDownload";
+
+import Button from "../utils/Button";
+import Image from "../utils/Image";
 
 export default function Editor({
   formData,
@@ -20,6 +26,7 @@ export default function Editor({
   handleChangeArray,
   handleSubmit,
   handleResetSection,
+  handleDownload,
 }) {
   const [activeForm, setActiveForm] = useState("personal");
   const switchForm = (formName) => {
@@ -29,7 +36,6 @@ export default function Editor({
   };
 
   return (
-    // <div className={styles.editorContainer}>
     <div className="editor-container">
       <div className={styles.navButtonContainer}>
         <Button
@@ -56,11 +62,10 @@ export default function Editor({
         >
           <Image src={imgMisc} alt="" />
         </Button>
-        {/* Todo - this will be the download PDF button */}
         <Button
           variant="nav"
           type="button"
-          // onClick={() => switchForm("hat")}
+          onClick={() => switchForm("download")}
         >
           <Image src={imgDownload} alt="" />
         </Button>
@@ -106,6 +111,16 @@ export default function Editor({
               handleChangeArray={handleChangeArray}
               handleSubmit={handleSubmit}
               handleResetSection={handleResetSection}
+            />
+          </div>
+        )}
+        {activeForm === "download" && (
+          <div className="visible">
+            <EditorFormDownload
+              formData={formData}
+              setFormData={setFormData}
+              handleSubmit={handleSubmit}
+              handleDownload={handleDownload}
             />
           </div>
         )}

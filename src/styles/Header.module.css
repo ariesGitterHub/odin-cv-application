@@ -1,12 +1,16 @@
 header {
   width: 100vw;
   background-color: var(--purple-trans);
+  box-shadow: 0 0 5px var(--accent-blue), 
+            0 0 10px var(--accent-blue), 
+            0 0 20px var(--accent-blue);
+
   padding: 0.25rem;
   margin-bottom: 1rem;
 }
 
 header h1 {
-  color: var(--orb-gold);
+  color: var(--orb-gold-lt);
   /* font-size: var(--header-font-size); */
   /* margin: 0 0.25rem 0 0.25rem; */
   font-size: 1.8rem;
@@ -25,6 +29,7 @@ header p {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  
 }
 
 .textContainer {
@@ -32,12 +37,12 @@ header p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--orb-gold);
+  color: var(--orb-gold-lt);
   font-family: var(--font-logo);
   /* margin: 0 0.25rem 0 0.25rem; */
   margin-left: 0.25rem;
-  text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue),
-    0 0 20px var(--accent-blue);
+  /* text-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue),
+    0 0 20px var(--accent-blue); */
   text-transform: uppercase;
 }
 

@@ -2,15 +2,17 @@ import { nanoid } from "nanoid";
 
 export const sectionHeaderText = {
   personal: "personal details",
-  education: "educational background",
-  work: "work history",
-  miscellaneous: "miscellaneous sections",
+  education: "education",
+  work: "employment",
+  miscellaneous: "miscellaneous",
+  download: "review & download",
 };
 
 export const initialFormData = {
+  sectionsOrder: ["education", "work", "miscellaneous"],
   personal: {
     fullName: "HAROLD JAMES POTTER",
-    email: "h.potter@potter-and-co.com",
+    email: "h.potter@potterco.com",
     phone: "01632 960974",
     address: "14 Primrose Lane, Penhaligon, Cornwall, TR27 5BZ",
     website: "",
@@ -21,14 +23,14 @@ export const initialFormData = {
       school: "Hogwarts School of Witchcraft & Wizardry",
       location: "Hogwarts Castle, Scottish Highlands",
       degree: "N.E.W.T.s Certified",
-      year: "1991-1997",
+      years: "1991-1997",
     },
     {
       id: nanoid(),
       school: "College of Wizardry at Durham",
       location: "Durham, England",
       degree: "Master of Spellcraft & Enchantments (MSE)",
-      year: "1998-2000",
+      years: "1998-2000",
     },
   ],
   work: [

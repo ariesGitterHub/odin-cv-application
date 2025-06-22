@@ -22,7 +22,7 @@
   
   .input {
     width: 100%;
-    background-color: var(--orb-white);
+    background-color: #fff;
     border-color: transparent;
     border-radius: var(--border-radius-roundish);
     color: var(--mage-blue);

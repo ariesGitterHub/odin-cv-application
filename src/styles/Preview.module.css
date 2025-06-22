@@ -12,11 +12,17 @@
   } */
   
   .previewPage {
-    width: 8.5in;
-    height: 11in;
-    background-color: var(--orb-white);
+    /* width: 8.5in; */
+    width: 816px; /* 8.5 * 96 */
+    /* height: 11in; */
+    height: 1056px; /* 11 * 96 */
+    
+    background-color: #fff;
     border-radius: 0.125rem;
-    padding: 0.5in;
+    box-shadow: 0 0 10px #0000001a;
+    font-family: var(--font-text, sans-serif);
+    /* padding: 0.5in; */
+    padding: 48px; /* 0.5in = 48px */
       /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
     font-family: var(--font-text);
   }
@@ -26,19 +32,22 @@
 }
 
 .fullName {
-    color: var(--mage-blue);
+    color: var(--mage-blue, #080818);
     font-family: var(--font-text);
     /* font-size: 1.25rem; */
-    font-size: 18pt;
+    /* font-size: 18pt; */
+    font-size: 1.5rem;
     font-weight: 800;
     margin: 0;
     padding: 0;
 }
 
 .contactInfo {
-    color: var(--accent-blue);
+    /* color: var(--accent-blue, #5d667e); */
+    color: var(--mage-blue, #080818);
     /* font-size: .85rem; */
-    font-size: 11pt;
+    /* font-size: 11pt; */
+    font-size: 0.917rem;
 }
 
 .fullName, .contactInfo {
@@ -53,31 +62,28 @@
     justify-items: space-around;
 } */
 
-/* hr {
-  border-top: 1px solid var(--accent-blue);
-  border-bottom-color: var(--orb-white) ;
-} */
-
 .sectionHeader {
-  width: 13rem;
-    color: var(--orb-white);
+  max-width: fit-content;
+  min-width: 7rem;
+    color: #fff;
     /* font-size: .85rem; */
-    font-size: 9.5pt;
+    /* font-size: 9.5pt; */
+    font-size: 0.792rem;
     margin-top: 0.25rem;
     /* margin-bottom: -0.25rem; */
-    background-color: var(--accent-blue);
+    background-color: var(--accent-blue, #5d667e);
     text-align: center;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    padding: 0 0.25rem 0 0.25rem;
+    padding: 0.125rem 0.5rem 0 0.5rem;
 }
 .sectionEntry {
     display: flex;
     flex-direction: column;
-    /* background-color: var(--resume-blue); */
-    background: linear-gradient(5deg, var(--resume-blue), var(--resume-blue-dk));
+    /* background: linear-gradient(5deg, var(--resume-blue), var(--resume-blue-dk)); */
+    background-color: var(--resume-blue);
     /* border-radius: 0.125rem; */
-    border: 1px solid var(--accent-blue);
+    border: 1px solid var(--accent-blue, #5d667e);
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
@@ -111,7 +117,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 11pt;
+    /* font-size: 11pt; */
+    font-size: 0.917rem;
     font-style: italic;
 }
 
@@ -126,8 +133,9 @@ ul {
 }
 
 li {
-    color: var(--mage-blue);
-    font-size: 10pt;
+    color: var(--mage-blue, #080818);
+    /* font-size: 10pt; */
+    font-size: 0.833rem;
     margin-left: 0.25rem;
     margin-bottom: .25rem;
 }

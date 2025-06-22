@@ -1,37 +1,32 @@
+import styles from "../styles/Editor.module.css";
 import { useState } from "react";
 import { nanoid } from "nanoid";
-
-import styles from "../styles/Editor.module.css";
-
+import InputField from "../utils/InputField";
+import Button from "../utils/Button";
+import SaveButton from "../utils/SaveButton";
+import ResetButton from "../utils/ResetButton";
+import Image from "../utils/Image";
 import imgTrash from "../assets/btnTrash.svg";
 import imgUp from "../assets/btnArrowUp.svg";
 import imgDown from "../assets/btnArrowDown.svg";
 import imgEdit from "../assets/btnEdit.svg";
 import imgAdd from "../assets/btnAdd.svg";
-
-import { sectionHeaderText } from "../data/data";
-
-import Image from "../utils/Image";
-import InputField from "../utils/InputField";
-import Button from "../utils/Button";
-import SaveButton from "../utils/SaveButton";
-import ResetButton from "../utils/ResetButton";
-
 import {
   removeItemById,
   moveItemUp,
   moveItemDown,
 } from "../utils/formArrayHelpers";
+import { sectionHeaderText } from "../data/data";
 
-export default function EditorFormMiscSections({
+export default function EditorFormEducation({
   formData,
   setFormData,
   handleChangeArray,
   handleSubmit,
   handleResetSection,
 }) {
-  const section = "miscellaneous";
-  const miscellaneous = formData[section];
+  const section = "education";
+  const education = formData[section];
   const sectionHeader = sectionHeaderText[section];
   const enterYour = "Enter your";
 
@@ -41,50 +36,52 @@ export default function EditorFormMiscSections({
     setShowForm((prev) => (prev === id ? null : id));
   };
 
-  const removeMiscellaneousItem = (id) => {
-    const updatedMiscellaneous = removeItemById(miscellaneous, id);
+  const removeEducationItem = (id) => {
+    const updatedEducation = removeItemById(education, id);
     setFormData((prevData) => ({
       ...prevData,
-      miscellaneous: updatedMiscellaneous,
+      education: updatedEducation,
     }));
   };
 
-  const addMiscellaneousItem = () => {
+  const addEducationItem = () => {
     const newEntry = {
       id: nanoid(),
-      section: "",
-      description: "",
+      school: "",
+      location: "",
+      degree: "",
+      year: "",
     };
 
     setFormData((prevData) => ({
       ...prevData,
-      miscellaneous: [...prevData.miscellaneous, newEntry],
+      education: [...prevData.education, newEntry],
     }));
 
     setShowForm(newEntry.id);
   };
 
-  const moveMiscellaneousItemUp = (id) => {
-    const updatedMiscellaneous = moveItemUp(miscellaneous, id);
+  const moveEducationItemUp = (id) => {
+    const updatedEducation = moveItemUp(education, id);
     setFormData((prevData) => ({
       ...prevData,
-      miscellaneous: updatedMiscellaneous,
+      education: updatedEducation,
     }));
   };
 
-  const moveMiscellaneousItemDown = (id) => {
-    const updatedMiscellaneous = moveItemDown(miscellaneous, id);
+  const moveEducationItemDown = (id) => {
+    const updatedEducation = moveItemDown(education, id);
     setFormData((prevData) => ({
       ...prevData,
-      miscellaneous: updatedMiscellaneous,
+      education: updatedEducation,
     }));
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>{sectionHeader}</h1>
-      {miscellaneous.map((entry, index) => (
-        <div key={entry.id} className={styles.miscellaneousEntry}>
+      {education.map((entry, index) => (
+        <div key={entry.id} className={styles.educationEntry}>
           <div
             style={{
               backgroundColor:
@@ -107,28 +104,28 @@ export default function EditorFormMiscSections({
                       : "var(--mage-blue)",
                 }}
               >
-                section #{index + 1}
+                school #{index + 1}{" "}
               </h2>
             </div>
             <div className={styles.entryButtonContainer}>
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => removeMiscellaneousItem(entry.id)}
+                onClick={() => removeEducationItem(entry.id)}
               >
                 <Image src={imgTrash} alt="" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => moveMiscellaneousItemUp(entry.id)}
+                onClick={() => moveEducationItemUp(entry.id)}
               >
                 <Image src={imgUp} alt="" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
-                onClick={() => moveMiscellaneousItemDown(entry.id)}
+                onClick={() => moveEducationItemDown(entry.id)}
               >
                 <Image src={imgDown} alt="" />
               </Button>
@@ -144,27 +141,35 @@ export default function EditorFormMiscSections({
           {showForm === entry.id && (
             <div className="visible">
               <InputField
-                label="Section"
-                name="section"
-                value={entry.section}
+                label="School"
+                name="school"
+                value={entry.school}
                 onChange={handleChangeArray(section, entry.id)}
-                placeholder={`${enterYour} new section...`}
+                placeholder={`${enterYour} school's name...`}
                 required={false}
               />
               <InputField
-                label="Title"
-                name="title"
-                value={entry.title}
+                label="Location"
+                name="location"
+                value={entry.location}
                 onChange={handleChangeArray(section, entry.id)}
-                placeholder="Enter an entry title, if applicable..."
+                placeholder={`${enterYour} school's location...`}
                 required={false}
               />
               <InputField
-                label="Description"
-                name="description"
-                value={entry.description}
+                label="Degree"
+                name="degree"
+                value={entry.degree}
                 onChange={handleChangeArray(section, entry.id)}
-                placeholder="Enter the appropriate text..."
+                placeholder={`${enterYour} degree type...`}
+                required={false}
+              />
+              <InputField
+                label="Year"
+                name="year"
+                value={entry.year}
+                onChange={handleChangeArray(section, entry.id)}
+                placeholder={`${enterYour} graduation year...`}
                 required={false}
               />
             </div>
@@ -172,18 +177,18 @@ export default function EditorFormMiscSections({
         </div>
       ))}
       <div className={styles.addNewContainer}>
-        <h2>add new section</h2>
+        <h2>Add New {section} Entry</h2>
         <Button
           variant="formDataControl"
           type="button"
-          onClick={addMiscellaneousItem}
+          onClick={addEducationItem}
         >
-          <Image src={imgAdd} alt="Add new miscellaneous entry" />
+          <Image src={imgAdd} alt="add new education entry" />
         </Button>
       </div>
       <div className={styles.endFormButtonContainer}>
         <SaveButton />
-        <ResetButton onClick={() => handleResetSection("miscellaneous")} />
+        <ResetButton onClick={() => handleResetSection("education")} />
       </div>
     </form>
   );

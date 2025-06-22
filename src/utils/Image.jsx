@@ -7,7 +7,7 @@ export default function Image({ src, alt, className = "", ...props }) {
       alt={alt}
       loading="lazy"
       // className={`${styles.image} ${className}`}
-      className={className} // Use above if linking to Image.module.css
+      className={className} // Use above if linking to modular css like "Image.module.css"
       {...props}
     />
   );

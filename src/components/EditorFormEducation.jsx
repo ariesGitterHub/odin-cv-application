@@ -1,22 +1,27 @@
-import styles from "../styles/Editor.module.css";
 import { useState } from "react";
 import { nanoid } from "nanoid";
-import InputField from "../utils/InputField";
-import Button from "../utils/Button";
-import SaveButton from "../utils/SaveButton";
-import ResetButton from "../utils/ResetButton";
-import Image from "../utils/Image";
+
+import styles from "../styles/Editor.module.css";
+
 import imgTrash from "../assets/btnTrash.svg";
 import imgUp from "../assets/btnArrowUp.svg";
 import imgDown from "../assets/btnArrowDown.svg";
 import imgEdit from "../assets/btnEdit.svg";
 import imgAdd from "../assets/btnAdd.svg";
+
+import { sectionHeaderText } from "../data/data";
+
+import Image from "../utils/Image";
+import InputField from "../utils/InputField";
+import Button from "../utils/Button";
+import SaveButton from "../utils/SaveButton";
+import ResetButton from "../utils/ResetButton";
+
 import {
   removeItemById,
   moveItemUp,
   moveItemDown,
 } from "../utils/formArrayHelpers";
-import { sectionHeaderText } from "../data/data";
 
 export default function EditorFormEducation({
   formData,
@@ -50,7 +55,7 @@ export default function EditorFormEducation({
       school: "",
       location: "",
       degree: "",
-      year: "",
+      years: "",
     };
 
     setFormData((prevData) => ({
@@ -165,11 +170,11 @@ export default function EditorFormEducation({
                 required={false}
               />
               <InputField
-                label="Year"
-                name="year"
-                value={entry.year}
+                label="Years"
+                name="years"
+                value={entry.years}
                 onChange={handleChangeArray(section, entry.id)}
-                placeholder={`${enterYour} graduation year...`}
+                placeholder={`${enterYour} years of attendance...`}
                 required={false}
               />
             </div>

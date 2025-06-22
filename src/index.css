@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Wendy+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Wendy+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); */
 
 :root {
   /* COLORS */
   --orb-gold: #edbd58;
-  --orb-gold-lt: #d9c8a3;
-  --orb-white: #dcdad5;
+  --orb-gold-lt: #f2e2be;
+  /* --orb-white: #e0ddd5; */
   --mage-blue: #080818;
   --mage-blue-trans: #0808184b;
   --accent-blue: #5d667e;
-  --resume-blue: #d9e3e6;
-  --resume-blue-dk: #b1bedc;;
-  --focus-blue: #00bfff;
+  --resume-blue: #dedeea;
+  /* --resume-blue-dk: #cecedf; */
   --flamel-red: #eb470b;
   --purple-trans: #7244723f;
   
-  --font-logo: "Wendy One", sans-serif;
-  --font-text: "Lato", sans-serif;
-  --font-emoji: "Noto Emoji", sans-serif;
+  --font-logo: "Wendy One", Impact, sans-serif;
+  --font-text: "Lato", sans-serif, -apple-system, "Segoe UI" ;
 
   /* MEDIA QUERY VARIABLES */
   /* Mobile first */
@@ -29,7 +26,7 @@
   --border-radius-roundish: 1rem;
   --border-radius-squarish: 0.5rem;
 
-  --section-header-size: 1.5rem;
+  --section-header-size: 1.75rem;
   --existing-data-header-size: 1rem;
 }
 
@@ -130,7 +127,8 @@ select {
 *:focus {
   /* outline: 2px dashed var(--focus-blue); */
   outline: 2px solid var(--flamel-red);
-  /* outline-offset: 2px; */
+  outline-offset: 1px;
+  transition: outline 0.2s ease-in-out;
 }
 
 .visible {
