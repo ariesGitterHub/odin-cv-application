@@ -34,8 +34,7 @@ const Preview = forwardRef(({ formData }, ref) => {
             {formData.personal.address && <p>{formData.personal.address}</p>}
             {/* The above line hides empty values... */}
           </div>
-
-          {/* Render sections in the order of formData.sectionsOrder */}
+          {/* Renders sections in the order of formData.sectionsOrder */}
           {formData.sectionsOrder.map((sectionKey) => (
             <div key={sectionKey}>
               {/* Only render the header once per section */}
@@ -44,8 +43,7 @@ const Preview = forwardRef(({ formData }, ref) => {
                   {sectionHeaderText[sectionKey]}
                 </h2>
               )}
-
-              {/* Render education entries if section is "education" */}
+              {/* Renders education entries if section is "education" */}
               {sectionKey === "education" &&
                 formData.education.map((entry) => (
                   <div key={entry.id} className={styles.sectionEntry}>
@@ -64,8 +62,7 @@ const Preview = forwardRef(({ formData }, ref) => {
                     </div>
                   </div>
                 ))}
-
-              {/* Render work entries if section is "work" */}
+              {/* Renders work entries if section is "work" */}
               {sectionKey === "work" &&
                 formData.work.map((entry) => (
                   <div key={entry.id} className={styles.sectionEntry}>
@@ -93,12 +90,11 @@ const Preview = forwardRef(({ formData }, ref) => {
                     )}
                   </div>
                 ))}
-
-              {/* Render miscellaneous entries if section is "miscellaneous" */}
+              {/* Renders miscellaneous entries if section is "miscellaneous" */}
               {sectionKey === "miscellaneous" &&
                 formData.miscellaneous.map((entry) => (
                   <div key={entry.id}>
-                    {/* Render section name (e.g., "PROJECTS", "SKILLS") */}
+                    {/* Renders section name (e.g., "PROJECTS", "SKILLS") */}
                     <h2 className={styles.sectionHeader}>{entry.section}</h2>
                     <div className={styles.sectionEntry}>
                       {entry.title && (
@@ -107,7 +103,6 @@ const Preview = forwardRef(({ formData }, ref) => {
                         </div>
                       )}
                       {/* The above line hides empty values... */}
-                      {/* Render description */}
                       <div className={styles.entryDetail}>
                         <p>{entry.description}</p>
                       </div>

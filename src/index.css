@@ -1,36 +1,32 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Wendy+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); */
-
 :root {
   /* COLORS */
+  --white: #ffffff;
   --orb-gold: #edbd58;
   --orb-gold-lt: #f2e2be;
-  /* --orb-white: #e0ddd5; */
   --mage-blue: #080818;
-  --mage-blue-trans: #0808184b;
   --accent-blue: #5d667e;
   --resume-blue: #dedeea;
-  /* --resume-blue-dk: #cecedf; */
   --flamel-red: #eb470b;
   --purple-trans: #7244723f;
   
+  /* FONTS */
   --font-logo: "Wendy One", Impact, sans-serif;
   --font-text: "Lato", sans-serif, -apple-system, "Segoe UI" ;
 
-  /* MEDIA QUERY VARIABLES */
-  /* Mobile first */
-  --header-font-size: 1.65rem;
-  --header-logo-size: 1.75rem;
+  /* VARIABLES */
+  --header-font-size: 0.8rem;
+  --header-title-size: 1.8rem;
+  --header-logo-size: 3.5rem;
 
   --border-radius-round: 50%;
   --border-radius-roundish: 1rem;
   --border-radius-squarish: 0.5rem;
 
-  --section-header-size: 1.75rem;
+  --section-header-size: 1.65rem;
   --existing-data-header-size: 1rem;
-}
 
-/* Use below as a boilerplate, comment out what is not needed on this project */
+  --tile-width-size: 32ch;
+}
 
 *,
 *::before,
@@ -53,27 +49,22 @@ blockquote, dl, dd {
   padding: 0;
 }
 
-/* Remove list styles */
 ul, ol {
   list-style: none;
 }
 
-/* Remove link styles */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Set default body styles */
 body {
-  /* height: 100vh; */
   min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   line-height: 1.5;
-  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
   background: linear-gradient(5deg, var(--accent-blue), var(--mage-blue));
    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -90,32 +81,7 @@ h2 {
 .content-list{
   margin: 1rem;
 }
-ul {
-  /* display: block;
-  list-style-type: disc; */
-  /* margin-block-start: 1em; */
-  /* margin-block-end: 1em; */
-  /* padding-inline-start: 1rem; */
-}
-li {
-  /* color: var(--mage-blue);
-  font-family: var(--font-text);
-  font-size: .65rem;
-  list-style: circle; */
-}
 
-/* Set media to block */
-/* img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
-
-/* Inherit fonts for form elements */
 input,
 button,
 textarea,
@@ -123,9 +89,7 @@ select {
   font: inherit;
 }
 
-/* Prevent animations during page load (optional) */
 *:focus {
-  /* outline: 2px dashed var(--focus-blue); */
   outline: 2px solid var(--flamel-red);
   outline-offset: 1px;
   transition: outline 0.2s ease-in-out;

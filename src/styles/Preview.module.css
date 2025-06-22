@@ -1,106 +1,78 @@
-/* .previewContainer {
-    height: auto;
-    width: 100%;  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .previewScaler {
-    transform-origin: top center;
-    transition: transform 0.3s ease;
-  } */
-  
-  .previewPage {
-    /* width: 8.5in; */
-    width: 816px; /* 8.5 * 96 */
-    /* height: 11in; */
-    height: 1056px; /* 11 * 96 */
-    
-    background-color: #fff;
-    border-radius: 0.125rem;
-    box-shadow: 0 0 10px #0000001a;
-    font-family: var(--font-text, sans-serif);
-    /* padding: 0.5in; */
-    padding: 48px; /* 0.5in = 48px */
-      /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
-    font-family: var(--font-text);
-  }
+/* Below, changing the font-sizes from pt to rem is what fixed the pdf sizing issue with the text, also in changed to px */
+
+.previewPage {
+  /* width: 8.5in; */
+  width: 816px; /* 8.5 * 96 */
+  /* height: 11in; */
+  height: 1056px; /* 11 * 96 */
+  background-color: var(--white);
+  border-radius: 0.125rem;
+  box-shadow: 0 0 10px #0000001a;
+  font-family: var(--font-text);
+  /* padding: 0.5in; */
+  padding: 48px; /* 0.5in = 48px */
+}
 
 .bold {
-    font-weight: 800;
+  font-weight: 800;
+}
+
+.fullName,
+.contactInfo {
+  text-align: center;
 }
 
 .fullName {
-    color: var(--mage-blue, #080818);
-    font-family: var(--font-text);
-    /* font-size: 1.25rem; */
-    /* font-size: 18pt; */
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin: 0;
-    padding: 0;
+  color: var(--mage-blue);
+  font-family: var(--font-text);
+  /* font-size: 18pt; */
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
 }
 
 .contactInfo {
-    /* color: var(--accent-blue, #5d667e); */
-    color: var(--mage-blue, #080818);
-    /* font-size: .85rem; */
-    /* font-size: 11pt; */
-    font-size: 0.917rem;
+  color: var(--mage-blue);
+  /* font-size: 11pt; */
+  font-size: 0.917rem;
 }
-
-.fullName, .contactInfo {
-    text-align: center;
-}
-
-/* .contactInfo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-items: space-around;
-} */
 
 .sectionHeader {
   max-width: fit-content;
   min-width: 7rem;
-    color: #fff;
-    /* font-size: .85rem; */
-    /* font-size: 9.5pt; */
-    font-size: 0.792rem;
-    margin-top: 0.25rem;
-    /* margin-bottom: -0.25rem; */
-    background-color: var(--accent-blue, #5d667e);
-    text-align: center;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    padding: 0.125rem 0.5rem 0 0.5rem;
+  color: var(--white);
+  /* font-size: 9.5pt; */
+  font-size: 0.792rem;
+  margin-top: 0.25rem;
+  background-color: var(--accent-blue);
+  text-align: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding: 0.125rem 0.5rem 0 0.5rem;
 }
 .sectionEntry {
-    display: flex;
-    flex-direction: column;
-    /* background: linear-gradient(5deg, var(--resume-blue), var(--resume-blue-dk)); */
-    background-color: var(--resume-blue);
-    /* border-radius: 0.125rem; */
-    border: 1px solid var(--accent-blue, #5d667e);
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    /* font-size: 0.75rem; */
-    /* font-size: 5pt; */
-    margin-top: 0.125rem;
-    padding: 0.35rem;
-    gap: 0.25rem;
-    margin-bottom: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--resume-blue);
+  border: 1px solid var(--accent-blue);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  /* font-size: 0.75rem; */
+  /* font-size: 5pt; */
+  margin-top: 0.125rem;
+  padding: 0.35rem;
+  gap: 0.25rem;
+  margin-bottom: 0.45rem;
 }
 
 .entryHeader {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 11pt;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11pt;
 }
 
 .entryHeader1 {
@@ -108,62 +80,27 @@
   flex-direction: row;
 }
 
-.entryHeader2 {
-
-}
-
 .entryDetail {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    /* font-size: 11pt; */
-    font-size: 0.917rem;
-    font-style: italic;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* font-size: 11pt; */
+  font-size: 0.917rem;
+  font-style: italic;
 }
 
-/* Bullet points */
-
+/* BULLET POINTS */
 ul {
   display: block;
-  list-style-type: disc ;
-  /* margin-block-start: 1em; */
-  /* margin-block-end: 1em; */
+  list-style-type: disc;
   padding-inline-start: 1rem;
 }
 
 li {
-    color: var(--mage-blue, #080818);
-    /* font-size: 10pt; */
-    font-size: 0.833rem;
-    margin-left: 0.25rem;
-    margin-bottom: .25rem;
+  color: var(--mage-blue);
+  /* font-size: 10pt; */
+  font-size: 0.833rem;
+  margin-left: 0.25rem;
+  margin-bottom: 0.25rem;
 }
-
-
-  
-  /* Responsive scaling without layout jumps */
-  /* @media (max-width: 1000px) {
-    .previewScaler {
-      transform: scale(0.85);
-    }
-  }
-  
-  @media (max-width: 800px) {
-    .previewScaler {
-      transform: scale(0.7);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .previewScaler {
-      transform: scale(0.5);
-    }
-  }
-  
-  @media (max-width: 400px) {
-    .previewScaler {
-      transform: scale(0.35);
-    }
-  } */
-  

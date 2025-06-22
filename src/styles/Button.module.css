@@ -56,8 +56,6 @@
   background-color: var(--orb-gold-lt);
   border: 0.125rem solid var(--mage-blue);
   border-radius: var(--border-radius-round);
-  /* margin-top: 0.5rem; */
-  /* margin-right: 0rem; */
 }
 
 .formDataControlTask img {
