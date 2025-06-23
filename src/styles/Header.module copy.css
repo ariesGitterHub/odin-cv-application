@@ -1,9 +1,8 @@
 header {
-  /* width: 100vw; */
-  /* background-color: var(--purple-trans); */
-  /* box-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue),
-    0 0 20px var(--accent-blue); */
-    margin-top: 1rem;
+  width: 100vw;
+  background-color: var(--purple-trans);
+  box-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue),
+    0 0 20px var(--accent-blue);
   margin-bottom: 1rem;
   padding: 0.25rem;
 }
