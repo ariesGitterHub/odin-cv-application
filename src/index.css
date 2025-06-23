@@ -21,6 +21,7 @@
   --border-radius-round: 50%;
   --border-radius-roundish: 1rem;
   --border-radius-squarish: 0.5rem;
+  --border-radius-squarish-less: 0.675rem;
 
   --section-header-size: 1.65rem;
   --existing-data-header-size: 1rem;
