@@ -156,6 +156,7 @@ h1 {
 }
 
 .textExplainerBox {
+width: var(--tile-width-size);
   background-color: var(--purple-trans);
   border-radius: var(--border-radius-squarish);
   color: var(--orb-gold);

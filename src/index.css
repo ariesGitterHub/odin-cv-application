@@ -34,6 +34,16 @@
   box-sizing: border-box;
 }
 
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
 html {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -41,15 +51,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body,
 h1, h2, h3, h4, h5, h6,
-p, ul, ol, figure,
-blockquote, dl, dd {
+p, ul{
   margin: 0;
   padding: 0;
 }
 
-ul, ol {
+ul {
   list-style: none;
 }
 
@@ -59,15 +67,13 @@ a {
 }
 
 body {
-  min-height: 100%;
+  /* min-height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  line-height: 1.5;
   background: linear-gradient(5deg, var(--accent-blue), var(--mage-blue));
-   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
 h2 {
@@ -75,10 +81,6 @@ h2 {
   font-family: var(--font-text);
   font-size: 1rem;
   text-transform: uppercase;
-}
-
-.content-list{
-  margin: 1rem;
 }
 
 input,
@@ -95,7 +97,7 @@ select {
 }
 
 .visible {
-  width: 32ch; 
+  width: var(----tile-width-size); 
   display: flex;
   flex-direction: column;
   align-items: center;
