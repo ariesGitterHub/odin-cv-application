@@ -118,28 +118,28 @@ export default function EditorFormEducation({
                 type="button"
                 onClick={() => removeEducationItem(entry.id)}
               >
-                <Image src={imgTrash} alt="" />
+                <Image src={imgTrash} alt="Remove school item" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => moveEducationItemUp(entry.id)}
               >
-                <Image src={imgUp} alt="" />
+                <Image src={imgUp} alt="Move school item up" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => moveEducationItemDown(entry.id)}
               >
-                <Image src={imgDown} alt="" />
+                <Image src={imgDown} alt="Move school item down" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => toggleForm(entry.id)}
               >
-                <Image src={imgEdit} alt="" />
+                <Image src={imgEdit} alt="Edit school item" />
               </Button>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function EditorFormEducation({
           type="button"
           onClick={addEducationItem}
         >
-          <Image src={imgAdd} alt="add new education entry" />
+          <Image src={imgAdd} alt="add new school entry" />
         </Button>
       </div>
       <div className={styles.endFormButtonContainer}>

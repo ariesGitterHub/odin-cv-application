@@ -174,28 +174,28 @@ export default function EditorFormWork({
                 type="button"
                 onClick={() => removeWorkItem(entry.id)}
               >
-                <Image src={imgTrash} alt="" />
+                <Image src={imgTrash} alt="Remove employer item" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => moveWorkItemUp(entry.id)}
               >
-                <Image src={imgUp} alt="" />
+                <Image src={imgUp} alt="Move employer item up" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => moveWorkItemDown(entry.id)}
               >
-                <Image src={imgDown} alt="" />
+                <Image src={imgDown} alt="Move employer item down" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => toggleForm(entry.id)}
               >
-                <Image src={imgEdit} alt="" />
+                <Image src={imgEdit} alt="Edit employer item" />
               </Button>
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function EditorFormWork({
                       variant="formDataControlTask"
                       onClick={() => removeTaskFromWork(entry.id, task.id)}
                     >
-                      <Image src={imgTrash} alt="Remove task" />
+                      <Image src={imgTrash} alt="Remove task entry" />
                     </Button>
                     <InputField
                       label=""
@@ -275,7 +275,7 @@ export default function EditorFormWork({
       <div className={styles.addNewContainer}>
         <h2>add new employer entry</h2>
         <Button variant="formDataControl" type="button" onClick={addWorkItem}>
-          <Image src={imgAdd} alt="Add new work entry" />
+          <Image src={imgAdd} alt="Add new employer entry" />
         </Button>
       </div>
       <div className={styles.endFormButtonContainer}>

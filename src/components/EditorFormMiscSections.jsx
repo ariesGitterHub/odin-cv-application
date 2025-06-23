@@ -116,28 +116,28 @@ export default function EditorFormMiscSections({
                 type="button"
                 onClick={() => removeMiscellaneousItem(entry.id)}
               >
-                <Image src={imgTrash} alt="" />
+                <Image src={imgTrash} alt="Remove section item" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => moveMiscellaneousItemUp(entry.id)}
               >
-                <Image src={imgUp} alt="" />
+                <Image src={imgUp} alt="Move section item up" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => moveMiscellaneousItemDown(entry.id)}
               >
-                <Image src={imgDown} alt="" />
+                <Image src={imgDown} alt="Move section item down" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => toggleForm(entry.id)}
               >
-                <Image src={imgEdit} alt="" />
+                <Image src={imgEdit} alt="Edit section item" />
               </Button>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function EditorFormMiscSections({
           type="button"
           onClick={addMiscellaneousItem}
         >
-          <Image src={imgAdd} alt="Add new miscellaneous entry" />
+          <Image src={imgAdd} alt="Add new section entry" />
         </Button>
       </div>
       <div className={styles.endFormButtonContainer}>

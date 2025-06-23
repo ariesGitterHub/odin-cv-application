@@ -72,14 +72,14 @@ handleDownload,
                 type="button"
                 onClick={() => moveSectionUp(sectionKey)}
               >
-                <Image src={imgUp} alt="" />
+                <Image src={imgUp} alt="Move resumé section up" />
               </Button>
               <Button
                 variant="formDataControl"
                 type="button"
                 onClick={() => moveSectionDown(sectionKey)}
               >
-                <Image src={imgDown} alt="" />
+                <Image src={imgDown} alt="Move resumé section down" />
               </Button>
             </div>
           </div>
@@ -87,9 +87,7 @@ handleDownload,
       </div>
       <div className={styles.endFormButtonContainer}>
         <SaveButton />
-        <DownloadButton
-        onClick={() => handleDownload()}
-        />
+        <DownloadButton onClick={() => handleDownload()} />
       </div>
     </form>
   );

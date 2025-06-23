@@ -12,7 +12,7 @@ export default function Header() {
       <div className={styles.innerHeaderContainer}>
         <Image
           src={imgHat}
-          alt="Resumé Wizard Hat Logo"
+          alt="Resumé Wizard hat logo"
           className={styles.headerHatLogo}
         />
         <div className={styles.textContainer}>

@@ -43,31 +43,43 @@ export default function Editor({
           type="button"
           onClick={() => switchForm("personal")}
         >
-          <Image src={imgPersonal} alt="" />
+          <Image
+            src={imgPersonal}
+            alt="Switch to personal details section of resumé"
+          />
         </Button>
         <Button
           variant="nav"
           type="button"
           onClick={() => switchForm("education")}
         >
-          <Image src={imgEducation} alt="" />
+          <Image
+            src={imgEducation}
+            alt="Switch to education section of resumé"
+          />
         </Button>
         <Button variant="nav" type="button" onClick={() => switchForm("work")}>
-          <Image src={imgWork} alt="" />
+          <Image src={imgWork} alt="Switch to employment section of resumé" />
         </Button>
         <Button
           variant="nav"
           type="button"
           onClick={() => switchForm("miscellaneous")}
         >
-          <Image src={imgMisc} alt="" />
+          <Image
+            src={imgMisc}
+            alt="Switch to miscellaneous section of resumé"
+          />
         </Button>
         <Button
           variant="nav"
           type="button"
           onClick={() => switchForm("download")}
         >
-          <Image src={imgDownload} alt="" />
+          <Image
+            src={imgDownload}
+            alt="Switch to review and download pdf section of resumé"
+          />
         </Button>
       </div>
       <div>
