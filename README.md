@@ -12,9 +12,9 @@ It tunrs out that this was a viewport and touch behavior issue, not a flexbox pr
 Solution, in index.html, change to this: 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<!-- Also added this to index.css: 
+Also added this to index.css: 
 html, body {
   overflow-x: hidden;
   overscroll-behavior: none;
   touch-action: manipulation;
-} -->
+}

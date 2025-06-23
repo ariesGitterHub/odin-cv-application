@@ -1,7 +1,7 @@
 header {
-  background-color: var(--orb-gold);
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  width: 100vw;
+  background-color: var(--purple-trans);
+  margin-bottom: 1rem;
   padding: 0.25rem;
 }
 
