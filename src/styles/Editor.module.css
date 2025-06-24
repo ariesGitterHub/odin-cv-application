@@ -41,7 +41,8 @@ h1 {
 
 .resumeEntryTile {
   height: 3.25rem;
-  background-color: var(--mage-blue);
+  /* background-color: var(--purple-dragon); */
+  background-color: var(--accent-blue);
   margin: 0.5rem 0 0.5rem 0;
 }
 
@@ -50,8 +51,7 @@ h1 {
 }
 
 .resumeEntryTile:hover {
-  box-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue),
-    0 0 20px var(--accent-blue);
+  box-shadow: var(--box-shadow-selection);
 }
 
 .dropdownEntryTile h2,
@@ -63,12 +63,8 @@ h1 {
   margin: 0 0.25rem 0 0.25rem;
 }
 
-.dropdownEntryTile h2 {
+.dropdownEntryTile h2, .resumeEntryTile h2 {
   color: var(--mage-blue);
-}
-
-.resumeEntryTile h2 {
-  color: var(--orb-gold-lt);
 }
 
 .entryHeadingContainer {
@@ -134,8 +130,7 @@ h1 {
 .educationEntry:hover,
 .workEntry:hover,
 .miscellaneousEntry:hover {
-  box-shadow: 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue),
-    0 0 20px var(--accent-blue);
+  box-shadow: var(--box-shadow-selection);
 }
 
 .downloadEntry {
@@ -157,7 +152,6 @@ h1 {
 
 .textExplainerBox {
   width: var(--tile-width-size);
-  background-color: var(--purple-dragon);
   border-radius: var(--border-radius-squarish);
   color: var(--orb-gold);
   font-family: var(--font-text);
