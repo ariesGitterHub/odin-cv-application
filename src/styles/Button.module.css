@@ -33,7 +33,7 @@
 .save,
 .reset,
 .download {
-  width: fit-content;
+  width: 8.35rem;
   background-color: var(--mage-blue);
   border: 0.125rem solid var(--orb-gold-lt);
   border-radius: 2rem;
